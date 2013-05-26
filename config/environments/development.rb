@@ -1,4 +1,5 @@
 Minifast::Application.configure do
+  config.style_guide.paths << Rails.root.join("app/style-guide/**/*")
   config.middleware.insert_before(::Rack::Lock, ::Rack::LiveReload, :min_delay => 500) if defined?(Rack::LiveReload)
   # Settings specified here will take precedence over those in config/application.rb
 
