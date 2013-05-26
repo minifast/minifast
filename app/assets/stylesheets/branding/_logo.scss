@@ -1,0 +1,28 @@
+@import "minifast";
+
+$brandingLogoStripeColor: black !default;
+
+.branding-logo {
+  text-transform: uppercase;
+  text-align: center;
+
+  h2 {
+    border-top: 2px solid $brandingLogoStripeColor;
+    position: relative;
+    line-height: 1em;
+    margin: 0.5em 0;
+
+    span {
+      position: absolute;
+      top: -0.5em;
+      left: 50%;
+      margin-left: -1em;
+      background: $bodyBackground;
+      padding: 0 0.5em;
+    }
+  }
+
+  h1:first-letter {
+    font-size: 1.4em;
+  }
+}

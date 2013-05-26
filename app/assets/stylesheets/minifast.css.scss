@@ -1,4 +1,7 @@
-@import "vignette";
+$headingsFontFamily: "minifast-font";
+$headingsFontWeight: 300;
+
+@import "bootstrap";
 
 body {
   padding: 0;

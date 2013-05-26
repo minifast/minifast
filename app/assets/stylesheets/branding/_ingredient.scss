@@ -1,0 +1,25 @@
+@import "minifast";
+@import "compass/css3/box-shadow";
+
+.branding-ingredient {
+  padding: 0 1em;
+  border-top: 0.5em solid #eee;
+  @include box-shadow(
+    #eee 0 2px 5px 0,
+    #e8e8e8 0 -2px 0 1px inset
+  );
+
+  h3 {
+    text-transform: uppercase;
+    line-height: 1em;
+
+    &:first-letter {
+      font-size: 1.3em;
+    }
+  }
+
+  article {
+    padding-bottom: 0.25em;
+    font-family: $serifFontFamily;
+  }
+}

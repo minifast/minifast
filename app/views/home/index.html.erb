@@ -1,14 +1,22 @@
 <div class="container">
-  <h1>
-    <div>The</div>
-    Ministry
-    <div>of</div>
-    Velocity
-  </h1>
+  <header>
+    <h1>Ministry</h1>
+    <h2><span>of</span></h2>
+    <h1>Velocity</h1>
+  </header>
 
-  <h2>Tracker is peace</h2>
-  <h2>Waterfall is slavery</h2>
-  <h2>Retrospectives are strength</h2>
-
-  <h3><a href="mailto:contact@ministryofvelocity.com">Contact is email</a></h3>
+  <table>
+    <tr>
+      <% t(:rationale, scope: :home).each do |section_id, section| %>
+      <td>
+        <section class="<%= section_id %>">
+          <h3><%= section[:title] %></h3>
+          <article>
+            <p><%= section[:text] %></p>
+          </article>
+        </section>
+      </td>
+      <% end %>
+    </tr>
+  </table>
 </div>

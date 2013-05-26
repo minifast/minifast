@@ -1,38 +1,50 @@
+@import "minifast";
+@import "branding/logo";
+@import "branding/ingredient";
+
 .home.index {
+  header {
+    @extend .branding-logo;
+  }
+
+  td section {
+    @extend .branding-ingredient;
+
+    &.who {
+      border-top-color: #1cf;
+    }
+
+    &.what {
+      border-top-color: #f1c;
+    }
+
+    &.why {
+      border-top-color: #ccf811;
+    }
+  }
+
+  table {
+    width: 940px;
+    margin: 0 auto;
+    margin-top: 5em;
+    border-collapse: collapse;
+  }
+
+
+  td {
+    width: 33.33333333%;
+    vertical-align: top;
+    padding: 0;
+  }
+
+  td + td {
+    padding-left: 20px;
+  }
+
   .container {
     position: absolute;
     top: 50%;
-    margin-top: -250px;
+    margin-top: -150px;
     width: 100%;
-  }
-
-  h1, h2, h3 {
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 50px;
-    font-weight: 800;
-    text-shadow: rgba(255, 255, 255, 0.3) 0 -1px 0,
-                 rgba(0, 0, 0, 0.3) 0 1px 2px,
-                 rgba(0, 0, 0, 0.1) 0 0 80px;
-
-    div {
-      font-weight: 400;
-      font-size: 30px;
-      font-style: italic;
-    }
-  }
-
-  h2, h3 {
-    text-transform: uppercase;
-    font-weight: 300;
-  }
-
-  h3 {
-    a {
-      text-decoration: none;
-    }
   }
 }
