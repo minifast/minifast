@@ -4,20 +4,19 @@
 en:
   home:
     rationale:
+      why:
+        title: Why work with us
+        text: >
+          Joy. Diversity. Discipline. Investment. We love your project and we want it to succeed.
       who:
         title: Who we are
         text: >
-          We are a group of software experts.
+          Software experts with a long track record of success.
       what:
         title: What we bring
         text: >
-          Ministry of Velocity develops custom Ruby on Rails, iOS and Go
-          applications.
-      why:
-        title: Why choose us
-        text: >
-          Joy, diversity, discipline and investment are all things we feel
-          about projects we work on.
+          Custom Ruby on Rails, iOS, Android, and Go applications.
+
   dog_story:
     - |
       One time, and this would be in the early 90s, I was staying

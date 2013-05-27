@@ -1,9 +1,11 @@
+$brandingIngredientBorderColor: #eee !default;
+
 .branding-ingredient {
   padding: 0 1em;
-  border-top: 0.5em solid #eee;
+  border-top: 0.5em solid $brandingIngredientBorderColor;
   @include box-shadow(
-    #eee 0 2px 5px 0,
-    #e8e8e8 0 -2px 0 1px inset
+    $brandingIngredientBorderColor 0 2px 5px 0,
+    darken($brandingIngredientBorderColor, 5) 0 -2px 0 1px inset
   );
 
   h3 {
