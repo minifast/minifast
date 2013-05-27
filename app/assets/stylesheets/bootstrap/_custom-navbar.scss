@@ -1,0 +1,6 @@
+.navbar {
+  font-family: "minifast-font", sans-serif;
+  font-weight: 400;
+  font-variant: small-caps;
+  @include user-select(none);
+}
