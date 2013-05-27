@@ -1,8 +1,12 @@
 .navbar {
   font-family: "minifast-font", sans-serif;
-  font-weight: 300;
   font-variant: small-caps;
   @include user-select(none);
+
+  .brand, li a {
+    @include single-transition(color, 0.15s, ease-in);
+    font-weight: 300;
+  }
 
   .nav-collapse {
     ul {
@@ -10,7 +14,7 @@
     }
 
     li a {
-      font-weight: 300;
+      font-size: 20px;
     }
   }
 
