@@ -1,22 +1,22 @@
-<div class="container">
+<div class="infinity-container">
   <header>
     <h1>Ministry</h1>
     <h2><span>of</span></h2>
     <h1>Velocity</h1>
   </header>
 
-  <table>
-    <tr>
-      <% t(:rationale, scope: :home).each do |section_id, section| %>
-      <td>
-        <section class="<%= section_id %>">
+  <div class="row-fluid">
+    <div class="span10 offset1 mobile-anchor">
+      <div class="row-fluid">
+        <% t(:rationale, scope: :home).each do |section_id, section| %>
+        <section class="span4 <%= section_id %>">
           <h3><%= section[:title] %></h3>
           <article>
             <p><%= section[:text] %></p>
           </article>
         </section>
-      </td>
-      <% end %>
-    </tr>
-  </table>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

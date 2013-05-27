@@ -1,0 +1,61 @@
+@import "minifast";
+@import "branding/logo";
+@import "branding/ingredient";
+
+.home.index {
+  padding: 0;
+
+  .infinity-container {
+    position: absolute;
+    top: 50%;
+    margin-top: -150px;
+    width: 100%;
+  }
+
+  header {
+    @extend .branding-logo;
+    margin-bottom: 4em;
+  }
+
+  section {
+    @extend .branding-ingredient;
+
+    &.who {
+      border-top-color: $hotBlue;
+    }
+
+    &.what {
+      border-top-color: $hotPink;
+    }
+
+    &.why {
+      border-top-color: $hotGreen;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .home.index {
+    .navbar-static-top {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    .infinity-container {
+      top: 40px;
+      margin-top: 0;
+    }
+
+    header {
+      margin-top: 4em;
+    }
+
+    .mobile-anchor {
+      padding: 0 1em;
+    }
+
+    section + section {
+      margin-top: 1em;
+    }
+  }
+}
