@@ -5,23 +5,31 @@ $brandingLogoStripeColor: black !default;
   text-align: center;
   @include user-select(none);
 
-  h2 {
-    border-top: 2px solid $brandingLogoStripeColor;
+  strong {
+    font-size: 1.4em;
+    font-weight: $headingsFontWeight;
+  }
+
+  span {
+    display: block;
     position: relative;
     line-height: 1em;
     margin: 0.5em 0;
 
-    span {
+    border-top: 0.075em solid $brandingLogoStripeColor;
+
+    small {
+      display: block;
       position: absolute;
       top: -0.5em;
       left: 50%;
       margin-left: -1em;
-      background: $bodyBackground;
       padding: 0 0.5em;
-    }
-  }
 
-  h1:first-letter {
-    font-size: 1.4em;
+      color: $textColor;
+      background: $bodyBackground;
+      font-weight: $headingsFontWeight;
+      font-size: 0.85em;
+    }
   }
 }
