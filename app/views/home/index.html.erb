@@ -6,13 +6,16 @@
   </h1>
 </header>
 
-<div class="row-fluid ingredients">
-  <% t(:rationale, scope: :home).each do |section_id, section| %>
-  <section class="span4 <%= section_id %>">
-    <h3><%= section[:title] %></h3>
-    <article>
-      <p><%= section[:text] %></p>
-    </article>
-  </section>
-  <% end %>
+<div class="container">
+  <div class="row ingredients">
+    <div class="offset3 span6">
+    <% t(:rationale, scope: :home).each do |section_id, section| %>
+    <section class="row <%= section_id %>">
+      <h3><%= section[:title] %></h3>
+      <article>
+        <p><%= section[:text] %></p>
+      </article>
+    </section>
+    <% end %>
+  </div>
 </div>
