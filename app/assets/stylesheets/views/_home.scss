@@ -1,3 +1,5 @@
+@import "compass/css3/images";
+
 .home.index {
   padding: 0;
 
@@ -8,17 +10,14 @@
 
   section {
     @extend .branding-ingredient;
+  }
+}
 
-    &.who {
-      border-top-color: $cancunBeach;
-    }
-
-    &.what {
-      border-top-color: $tierra;
-    }
-
-    &.why {
-      border-top-color: $djRush;
+@media (min-width: 767px) {
+  .home.index {
+    section {
+      width: 33.3333333333333333%;
+      margin-left: 0;
     }
   }
 }

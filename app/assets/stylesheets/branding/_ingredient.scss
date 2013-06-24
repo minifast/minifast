@@ -1,12 +1,5 @@
-$brandingIngredientBorderColor: #eee !default;
-
 .branding-ingredient {
-  padding: 0 1em;
-  border-top: 0.5em solid $brandingIngredientBorderColor;
-  @include box-shadow(
-    $brandingIngredientBorderColor 0 2px 5px 0,
-    darken($brandingIngredientBorderColor, 5) 0 -2px 0 1px inset
-  );
+  padding: 0.5em 1em 0 1em;
 
   h3 {
     text-transform: uppercase;

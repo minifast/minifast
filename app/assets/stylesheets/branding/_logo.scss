@@ -4,6 +4,7 @@ $brandingLogoStripeColor: black !default;
   text-transform: uppercase;
   text-align: center;
   @include user-select(none);
+  cursor: default;
 
   strong {
     font-size: 1.4em;
