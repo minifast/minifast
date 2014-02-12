@@ -1,7 +1,7 @@
 Ministry of Velocity
 ====================
 
-A website to celebrate our sovreign state.
+A website to celebrate our sovereign state.
 
 
 Installation
