@@ -2,3 +2,7 @@
 /.bundle
 /log/*.log
 /tmp
+/build
+/.sass-cache
+.DS_Store
+.env
