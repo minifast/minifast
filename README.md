@@ -39,8 +39,16 @@ Create a `.env` file locally with these entries:
     GOOGLE_ANALYTICS_TRACKING_ID=
 ```
 
-You must also stoop acquire a [Google Analytics](https://analytics.google.com)
-tracking id.  Wash yourself thoroughly afterwards.
+You must also acquire a [Google Analytics](https://analytics.google.com)
+tracking id.
+
+Then, follow these important steps:
+
+    $ bundle exec middleman build
+    $ bundle exec middleman sync
+    $ bundle exec middleman invalidate
+
+After 10 minutes, our adoring public will receive the new revelations.
 
 
 Contributing
