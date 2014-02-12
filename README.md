@@ -11,7 +11,7 @@ Install all worthy dependencies with bundler:
 
     $ bundle install
 
-Then start Middleman for :
+Then start Middleman for great victories in development:
 
     $ bundle exec middleman server
 
@@ -51,4 +51,3 @@ Contributing
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
->>>>>>> Initial checkin of website

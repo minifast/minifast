@@ -1,11 +1,11 @@
 require "spec_helper"
 
-describe "contact", type: :feature do
+describe "index", type: :feature do
   before do
     visit "/"
   end
 
-  it "came from the company" do
+  it "shows the company name" do
     page.should have_selector "h1"
     page.should have_content "Ministry of Velocity"
   end
