@@ -1,56 +1,97 @@
-section {
-  @include outer-container;
+article, footer {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Josefin Sans";
+    font-weight: 700;
+  }
 }
 
 article {
-  background: white;
-  overflow: hidden;
-  position: relative;
-  color: black;
-  padding-top: em(100);
-  padding-bottom: em(100);
+  text-shadow: rgba(0, 0, 0, 0.4) 0 1px 1px,
+               rgba(0, 0, 0, 0.1) 0 -1px 3px,
+               rgba(0, 0, 0, 0.2) 0 0 20px;
+}
+
+header {
+  padding: 10rem 0;
+
+  h1.logo {
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    @include hide-text;
+    background: white image-url('minifast.png') center center no-repeat;
+    background-size: 300px;
+  }
+}
+
+footer {
+  padding: 10rem 0;
+  text-align: center;
+}
+
+section {
+  color: white;
+  padding: 4rem 0;
+  background-size: cover;
+  background-repeat: none;
+  background-position: center center;
+
+  article {
+    @include outer-container;
+  }
 
   h1 {
     @include span-columns(12);
-    @include row(table);
+    @include omega;
     text-align: center;
-    position: absolute;
+    margin-bottom: 5rem;
   }
 
   p {
     @include span-columns(6);
-    @include pad;
-    padding-top: em(160);
-    padding-bottom: em(100);
-    background-repeat: no-repeat;
-    background-size: 200%;
-    background-color: rgba(255, 255, 255, 0.3);
+    text-shadow: rgba(0, 0, 0, 0.5) 0 1px 1px,
+                 rgba(0, 0, 0, 0.2) 0 -1px 3px,
+                 rgba(0, 0, 0, 0.5) 0 0 20px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: right;
   }
 
-  p:first-of-type {
-    background-position: center left;
-  }
-
-  p:last-of-type {
-    @include reset-display;
-    background-position: center right;
+  p + p {
+    padding-left: 1rem;
+    padding-right: 3rem;
+    text-align: left;
   }
 }
 
-.logo {
-  height: em(600);
-  padding-top: em(150);
+.who {
+  background-image: image-url('wheat.jpg');
+  padding: 10rem 0;
 
-  header {
-    height: 16rem;
-    width: 16 * 1.7rem;
-    left: 50%;
-    margin-left: (16 * 1.7rem) / -2;
-    @include hide-text;
-    background-image: image-url('minifast.png');
-    background-size: 90%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    position: fixed;
+  h1 {
+    margin-bottom: 10rem;
+    text-align: right;
+    padding: 0 5rem;
   }
+}
+
+.what {
+  background-image: image-url('snow.jpg');
+  padding: 15rem 0;
+}
+
+.why {
+  background-image: image-url('broken.jpg');
+  padding: 15rem 0;
+}
+
+.how {
+  background-image: image-url('mom.jpg');
+  padding: 10rem 0;
+  background-position: center right;
+}
+
+.agile {
+  background-image: image-url('field.jpg');
+  padding: 15rem 0;
 }

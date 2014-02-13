@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem "jquery-middleman"
 gem "middleman"
 gem "middleman-bourbon"
 gem "middleman-cloudfront"
