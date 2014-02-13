@@ -27,16 +27,32 @@ header {
 }
 
 header, footer {
-  padding: 10rem 0;
   text-align: center;
+}
+
+header {
+  padding: 10rem 0;
+
+  @include media($mobile) {
+    padding: 2rem 0;
+  }
+}
+
+footer {
+  padding: 12rem 0;
 }
 
 section {
   color: white;
-  padding: 4rem 0;
   background-size: cover;
   background-repeat: none;
   background-position: center center;
+  padding: 15rem 0;
+
+  @include media($mobile) {
+    padding: 4rem 0;
+    box-shadow: inset rgba(0, 0, 0, 0.6) 0 0 100px;
+  }
 
   article {
     @include outer-container;
@@ -82,9 +98,16 @@ section {
   }
 }
 
+.who, .how {
+  padding: 10rem 0;
+
+  @include media($mobile) {
+    padding: 4rem 0;
+  }
+}
+
 .who {
   background-image: image-url('wheat.jpg');
-  padding: 10rem 0;
 
   h1 {
     margin-bottom: 10rem;
@@ -100,22 +123,18 @@ section {
 }
 
 .what {
-  background-image: image-url('snow.jpg');
-  padding: 15rem 0;
+  background-image: image-url('forest.jpg');
 }
 
 .why {
   background-image: image-url('broken.jpg');
-  padding: 15rem 0;
 }
 
 .how {
   background-image: image-url('mom.jpg');
-  padding: 10rem 0;
   background-position: center right;
 }
 
 .agile {
   background-image: image-url('field.jpg');
-  padding: 15rem 0;
 }
