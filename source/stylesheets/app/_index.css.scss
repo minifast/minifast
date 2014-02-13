@@ -1,7 +1,11 @@
-article, footer {
+article, header, footer {
   h1, h2, h3, h4, h5, h6 {
     font-family: "Josefin Sans";
     font-weight: 700;
+  }
+
+  a {
+    text-decoration: none;
   }
 }
 
@@ -12,8 +16,6 @@ article {
 }
 
 header {
-  padding: 10rem 0;
-
   h1.logo {
     margin: 0 auto;
     width: 300px;
@@ -24,7 +26,7 @@ header {
   }
 }
 
-footer {
+header, footer {
   padding: 10rem 0;
   text-align: center;
 }
