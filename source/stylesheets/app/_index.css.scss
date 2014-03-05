@@ -13,12 +13,6 @@ article, header, footer {
   }
 }
 
-article {
-  text-shadow: rgba(0, 0, 0, 0.4) 0 1px 1px,
-               rgba(0, 0, 0, 0.1) 0 -1px 3px,
-               rgba(0, 0, 0, 0.2) 0 0 20px;
-}
-
 header {
   h1.logo {
     margin: 0 auto;
@@ -46,6 +40,18 @@ footer {
   padding: 12rem 0;
 }
 
+article {
+  p {
+    text-shadow: rgba(0, 0, 0, 0.4) 0 1px 1px,
+                 rgba(0, 0, 0, 0.2) 0 -1px 3px,
+                 rgba(0, 0, 0, 0.3) 0 0 10px;
+  }
+
+  h1 {
+    @include dimensional-text;
+  }
+}
+
 section {
   color: white;
   background-size: cover;
@@ -55,7 +61,6 @@ section {
 
   @include media($mobile) {
     padding: 4rem 0;
-    box-shadow: inset rgba(0, 0, 0, 0.6) 0 0 100px;
   }
 
   article {
@@ -78,9 +83,6 @@ section {
 
   p {
     @include span-columns(6);
-    text-shadow: rgba(0, 0, 0, 0.5) 0 1px 1px,
-                 rgba(0, 0, 0, 0.2) 0 -1px 3px,
-                 rgba(0, 0, 0, 0.5) 0 0 20px;
     padding: 0 2rem;
     text-align: right;
 
@@ -110,23 +112,22 @@ section {
   }
 }
 
-.who {
+.summer {
   background-image: image-url('wheat-field.jpg');
 }
 
-.what {
-  background-image: image-url('playing-card.jpg');
-}
-
-.why {
+.fall {
   background-image: image-url('fog.jpg');
 }
 
-.how {
+.winter {
   background-image: image-url('grass.jpg');
-  background-position: center right;
 }
 
-.agile {
+.spring {
   background-image: image-url('green-wheat.jpg');
+}
+
+.street {
+  background-image: image-url('playing-card.jpg');
 }
