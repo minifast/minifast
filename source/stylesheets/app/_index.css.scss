@@ -111,34 +111,22 @@ section {
 }
 
 .who {
-  background-image: image-url('wheat.jpg');
-
-  h1 {
-    margin-bottom: 10rem;
-    text-align: right;
-    padding: 0 5rem;
-
-    @include media($mobile) {
-      margin-bottom: 1rem;
-      padding: 0 2rem;
-      text-align: left;
-    }
-  }
+  background-image: image-url('wheat-field.jpg');
 }
 
 .what {
-  background-image: image-url('uprising.jpg');
+  background-image: image-url('playing-card.jpg');
 }
 
 .why {
-  background-image: image-url('broken.jpg');
+  background-image: image-url('fog.jpg');
 }
 
 .how {
-  background-image: image-url('mom.jpg');
+  background-image: image-url('grass.jpg');
   background-position: center right;
 }
 
 .agile {
-  background-image: image-url('field.jpg');
+  background-image: image-url('green-wheat.jpg');
 }
