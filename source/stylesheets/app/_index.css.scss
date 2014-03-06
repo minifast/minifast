@@ -10,6 +10,7 @@ article, header, footer {
 
   p {
     font-family: "Helvetica Neue", Arial, sans-serif;
+    font-weight: 500;
   }
 }
 
@@ -118,10 +119,12 @@ section {
 
 .fall {
   background-image: image-url('fog.jpg');
+  background-position: 50% 100%;
 }
 
 .winter {
   background-image: image-url('grass.jpg');
+  background-position: 100% 50%;
 }
 
 .spring {
