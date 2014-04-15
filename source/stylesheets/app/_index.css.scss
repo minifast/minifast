@@ -12,6 +12,10 @@ article, header, footer {
     font-family: "Helvetica Neue", Arial, sans-serif;
     font-weight: 500;
   }
+
+  .minifast {
+    font-family: "Josefin Sans";
+  }
 }
 
 header {
@@ -42,22 +46,19 @@ footer {
 }
 
 article {
-  p {
-    text-shadow: rgba(0, 0, 0, 0.4) 0 1px 1px,
-                 rgba(0, 0, 0, 0.2) 0 -1px 3px,
-                 rgba(0, 0, 0, 0.3) 0 0 10px;
-  }
-
   h1 {
     background: rgba(white, 0.9);
     color: #333;
     padding: 0.5em 0 0.25em 0;
     line-height: 2em;
   }
+
+  .minifast {
+    color: rgba(208, 86, 74, 1);
+  }
 }
 
 section {
-  color: white;
   background-size: cover;
   background-repeat: none;
   background-position: center center;
@@ -89,15 +90,22 @@ section {
   p {
     @include span-columns(6);
     padding: 0 2rem;
-    text-align: right;
 
     @include media($mobile) {
       @include span-columns(4);
+    }
+  }
+
+  p:nth-of-type(odd) {
+    text-align: right;
+
+    @include media($mobile) {
       text-align: left;
     }
   }
 
-  p + p {
+  p:nth-of-type(even) {
+    @include omega;
     padding-left: 1rem;
     padding-right: 3rem;
     text-align: left;
@@ -109,11 +117,76 @@ section {
   }
 }
 
+.squished {
+  padding-top: 0;
+
+  @include media($mobile) {
+    padding-top: 4rem;
+  }
+}
+
+.which {
+  img {
+    display: block;
+  }
+
+  .eyefaster img {
+    width: 80px;
+  }
+
+  .npm img {
+    width: 240px;
+  }
+
+  .wanelo img {
+    width: 160px;
+  }
+
+  .timeline img {
+    width: 80px;
+  }
+
+  p {
+    font-weight: 200;
+
+    .cite {
+      margin-top: 0.5rem;
+      display: block;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  }
+
+  p:nth-of-type(odd) img {
+    margin: 0 0 1rem auto;
+  }
+
+  p:nth-of-type(even) img {
+    margin: 0 auto 1rem 0;
+  }
+
+  @include media($mobile) {
+    p:nth-of-type(n) img {
+      margin: 0 auto 1rem 0;
+    }
+  }
+}
+
 .who, .how {
   padding: 10rem 0;
 
   @include media($mobile) {
     padding: 4rem 0;
+  }
+}
+
+.season {
+  color: white;
+
+  p {
+    text-shadow: rgba(0, 0, 0, 0.4) 0 1px 1px,
+                 rgba(0, 0, 0, 0.2) 0 -1px 3px,
+                 rgba(0, 0, 0, 0.3) 0 0 10px;
   }
 }
 
@@ -135,6 +208,3 @@ section {
   background-image: image-url('green-wheat.jpg');
 }
 
-.street {
-  background-image: image-url('playing-card.jpg');
-}
