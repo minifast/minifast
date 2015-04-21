@@ -6,7 +6,6 @@
 @import "bootstrap_variables";
 @import "bootstrap/mixins";
 
-
 // Reset and dependencies
 @import "bootstrap/normalize";
 @import "bootstrap/print";
@@ -54,5 +53,5 @@
 @import "bootstrap/utilities";
 @import "bootstrap/responsive-utilities";
 
-@import "nav";
+@import "app/nav";
 @import "app/index";

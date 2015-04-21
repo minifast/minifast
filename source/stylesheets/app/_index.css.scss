@@ -1,5 +1,5 @@
 body.index {
-  background: url("/images/backgrounds/halftone-2560.png") no-repeat center center fixed;
+  background: url(image-path("backgrounds/halftone-750.png")) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -45,5 +45,29 @@ body.index {
     border-right-width: 0;
     border-left-width: 0;
     font-weight: 200;
+  }
+}
+
+@media (min-width: 768px) {
+  body.index {
+    background-image: url(image-path("backgrounds/halftone-1080.png"));
+  }
+}
+
+@media (min-width: 992px) {
+  body.index {
+    background-image: url(image-path("backgrounds/halftone-1334.png"));
+  }
+}
+
+@media (min-width: 1200px) {
+  body.index {
+    background-image: url(image-path("backgrounds/halftone-1920.png"));
+  }
+}
+
+@media (min-width: 1700px) {
+  body.index {
+    background-image: url(image-path("backgrounds/halftone-2560.png"));
   }
 }
