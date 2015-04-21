@@ -1,0 +1,20 @@
+<header class="centered-navigation" role="banner">
+  <div class="centered-navigation-wrapper">
+    <% link_to '/', class: 'mobile-logo' do %>
+      <%= image_tag 'logos/logo@3x.png' %>
+    <% end %>
+
+    <a href="javascript:void(0)" id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</a>
+    <nav role="navigation">
+      <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
+        <li class="nav-link"><%= link_to 'About', '/' %></li>
+        <li class="nav-link logo">
+          <% link_to '/', class: 'logo' do %>
+            <%= image_tag 'logos/logo@3x.png' %>
+          <% end %>
+        </li>
+        <li class="nav-link"><%= link_to 'Contact', '/' %></li>
+      </ul>
+    </nav>
+  </div>
+</header>

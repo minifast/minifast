@@ -26,7 +26,7 @@ end
 
 configure :development do
   activate :google_analytics do |ga|
-    ga.tracking_id = false
+    ga.tracking_id = 'UA-NOPE'
   end
 end
 

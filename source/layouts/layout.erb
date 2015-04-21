@@ -12,6 +12,7 @@
   </head>
 
   <body class="<%= page_classes %>">
+    <%= partial 'nav' %>
     <%= yield %>
     <%= google_analytics_tag if defined?(google_analytics_tag) %>
   </body>

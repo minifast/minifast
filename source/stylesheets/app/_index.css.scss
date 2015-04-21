@@ -1,210 +1,46 @@
-article, header, footer {
-  h1, h2, h3, h4, h5, h6 {
-    font-family: "Josefin Sans";
-    font-weight: 700;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  p {
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-weight: 500;
-  }
-
-  .minifast {
-    font-family: "Josefin Sans";
-  }
-}
-
-header {
-  h1.logo {
-    margin: 0 auto;
-    width: 300px;
-    height: 300px;
-    @include hide-text;
-    background: white image-url('minifast.png') center center no-repeat;
-    background-size: 300px;
-  }
-}
-
-header, footer {
-  text-align: center;
-}
-
-header {
-  padding: 10rem 0;
-
-  @include media($mobile) {
-    padding: 2rem 0;
-  }
-}
-
-footer {
-  padding: 12rem 0;
-}
-
-article {
-  h1 {
-    background: rgba(white, 0.9);
-    color: #333;
-    padding: 0.5em 0 0.25em 0;
-    line-height: 2em;
-  }
-
-  .minifast {
-    color: rgba(208, 86, 74, 1);
-  }
-}
-
-section {
+body.index {
+  background: url("/images/backgrounds/halftone-2560.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-repeat: none;
-  background-position: center center;
-  padding: 15rem 0;
 
-  @include media($mobile) {
-    padding: 4rem 0;
-  }
-
-  article {
-    @include outer-container;
-  }
-
-  h1 {
-    @include span-columns(12);
-    @include omega;
+  .manifesto {
+    margin: 0 auto;
+    width: 20rem;
     text-align: center;
-    margin-bottom: 5rem;
-
-    @include media($mobile) {
-      @include span-columns(4);
-      margin-bottom: 1rem;
-      padding-left: 2rem;
-      padding-right: 2rem;
-      text-align: left;
-    }
-  }
-
-  p {
-    @include span-columns(6);
-    padding: 0 2rem;
-
-    @include media($mobile) {
-      @include span-columns(4);
-    }
-  }
-
-  p:nth-of-type(odd) {
-    text-align: right;
-
-    @include media($mobile) {
-      text-align: left;
-    }
-  }
-
-  p:nth-of-type(even) {
-    @include omega;
-    padding-left: 1rem;
-    padding-right: 3rem;
-    text-align: left;
-
-    @include media($mobile) {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-  }
-}
-
-.squished {
-  padding-top: 0;
-
-  @include media($mobile) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -10rem;
+    margin-top: -10rem;
     padding-top: 4rem;
   }
-}
 
-.which {
-  img {
-    display: block;
+  h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    font-family: "Euclid BP";
+    text-transform: uppercase;
   }
 
-  .eyefaster img {
-    width: 80px;
+  h1 {
+    font-size: 3.75rem;
+    letter-spacing: -0.15rem;
   }
 
-  .npm img {
-    width: 240px;
+  h2 {
+    font-size: 2.55rem;
+    line-height: 4rem;
   }
 
-  .wanelo img {
-    width: 160px;
-  }
-
-  .timeline img {
-    width: 80px;
-  }
-
-  p {
-    font-weight: 200;
-
-    .cite {
-      margin-top: 0.5rem;
-      display: block;
-      color: #888;
-      font-size: 0.9rem;
-    }
-  }
-
-  p:nth-of-type(odd) img {
-    margin: 0 0 1rem auto;
-  }
-
-  p:nth-of-type(even) img {
-    margin: 0 auto 1rem 0;
-  }
-
-  @include media($mobile) {
-    p:nth-of-type(n) img {
-      margin: 0 auto 1rem 0;
-    }
+  h3 {
+    font-size: 1.55rem;
+    font-weight: 100;
+    line-height: 3.5rem;
+    padding-top: 0.25rem;
+    border: 3px solid black;
+    border-right-width: 0;
+    border-left-width: 0;
   }
 }
-
-.who, .how {
-  padding: 10rem 0;
-
-  @include media($mobile) {
-    padding: 4rem 0;
-  }
-}
-
-.season {
-  color: white;
-
-  p {
-    text-shadow: rgba(0, 0, 0, 0.4) 0 1px 1px,
-                 rgba(0, 0, 0, 0.2) 0 -1px 3px,
-                 rgba(0, 0, 0, 0.3) 0 0 10px;
-  }
-}
-
-.summer {
-  background-image: image-url('wheat-field.jpg');
-}
-
-.fall {
-  background-image: image-url('fog.jpg');
-  background-position: 50% 100%;
-}
-
-.winter {
-  background-image: image-url('grass.jpg');
-  background-position: 100% 50%;
-}
-
-.spring {
-  background-image: image-url('green-wheat.jpg');
-}
-
