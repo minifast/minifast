@@ -3,16 +3,13 @@
   font-size: 11px;
 }
 
-.navbar-brand {
-  padding: 0;
-}
-
 .navbar-brand-centered {
   position: absolute;
   left: 50%;
   display: block;
   width: 140px;
   text-align: center;
+  z-index: 10000;
 }
 
 .navbar>.container .navbar-brand-centered,
@@ -20,7 +17,27 @@
   margin-left: -70px;
 }
 
-@media (min-width: 768px) {
+
+@media (max-width: $screen-xs-max) {
+  .navbar-collapse {
+    background-color: $minifastRed;
+    min-height: 100%;
+  }
+
+  .navbar-nav {
+    padding: 5rem 0;
+  }
+
+  .navbar-nav li {
+    text-align: center;
+  }
+
+  .navbar-collapse .navbar-nav > li > a {
+    color: white;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
   .navbar .navbar-nav {
     display: inline-block;
     float: none;

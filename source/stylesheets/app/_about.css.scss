@@ -1,0 +1,71 @@
+html {
+  height: 100%;
+}
+
+body.about {
+  height: 100%;
+  background-color: $minifastWhite;
+  padding-top: $navbar-height;
+
+  > .container-fluid {
+    position: relative;
+    min-height: 100%;
+  }
+
+  h2 {
+    padding: 2rem 1rem 1rem;
+  }
+
+  p {
+    padding: 1rem;
+    margin-bottom: 0;
+  }
+
+  h4 {
+    margin-top: 0;
+    padding: 2rem 1rem 0 1rem;
+  }
+
+  h2 {
+    font-weight: 900;
+  }
+
+  h2, h4 {
+    text-transform: uppercase;
+  }
+
+  .tenets {
+    background-color: $minifastRed;
+    color: #fff;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  body.about {
+    .tenets {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+
+    h2 {
+      padding: 10rem 10rem 0 10rem;
+    }
+
+    h4 {
+      margin-top: 5rem;
+    }
+
+    p {
+      font-size: 1.8rem;
+    }
+
+    .first-tenets {
+      left: 0;
+    }
+
+    .last-tenets {
+      right: 0;
+    }
+  }
+}

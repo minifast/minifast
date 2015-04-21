@@ -48,25 +48,25 @@ body.index {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm) {
   body.index {
     background-image: url(image-path("backgrounds/halftone-1080.png"));
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: $screen-md) {
   body.index {
     background-image: url(image-path("backgrounds/halftone-1334.png"));
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg) {
   body.index {
     background-image: url(image-path("backgrounds/halftone-1920.png"));
   }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 1920px) {
   body.index {
     background-image: url(image-path("backgrounds/halftone-2560.png"));
   }
