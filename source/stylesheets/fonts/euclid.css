@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Euclid';
+    src: url('/fonts/euclidflex-light-webfont.eot');
+    src: url('/fonts/euclidflex-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/euclidflex-light-webfont.woff2') format('woff2'),
+         url('/fonts/euclidflex-light-webfont.woff') format('woff'),
+         url('/fonts/euclidflex-light-webfont.ttf') format('truetype'),
+         url('/fonts/euclidflex-light-webfont.svg#euclid_flexlight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid';
+    src: url('/fonts/euclidflex-bold-webfont.eot');
+    src: url('/fonts/euclidflex-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/euclidflex-bold-webfont.woff2') format('woff2'),
+         url('/fonts/euclidflex-bold-webfont.woff') format('woff'),
+         url('/fonts/euclidflex-bold-webfont.ttf') format('truetype'),
+         url('/fonts/euclidflex-bold-webfont.svg#euclid_flexbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
