@@ -5,8 +5,8 @@ describe "index", type: :feature do
     visit "/"
   end
 
-  it "shows the company name" do
-    page.should have_selector "h1"
-    page.should have_content "Ministry of Velocity"
+  it "shows the welcome message" do
+    expect(page).to have_content "Patterns"
+    expect(page).to have_content "Methodology"
   end
 end

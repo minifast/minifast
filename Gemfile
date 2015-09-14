@@ -8,7 +8,6 @@ gem "middleman-google-analytics"
 gem "middleman-livereload"
 gem "middleman-sync"
 gem "bootstrap-sass", require: false
-gem "unf"
 
 group :test, :development do
   gem "capybara"
