@@ -10,6 +10,8 @@ gem "middleman-sync"
 gem "bootstrap-sass", require: false
 
 group :test, :development do
+  gem "hashie"
+  gem "pry"
   gem "capybara"
   gem "rspec"
   gem "launchy"

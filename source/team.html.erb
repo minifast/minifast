@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <% data.team.members.each.with_index do |member, index| -%>
+    <% if index % 2 == 0 -%>
+      <div class="person row even">
+        <div class="headshot col-sm-12 col-md-5">
+          <div class="img-container">
+            <%= image_tag member.image, alt: member.name %>
+          </div>
+        </div>
+        <div class="clearfix visible-xs-block"></div>
+        <div class="info col-sm-12 col-md-5 clearfix">
+          <h4><%= member.name %>, <span><%= member.title %></span></h4>
+          <h5>
+            <% if member.email -%>
+              <span>E <%= link_to member.email, "mailto:#{member.email}" %></span>
+            <% end -%>
+            <% if member.twitter -%>
+              <span>T <%= link_to "@#{member.twitter}", "https://twitter.com/#{member.twitter}" %></span>
+            <% end -%>
+          </h5>
+          <p><%= member.story %></p>
+        </div>
+      </div>
+    <% else -%>
+      <div class="person row odd">
+        <div class="headshot col-sm-12 col-md-5 col-md-push-7">
+          <div class="img-container">
+            <%= image_tag member.image, alt: member.name %>
+          </div>
+        </div>
+        <div class="clearfix visible-xs-block"></div>
+        <div class="info col-sm-12 col-md-5 col-md-pull-3">
+          <h4><%= member.name %>, <span><%= member.title %></span></h4>
+          <h5>
+            <% if member.email -%>
+              <span>E <%= link_to member.email, "mailto:#{member.email}" %></span>
+            <% end -%>
+            <% if member.twitter -%>
+              <span>T <%= link_to "@#{member.twitter}", "https://twitter.com/#{member.twitter}" %></span>
+            <% end -%>
+          </h5>
+          <p><%= member.story %></p>
+        </div>
+      </div>
+    <% end -%>
+  <% end -%>
+</div>

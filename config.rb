@@ -1,5 +1,11 @@
-activate :dotenv
-activate :livereload
+configure :development do
+  activate :google_analytics do |ga|
+    ga.tracking_id = 'UA-NOPE'
+  end
+
+  activate :dotenv
+  activate :livereload, host: '0.0.0.0'
+end
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
@@ -21,12 +27,6 @@ activate :cloudfront do |cf|
   cf.secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
   cf.distribution_id = ENV['CLOUDFRONT_DISTRIBUTION_ID']
   cf.filter = /\.html$/i
-end
-
-configure :development do
-  activate :google_analytics do |ga|
-    ga.tracking_id = 'UA-NOPE'
-  end
 end
 
 configure :build do

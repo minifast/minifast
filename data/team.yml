@@ -1,0 +1,45 @@
+members:
+  - name: Doc Ritezel
+    image: images/photoshoot/doc_ritezel.jpg
+    title: CEO + Co-Founder
+    email: doc@ministryofvelocity.com
+    twitter: ohrite
+    story: |
+      Doc Ritezel has been compulsively pair programming for 5 years.
+      People have started to whisper, his friends and loved ones have staged
+      interventions, but pairing seems to be infectious, and he might be beyond
+      help.
+  - name: Rob Head
+    image: images/photoshoot/rob_head.jpg
+    title: Head of Accounts
+    email: rob@ministryofvelocity.com
+    twitter: roberthead
+    story: |
+      Agile conjurer of ephemeral things, both digital and aesthetic.  Also
+      totally needs to write his bio.
+  - name: CJ Bryan
+    image: images/photoshoot/cj_bryan.jpg
+    title: Webmaster
+    email: cj@minifast.co
+    twitter: waltz
+    story: |
+      I was born in the cornfields and grew up among the bears. I have come to
+      be the truest expression of my upbringing. Come aboard my zodiac and we
+      can sail the bay.
+  - name: Jim Haungs
+    image: images/photoshoot/jim_haungs.jpg
+    title: Consultant Emeritus
+    story: |
+      Two road bridges cross the Cape Cod Canal: the Sagamore Bridge and the
+      Bourne Bridge. In addition, the Cape Cod Canal Railroad Bridge carries
+      railway freight and limited passenger services onto the Cape. Cape
+      territory is divided into fifteen towns with many villages.
+  - name: Kane Baccigalupi
+    image: images/photoshoot/kane_baccigalupi.jpg
+    title: Consultant Emeritus
+    twitter: rubyghetto
+    story: |
+      Kane Baccigalupi has been building technology-based startups since 2005.
+      She has held a variety of roles from Founder/CTO to Agile Development
+      Consultant.  Before working in the startup world, she did engineering work
+      on the LHC.
