@@ -1,0 +1,18 @@
+body.contact {
+  // Proof we can style the contact page seperate from the rest
+  color: red;
+
+  // TODO: Add email icon
+  #email-link a {
+    text-decoration: none;
+    color: black;
+  }
+
+  // TODO: Add twitter icon
+  #twitter-link a {
+    text-decoration: none;
+    color: black;
+  }
+
+  // TODO: Style form
+}

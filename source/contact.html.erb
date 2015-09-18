@@ -1,0 +1,35 @@
+<span id="email-link">
+  <%= link_to "contact@ministryofvelocity.com", "mailto:contact@ministryofvelocity.com" %>
+</span>
+<span id="twitter-link">
+  <%= link_to "@minifast", "https://twitter.com/minifast" %>
+</span>
+
+<%# TODO: Setup simple form API keys for production %>
+<%# TODO: Change email format on Simple Form to be more readable %>
+<form action="https://getsimpleform.com/messages?form_api_token=<%= ENV['SIMPLEFORM_API_KEY']%>" method="post">
+  <h1>We'd love for you to get in touch:</h1>
+
+  <%# TODO: Create page to redirect to %>
+  <!-- input type="hidden" name="redirect_to" value="<the complete return url e.g. http://fooey.com/thank-you.html>" /-->
+  <label>
+    Name*
+    <input type="text" name="name" autocomplete="name" autocapitalize="words" />
+  </label>
+  </br>
+  <label>
+    Email*
+    <input type="email" name="email" autocomplete="email" />
+  </label>
+  <label>
+    Company
+    <input type="text" name="company" autocomplete="organization" />
+  </label>
+  <br/>
+  <label>
+    Message
+    <textarea name="message" inputmode="latin-prose" autocapitalize="sentences"></textarea>
+  </label>
+  <br/>
+  <input type="submit" value="Submit" />
+</form>

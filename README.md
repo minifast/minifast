@@ -37,6 +37,7 @@ Create a `.env` file locally with these entries:
     BUCKET_REGION=
     CLOUDFRONT_DISTRIBUTION_ID=
     GOOGLE_ANALYTICS_TRACKING_ID=
+    SIMPLEFORM_API_KEY=
 ```
 
 You must also acquire a [Google Analytics](https://analytics.google.com)
