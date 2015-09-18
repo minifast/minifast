@@ -15,8 +15,11 @@ members:
     email: rob@ministryofvelocity.com
     twitter: roberthead
     story: |
-      Agile conjurer of ephemeral things, both digital and aesthetic.  Also
-      totally needs to write his bio.
+      Robert Head revels in spreading the joys of agile collaboration,
+      remote pair programming, and humane, effective development processes.
+      He's based in the little mountain town of Ashland, Oregon,
+      midway between Seattle and San Francisco. When he's not coding,
+      he creates ephemeral aesthetic artifacts such as music and choreography.
   - name: CJ Bryan
     image: images/photoshoot/cj_bryan.jpg
     title: Webmaster
