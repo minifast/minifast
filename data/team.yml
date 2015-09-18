@@ -5,10 +5,12 @@ members:
     email: doc@ministryofvelocity.com
     twitter: ohrite
     story: |
-      Doc Ritezel has been compulsively pair programming for 5 years.
-      People have started to whisper, his friends and loved ones have staged
-      interventions, but pairing seems to be infectious, and he might be beyond
-      help.
+      As CEO, Doc sets the strategic direction for Ministry of Velocity's operations.
+      He has been involved with nearly every aspect of modern software development for over 15 years;
+      from operating system kernels to database storage backends,
+      from HTTP parsers to distributed systems design,
+      from W3C specifications to large-scale CSS organization.
+      In his free time, Doc loves spinning a globe and flying to wherever his finger lands.
   - name: Rob Head
     image: images/photoshoot/rob_head.jpg
     title: Head of Accounts
