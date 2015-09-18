@@ -12,7 +12,9 @@ body.contact {
 
     // TODO: Add email icon
     .email-link a {
-      @extend .col-lg-9;
+      @extend .col-lg-6;
+      @extend .col-md-6;
+      @extend .col-sm-6;
       // @extend .glyphicon;
       // @extend .glyphicon-envelope;
       text-decoration: none;
@@ -21,9 +23,12 @@ body.contact {
 
     // TODO: Add twitter icon
     .twitter-link a {
-      @extend .col-lg-3;
+      @extend .col-lg-6;
+      @extend .col-md-6;
+      @extend .col-sm-6;
       text-decoration: none;
       color: black;
+      text-align: right;
     }
   }
 
