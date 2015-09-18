@@ -14,8 +14,11 @@
 
     <div class="collapse navbar-collapse" id="navigation-panel">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'About', '/about.html' %></li>
-        <li><%= link_to 'Team', '/team.html' %></li>
+        <% %w{about team}.each do |page| %>
+          <li class="<%= 'active' if current_page.url =~ /#{page}\.html/ %>">
+            <%= link_to page.titlecase, "#{page}.html" %>
+          </li>
+        <% end %>
         <li class="navbar-brand-spacer"></li>
         <li><%= link_to 'Contact', 'mailto:contact@ministryofvelocity.com' %></li>
       </ul>
