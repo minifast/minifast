@@ -41,6 +41,16 @@ members:
       an engineer to his experience and training as poker player, actor, and
       hypnotist. When he is not building software and software teams he keeps
       busy doing things he doesn't know how to do.
+  - name: Jeff Parr
+    image: images/photoshoot/jeff_parr.jpg
+    title: Consultant
+    email: jeff@ministryofvelocity.com
+    twitter: _JeffParr
+    story: |
+  - name: Jim Haungs
+    image: images/photoshoot/jim_haungs.jpg
+    title: Consultant Emeritus
+    story: |
   - name: Kane Baccigalupi
     image: images/photoshoot/kane_baccigalupi.jpg
     title: Consultant Emeritus
@@ -50,11 +60,3 @@ members:
       She has held a variety of roles from Founder/CTO to Agile Development
       Consultant.  Before working in the startup world, she did engineering work
       on the LHC.
-  - name: Jim Haungs
-    image: images/photoshoot/jim_haungs.jpg
-    title: Consultant Emeritus
-    story: |
-      Two road bridges cross the Cape Cod Canal: the Sagamore Bridge and the
-      Bourne Bridge. In addition, the Cape Cod Canal Railroad Bridge carries
-      railway freight and limited passenger services onto the Cape. Cape
-      territory is divided into fifteen towns with many villages.
