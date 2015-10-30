@@ -24,10 +24,15 @@ members:
       he creates ephemeral aesthetic artifacts such as music and choreography.
   - name: CJ Bryan
     image: images/photoshoot/cj_bryan.jpg
-    title: Webmaster
+    title: Consultant
     email: cj@minifast.co
     twitter: waltz
     story: |
+      CJ is a software developer who loves working at the intersection of
+      software and people. He is dedicated to helping teams realize their full
+      potential through pairing, testing, and communicating. When he's not
+      building sustainable software, you can find him in his metal shop welding
+      bicycles.
   - name: Damien Burke
     image: images/photoshoot/damien_burke.jpg
     title: Consultant
