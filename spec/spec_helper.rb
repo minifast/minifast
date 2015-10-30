@@ -1,5 +1,4 @@
 require 'rspec'
-Bundler.require(:test)
 
 Dir.glob(File.expand_path('../support/**/*.rb', __FILE__)) { |f| require(f) }
 

@@ -1,4 +1,5 @@
 require "spec_helper"
+require 'hashie'
 
 describe "index", type: :feature do
   let(:fake_data) do
