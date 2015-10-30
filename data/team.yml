@@ -31,6 +31,18 @@ members:
       I was born in the cornfields and grew up among the bears. I have come to
       be the truest expression of my upbringing. Come aboard my zodiac and we
       can sail the bay.
+  - name: Damien Burke
+    image: images/photoshoot/damien_burke.jpg
+    title: Consultant
+    email: damien@ministryofvelocity.com
+    twitter: exmember
+    story: |
+      Damien has been working in web technologies for approximately two decades
+      and is a veteran of over a half-dozen startups. He holds a degree in
+      computer science from the MIT, but attributes his most important skills as
+      an engineer to his experience and training as poker player, actor, and
+      hypnotist. When he is not building software and software teams he keeps
+      busy doing things he doesn't know how to do.
   - name: Jim Haungs
     image: images/photoshoot/jim_haungs.jpg
     title: Consultant Emeritus
