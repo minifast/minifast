@@ -12,6 +12,8 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 set :fonts_dir, 'fonts'
 
+# activate :dotenv, env: '.env'
+
 activate :sync do |sync|
   sync.fog_provider = 'AWS'
   sync.fog_directory = ENV['BUCKET_NAME']

@@ -42,6 +42,11 @@ Create a `.env` file locally with these entries:
 You must also acquire a [Google Analytics](https://analytics.google.com)
 tracking id.
 
+In config.rb, uncomment this line:
+```
+# activate :dotenv, env: '.env'
+```
+
 Then, follow these important steps:
 
     $ bundle exec middleman build
