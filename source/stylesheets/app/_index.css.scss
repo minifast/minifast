@@ -48,6 +48,19 @@ body.index {
   }
 }
 
+@media(max-width: $screen-xs) {
+  body.index {
+    .manifesto {
+      width: 29rem;
+      margin-left: -14.5rem;
+    }
+
+    h1 { font-size: 5.5rem; }
+    h2 { font-size: 3.7rem; }
+    h3 { font-size: 2.2rem; }
+  }
+}
+
 @media (min-width: $screen-sm) {
   body.index {
     background-image: url(image-path("backgrounds/halftone-1080.png"));
