@@ -1,0 +1,7 @@
+deployment:
+  production:
+    branch: master
+    commands:
+      - bundle exec middleman build
+      - bundle exec middleman sync
+      - bundle exec middleman invalidate
