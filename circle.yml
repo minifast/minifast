@@ -1,15 +1,14 @@
 dependencies:
   pre:
-    - apt-get install jq
-    - export LATEST_APEX_TAG=$(curl -s https://api.github.com/repos/apex/apex/tags | jq -r .[0].name)
-    - curl -sL https://github.com/apex/apex/releases/download/${LATEST_APEX_TAG}/apex_linux_386 -o /usr/local/bin/apex
-    - chmod +x /usr/local/bin/apex
+    - curl -sL https://github.com/apex/apex/releases/download/v0.5.1/apex_linux_386 -o tmp/apex
+    - chmod +x tmp/apex
+    - tmp/apex upgrade
 
 deployment:
   production:
     branch: master
     commands:
-      - apex deploy
+      - tmp/apex deploy
       - bundle exec middleman build
       - bundle exec middleman sync
       - bundle exec middleman invalidate
