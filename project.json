@@ -1,0 +1,9 @@
+{
+  "name": "node",
+  "description": "MoV backing lambda for the contact form",
+  "memory": 128,
+  "timeout": 5,
+  "role": "arn:aws:iam::779918678411:role/MinifastContactForm-LambdaExecutionRole-1AU12XQ8OSND6",
+  "environment": {
+  }
+}
