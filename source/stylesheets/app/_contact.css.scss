@@ -1,6 +1,7 @@
 $vertical-space: $navbar-height * 1.5;
 
-body.contact {
+body.contact,
+body.thanks {
   background-color: $minifastWhite;
   max-width: 30em;
   margin-left: auto;
@@ -10,13 +11,10 @@ body.contact {
   .contact-info {
     @extend .container-fluid;
 
-    // TODO: Add email icon
     .email-link a {
       @extend .col-lg-6;
       @extend .col-md-6;
       @extend .col-sm-6;
-      // @extend .glyphicon;
-      // @extend .glyphicon-envelope;
       text-decoration: none;
       color: black;
     }

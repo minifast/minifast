@@ -8,19 +8,17 @@
     </div>
   </div>
 
-  <%# TODO: Setup simple form API keys for production %>
-  <%# TODO: Change email format on Simple Form to be more readable %>
-  <form action="https://getsimpleform.com/messages?form_api_token=<%= ENV['SIMPLEFORM_API_KEY']%>" method="post" class="contact-form">
-    <h1>We'd love for you to get in touch:</h1>
+  <form action="https://9fpqdbd7n0.execute-api.us-west-2.amazonaws.com/production/contact" method="post" class="contact-form">
+    <h1>We'd love for you to get in touch</h1>
 
-    <%# TODO: Create page to redirect to %>
-    <!-- input type="hidden" name="redirect_to" value="<the complete return url e.g. http://fooey.com/thank-you.html>" /-->
     <label for="name">Name*</label>
-    <input type="text" name="name" autocomplete="name" autocapitalize="words" />
+    <input type="text" name="name" autocomplete="on" autocapitalize="words" />
     <label>Email*</label>
-    <input type="email" name="email" autocomplete="email" />
+    <input type="email" name="email" autocomplete="on" />
+    <label>Phone</label>
+    <input type="tel" name="phone" autocomplete="on" />
     <label>Company</label>
-    <input type="text" name="company" autocomplete="organization" />
+    <input type="text" name="company" autocomplete="on" />
     <label>Message</label>
     <textarea name="message" inputmode="latin-prose" autocapitalize="sentences" rows="5", cols="80"></textarea>
     <input type="submit" value="Submit" />
