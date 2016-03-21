@@ -1,0 +1,65 @@
+---
+swagger: "2.0"
+host: "api.ministryofvelocity.com"
+basePath: "/api"
+info:
+  version: "2016-01-29T17:43:31Z"
+  title: Ministry of Velocity Site API
+  description: A backing API for the static MoV site.
+  contact:
+    email: contact@ministryofvelocity.com
+schemes:
+  - https
+paths:
+  "/contact":
+    post:
+      consumes:
+        - application/x-www-form-urlencoded
+      responses:
+        302:
+          description: Redirect to the given location
+          headers:
+            Location:
+              type: "string"
+      x-amazon-apigateway-integration:
+        httpMethod: "POST"
+        type: "aws"
+        uri: "arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:779918678411:function:minifast_contact/invocations"
+        requestTemplates:
+          application/x-www-form-urlencoded: "{\"form\":\"$input.path('$')\"}"
+        responses:
+          default:
+            statusCode: "302"
+            responseParameters:
+              method.response.header.Location: "integration.response.body.location"
+    options:
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: CORS response
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        requestTemplates:
+          application/json: "{\"statusCode\": 200}"
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'POST,OPTIONS'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'"
+              method.response.header.Access-Control-Allow-Origin: "'www.ministryofvelocity.com'"
+definitions:
+  Empty:
+    type: "object"
