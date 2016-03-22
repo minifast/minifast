@@ -8,7 +8,7 @@ describe "index", type: :feature do
 
   before do
     allow_any_instance_of(Middleman::Application).to receive(:data).and_return(fake_data)
-    visit "/team.html"
+    visit "/team"
   end
 
   it 'quotes the b-52s' do
