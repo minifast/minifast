@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <form action="https://9fpqdbd7n0.execute-api.us-west-2.amazonaws.com/production/contact" method="post" class="contact-form">
+  <form action="<%= api_gateway_url('/contact') %>" method="post" class="contact-form">
     <h1>We'd love for you to get in touch</h1>
 
     <label for="name">Name*</label>
