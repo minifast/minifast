@@ -1,3 +1,7 @@
+machine:
+  java:
+    version: oraclejdk8
+
 dependencies:
   pre:
     - curl -sL https://github.com/apex/apex/releases/download/v0.5.1/apex_linux_386 -o tmp/apex
