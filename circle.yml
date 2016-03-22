@@ -6,8 +6,8 @@ dependencies:
   pre:
     - curl -sL https://github.com/apex/apex/releases/download/v0.5.1/apex_linux_386 -o tmp/apex
     - chmod +x tmp/apex
-    - [ -d ./tmp/aws-apigateway-swagger-importer ] || git clone https://github.com/awslabs/aws-apigateway-swagger-importer.git ./tmp/aws-apigateway-swagger-importer
-    - cd tmp/aws-apigateway-swagger-importer; mvn assembly:assembly
+    - git clone https://github.com/awslabs/aws-apigateway-swagger-importer.git ./tmp/aws-apigateway-swagger-importer
+    - cd ./tmp/aws-apigateway-swagger-importer; mvn assembly:assembly
 
 deployment:
   production:
