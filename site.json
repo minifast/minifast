@@ -67,9 +67,6 @@
              },
             "ViewerProtocolPolicy" : "redirect-to-https"
           },
-          "ViewerCertificate" : {
-            "ACMCertificateArn": { "Ref" : "Certificate" }
-          },
           "Aliases" : [
             { "Fn::Join" : [ ".", [{"Ref" : "AWS::StackName"}, { "Ref" : "HostedZone" }]]},
             { "Fn::Join" : [ ".", [{"Ref" : "AWS::StackName"}, { "Ref" : "AlternateHostedZone" }]]}
