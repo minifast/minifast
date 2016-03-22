@@ -1,26 +1,25 @@
-<div class="contact-info">
-  <div class="row">
-    <div class="email-link">
-      <%= link_to "contact@ministryofvelocity.com", "mailto:contact@ministryofvelocity.com" %>
-    </div>
-    <div class="twitter-link">
-      <%= link_to "@minifast", "https://twitter.com/minifast" %>
-    </div>
-  </div>
+<h2>
+  <%= link_to "contact@ministryofvelocity.com", "mailto:contact@ministryofvelocity.com" %>
+  <%= link_to "@minifast", "https://twitter.com/minifast" %>
+</h2>
 
-  <form action="<%= api_gateway_url('/contact') %>" method="post" class="contact-form">
-    <h1>We'd love for you to get in touch</h1>
+<form action="<%= api_gateway_url('/contact') %>" method="post">
+  <h1>We'd love for you to get in touch</h1>
 
-    <label for="name">Name*</label>
-    <input type="text" name="name" autocomplete="on" autocapitalize="words" />
-    <label>Email*</label>
-    <input type="email" name="email" autocomplete="on" />
-    <label>Phone</label>
-    <input type="tel" name="phone" autocomplete="on" />
-    <label>Company</label>
-    <input type="text" name="company" autocomplete="on" />
-    <label>Message</label>
-    <textarea name="message" inputmode="latin-prose" autocapitalize="sentences" rows="5", cols="80"></textarea>
-    <input type="submit" value="Submit" />
-  </form>
-</div>
+  <label for="name">Name*</label>
+  <input type="text" name="name" autocomplete="on" autocapitalize="words" />
+
+  <label>Email*</label>
+  <input type="email" name="email" autocomplete="on" />
+
+  <label>Phone</label>
+  <input type="tel" name="phone" autocomplete="on" />
+
+  <label>Company</label>
+  <input type="text" name="company" autocomplete="on" />
+
+  <label>Message</label>
+  <textarea name="message" inputmode="latin-prose" autocapitalize="sentences" rows="5", cols="80"></textarea>
+
+  <input type="submit" value="Submit" />
+</form>

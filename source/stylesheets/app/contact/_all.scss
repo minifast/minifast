@@ -1,0 +1,63 @@
+body.contact,
+body.thanks {
+  h2 {
+    margin: 3rem 1rem 1rem;
+    display: flex;
+  }
+
+  h2 a {
+    flex: 1;
+    color: $base-font-color;
+
+    & + a {
+      text-align: right;
+    }
+  }
+
+  h1 {
+    font-size: 1.33rem;
+    text-align: center;
+  }
+
+  form {
+    border: 0.125rem solid $base-font-color;
+    padding: 1rem;
+    margin: 0 1rem;
+  }
+
+  form, input, textarea {
+    border: 0.125rem solid $base-font-color;
+    border-radius: 0;
+    background-color: $minifastWhite;
+  }
+
+  main label {
+    text-transform: uppercase;
+    font-family: Euclid, sans-serif;
+    margin: 1rem 0 0;
+    display: block;
+  }
+
+  input, textarea {
+    font-family: sans-serif;
+  }
+
+  input[type="submit"] {
+    color: $minifastWhite;
+    background-color: $base-font-color;
+  }
+
+  @include media($medium-screen) {
+    h2, form {
+      max-width: $medium-screen;
+    }
+
+    h2 {
+      margin: 3rem auto 1rem;
+    }
+
+    form {
+      margin: 0 auto;
+    }
+  }
+}
