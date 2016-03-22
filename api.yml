@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
-host: "api.ministryofvelocity.com"
-basePath: "/api"
+host: "hddj86pe82.execute-api.us-west-2.amazonaws.com"
+basePath: "/"
 info:
   version: "2016-01-29T17:43:31Z"
   title: Ministry of Velocity Site API
@@ -25,6 +25,7 @@ paths:
         httpMethod: "POST"
         type: "aws"
         uri: "arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:779918678411:function:minifast_contact/invocations"
+        credentials: "arn:aws:iam::779918678411:role/MinifastContactForm-ApiGatewayExecutionRole-24MYOLADJEYF"
         requestTemplates:
           application/x-www-form-urlencoded: "{\"form\":\"$input.path('$')\"}"
         responses:
