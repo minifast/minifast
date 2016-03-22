@@ -6,8 +6,17 @@
   "Parameters" : {
     "HostedZone" : {
       "Type" : "String",
-      "Description" : "The DNS name of an existing Amazon Route 53 hosted zone",
+      "Description" : "The main Amazon Route 53 hosted zone",
       "Default" : "ministryofvelocity.com"
+    },
+    "AlternateHostedZone" : {
+      "Type" : "String",
+      "Description" : "Another Amazon Route 53 hosted zone",
+      "Default" : "minifast.co"
+    },
+    "Certificate" : {
+      "Type" : "String",
+      "Description" : "The ARN of the certificate to use"
     }
   },
 
@@ -40,16 +49,31 @@
       "Type" : "AWS::CloudFront::Distribution",
       "Properties" : {
         "DistributionConfig" : {
-          "Comment" : "CDN for static site bucket",
-          "CustomOrigin" : {
-            "DNSName": { "Fn::GetAtt" : [ "Bucket", "DomainName" ] },
-            "HTTPPort" : "80",
-            "HTTPSPort" : "443",
-            "OriginProtocolPolicy" : "http-only"
-          },
           "Enabled" : "true",
           "DefaultRootObject" : "index.html",
-          "CNAMEs" : [{ "Fn::Join" : [ "", [{"Ref" : "AWS::StackName"}, ".", { "Ref" : "HostedZone" }]]}]
+          "Origins" : [{
+            "DomainName": { "Fn::Join" : [ "", [{ "Ref" : "Bucket" }, ".s3-website-", {"Ref" : "AWS::Region"}, ".amazonaws.com"]]},
+            "Id": "BucketOrigin",
+            "CustomOriginConfig": {
+              "HTTPPort" : "80",
+              "HTTPSPort" : "443",
+              "OriginProtocolPolicy" : "https-only"
+            }
+          }],
+          "DefaultCacheBehavior" : {
+            "TargetOriginId" : "BucketOrigin",
+            "ForwardedValues" : {
+                "QueryString" : "false"
+             },
+            "ViewerProtocolPolicy" : "redirect-to-https"
+          },
+          "ViewerCertificate" : {
+            "ACMCertificateArn": { "Ref" : "Certificate" }
+          },
+          "Aliases" : [
+            { "Fn::Join" : [ ".", [{"Ref" : "AWS::StackName"}, { "Ref" : "HostedZone" }]]},
+            { "Fn::Join" : [ ".", [{"Ref" : "AWS::StackName"}, { "Ref" : "AlternateHostedZone" }]]}
+          ]
         }
       }
     },
@@ -60,6 +84,18 @@
         "HostedZoneName" : { "Fn::Join" : [ "", [{ "Ref" : "HostedZone" }, "."]]},
         "Comment" : "CNAME redirect custom name to CloudFront distribution",
         "Name" : { "Fn::Join" : [ ".", [{"Ref" : "AWS::StackName"}, { "Ref" : "HostedZone" }]]},
+        "Type" : "CNAME",
+        "TTL" : "900",
+        "ResourceRecords" : [{"Fn::GetAtt" : ["CDN", "DomainName"]}]
+      }
+    },
+
+    "AlternateDNS" : {
+      "Type" : "AWS::Route53::RecordSet",
+      "Properties" : {
+        "HostedZoneName" : { "Fn::Join" : [ "", [{ "Ref" : "AlternateHostedZone" }, "."]]},
+        "Comment" : "CNAME redirect custom name to CloudFront distribution",
+        "Name" : { "Fn::Join" : [ ".", [{"Ref" : "AWS::StackName"}, { "Ref" : "AlternateHostedZone" }]]},
         "Type" : "CNAME",
         "TTL" : "900",
         "ResourceRecords" : [{"Fn::GetAtt" : ["CDN", "DomainName"]}]
