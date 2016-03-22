@@ -1,0 +1,49 @@
+body.playbook {
+  main {
+    margin: 3rem 1rem;
+    background-color: white;
+  }
+
+  h1, h2, h3 {
+    background: $minifastRed;
+    color: white;
+  }
+
+  h1 {
+    font-size: 2rem;
+    padding: 2rem 1rem 0.5rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  h2 {
+    margin-top: 3rem;
+    font-size: 1.5rem;
+    padding: 1.5rem 1rem 0.5rem;
+  }
+
+  h3 {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    padding: 1.2rem 1rem 0.2rem;
+    font-weight: normal;
+  }
+
+  p, ul {
+    padding: 0 2rem;
+  }
+
+  h1 + p,
+  h1 + p + p,
+  h1 + p + p + p {
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+
+  @include media($medium-screen) {
+    main {
+      width: $medium-screen;
+      margin: 3rem auto;
+    }
+  }
+}

@@ -1,0 +1,151 @@
+$centered-navigation-height: 60px;
+$centered-navigation-logo-height: 2.75rem;
+
+header {
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    height: $centered-navigation-logo-height;
+    border-bottom: 1px solid #ccc;
+  }
+
+  label {
+    height: $centered-navigation-logo-height;
+    line-height: $centered-navigation-logo-height;
+    cursor: pointer;
+    font-family: $heading-font-family;
+    font-weight: 100;
+    margin-bottom: 0;
+    margin-right: 1rem;
+    text-align: right;
+
+    position: relative;
+    top: 7px;
+  }
+
+  label .open {
+    text-transform: uppercase;
+  }
+
+  label .close {
+    color: $minifastWhite;
+    font-size: 2rem;
+    &:hover {
+      color: $dark-gray;
+    }
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .mobile-logo, .logo {
+    position: relative;
+    height: 70px;
+    width: 140px;
+
+    img {
+      position: absolute;
+      top: 0; bottom: 0; left: 0; right: 0;
+    }
+  }
+
+  input[type="checkbox"],
+  input[type="checkbox"] + label .close,
+  input[type="checkbox"]:checked + label .open {
+    display: none;
+  }
+
+  input[type="checkbox"]:checked + label .close {
+    display: inline;
+  }
+
+  input[type="checkbox"] + label {
+    z-index: 1001;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $minifastRed;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input[type="checkbox"]:checked + label + nav {
+    display: flex;
+  }
+
+  li {
+    text-align: center;
+    padding: 0 1rem;
+    padding-top: 1.75rem;
+  }
+
+  li + li {
+    border-top: 0.15rem solid $minifastWhite;
+  }
+
+  a {
+    color: $minifastWhite;
+    font-family: $heading-font-family;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 2rem;
+    line-height: 1;
+    vertical-align: bottom;
+  }
+
+  @include media($medium-screen) {
+    label {
+      display: none;
+    }
+
+    nav {
+      background: transparent;
+      display: block;
+      position: inherit;
+    }
+
+    a {
+      font-family: $base-font-family;
+      color: $dark-gray;
+      font-size: 0.7rem;
+      line-height: $centered-navigation-logo-height;
+    }
+
+    .mobile-logo {
+      display: none;
+    }
+
+    .logo {
+      display: inline-block;
+      z-index: 5000;
+    }
+
+    .wrapper {
+      display: block;
+    }
+
+    ul {
+      display: block;
+      text-align: center;
+    }
+
+    li {
+      padding-top: 0;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    li + li {
+      border-top: 0 none;
+    }
+  }
+}

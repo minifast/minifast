@@ -1,0 +1,61 @@
+body.index {
+  background: url(image-path("backgrounds/halftone-750.png")) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: $centered-navigation-logo-height;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .manifesto {
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    cursor: default;
+  }
+
+  h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 4rem;
+    letter-spacing: -0.25rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    padding-top: 1.25rem;
+    border: 0.25rem solid black;
+    border-right-width: 0;
+    border-left-width: 0;
+    font-weight: 200;
+  }
+
+  @include media($medium-screen) {
+    background-image: url(image-path("backgrounds/halftone-2560.png"));
+
+    h1 { font-size: 6.15rem; }
+    h2 { font-size: 4rem; }
+    h3 {
+      font-size: 2.5rem;
+      padding-top: 2rem;
+    }
+  }
+}

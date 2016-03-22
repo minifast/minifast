@@ -1,13 +1,13 @@
 source "https://rubygems.org"
 
-gem "jquery-middleman"
+gem "bitters"
 gem "middleman"
 gem "middleman-cloudfront"
 gem "middleman-dotenv"
 gem "middleman-google-analytics"
 gem "middleman-livereload"
 gem "middleman-sync"
-gem "bootstrap-sass", require: false
+gem "neat"
 
 group :test, :development do
   gem "hashie"

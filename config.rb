@@ -12,6 +12,7 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 set :fonts_dir, 'fonts'
 
+activate :directory_indexes
 activate :dotenv, env: '.env'
 
 activate :sync do |sync|

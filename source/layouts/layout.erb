@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <title><%= current_page.data.title || "Ministry of Velocity" %></title>
     <%= stylesheet_link_tag "all" %>
-    <%= javascript_include_tag  "all" %>
   </head>
 
   <body class="<%= page_classes %>">
     <%= partial 'nav' %>
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
+    <%= javascript_include_tag  "all" %>
     <%= google_analytics_tag if defined?(google_analytics_tag) %>
   </body>
 </html>
