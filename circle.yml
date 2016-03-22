@@ -6,13 +6,14 @@ dependencies:
   pre:
     - curl -sL https://github.com/apex/apex/releases/download/v0.5.1/apex_linux_386 -o tmp/apex
     - chmod +x tmp/apex
-    - cd tmp; git clone https://github.com/awslabs/aws-apigateway-swagger-importer.git
+    - [ -d ./tmp/aws-apigateway-swagger-importer ] || git clone https://github.com/awslabs/aws-apigateway-swagger-importer.git ./tmp/aws-apigateway-swagger-importer
     - cd tmp/aws-apigateway-swagger-importer; mvn assembly:assembly
 
 deployment:
   production:
     branch: master
     commands:
+      - aws cloudformation update-stack --stack-name MinifastContactForm --capabilities CAPABILITY_IAM --template-body "`cat ./cloudformation.json`"
       - tmp/apex deploy
       - tmp/aws-apigateway-swagger-importer/aws-api-import.sh --update $AWS_API_ID --deploy api ./api.yml
       - bundle exec middleman build
