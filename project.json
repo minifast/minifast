@@ -1,6 +1,6 @@
 {
   "name": "minifast",
-  "description": "MoV backing lambda for the static site",
+  "description": "Build/deploy configuration for each lambda function",
   "memory": 128,
   "timeout": 5,
   "role": "arn:aws:iam::779918678411:role/MinifastContactForm-LambdaExecutionRole-1AU12XQ8OSND6",
