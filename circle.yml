@@ -17,7 +17,7 @@ deployment:
     commands:
       - aws cloudformation update-stack --stack-name MinifastContactForm --capabilities CAPABILITY_IAM --template-body "`cat ./config/api.json`"
       - tmp/apex deploy
-      - tmp/aws-apigateway-swagger-importer/aws-api-import.sh --update $AWS_API_ID --deploy api ./config/api.yml
+      - tmp/aws-apigateway-swagger-importer/aws-api-import.sh --region $AWS_DEFAULT_REGION --update $AWS_API_ID --deploy api ./config/api.yml
       - bundle exec middleman build
       - bundle exec middleman sync
       - bundle exec middleman invalidate
