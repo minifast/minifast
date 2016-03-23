@@ -1,0 +1,21 @@
+{
+  "name": "minifast",
+  "version": "1.0.0",
+  "description": "Ministry of Velocity site",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.2.46",
+    "babel": "^6.5.2",
+    "babel-core": "^6.7.2",
+    "babel-loader": "^6.2.4",
+    "babel-polyfill": "^6.7.2",
+    "babel-preset-es2015": "^6.6.0",
+    "isomorphic-fetch": "^2.2.1",
+    "jasmine": "^2.4.1",
+    "jasmine-ajax": "^3.2.0",
+    "npm": "^3.8.2",
+    "webpack": "^1.12.14"
+  }
+}

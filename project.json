@@ -4,6 +4,10 @@
   "memory": 128,
   "timeout": 5,
   "role": "arn:aws:iam::779918678411:role/MinifastContactForm-LambdaExecutionRole-1AU12XQ8OSND6",
-  "environment": {
+  "runtime": "nodejs",
+  "handler": "dist.default",
+  "hooks": {
+    "build": "../../node_modules/.bin/webpack --config ../../webpack.config.js",
+    "clean": "rm -fr dist/"
   }
 }
