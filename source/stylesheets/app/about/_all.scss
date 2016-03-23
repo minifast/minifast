@@ -1,23 +1,36 @@
 body.about {
-  .mission, .tenets {
-    padding: 0 1rem;
+  > header {
+    position: absolute;
+    left: 0;
+    right: 0;
   }
 
-  .tenets {
+  main {
+    padding-top: 40px;
+  }
+
+  background-color: $minifastRed;
+
+  .mission {
+    background-color: $minifastWhite;
+    padding: 4rem 2rem 2rem;
+  }
+
+  .values {
+    padding: 0 2rem;
+  }
+
+  .values {
     background-color: $minifastRed;
     color: #fff;
   }
 
-  .first-tenets {
+  .first-values {
     padding-top: 1rem;
   }
 
-  .last-tenets {
+  .last-values {
     padding-bottom: 1rem;
-  }
-
-  main {
-    margin-top: $centered-navigation-logo-height;
   }
 
   h1 {
@@ -42,19 +55,19 @@ body.about {
   }
 
   @include media($medium-screen) {
-    .tenets {
+    .values {
       padding: 0 5rem;
     }
 
     .mission {
-      padding: 3rem 5rem;
+      padding: 5rem 5rem 3rem;
     }
 
-    .first-tenets {
+    .first-values {
       padding-top: 3rem;
     }
 
-    .last-tenets {
+    .last-values {
       padding-bottom: 2rem;
     }
 
@@ -69,7 +82,7 @@ body.about {
   }
 
   @include media($large-screen) {
-    .mission, .tenets {
+    .mission, .values {
       padding: 0 1rem;
     }
 
@@ -80,7 +93,7 @@ body.about {
       flex-direction: row;
     }
 
-    .first-tenets {
+    .first-values {
       order: -1;
     }
 
@@ -97,8 +110,14 @@ body.about {
       width: 20rem;
     }
 
-    .tenets {
+    .values {
       flex: 0 0 15rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .values article {
+      flex: 1;
     }
   }
 }
