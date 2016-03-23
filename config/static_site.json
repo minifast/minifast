@@ -57,7 +57,7 @@
             "CustomOriginConfig": {
               "HTTPPort" : "80",
               "HTTPSPort" : "443",
-              "OriginProtocolPolicy" : "https-only"
+              "OriginProtocolPolicy" : "http-only"
             }
           }],
           "DefaultCacheBehavior" : {
