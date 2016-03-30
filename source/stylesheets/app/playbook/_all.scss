@@ -1,5 +1,6 @@
 body.playbook,
-body.interview {
+body.interview,
+body.inception {
   main {
     margin: 3rem 1rem;
     background-color: white;
@@ -30,7 +31,7 @@ body.interview {
     font-weight: normal;
   }
 
-  p, ul {
+  p, ul, ol {
     padding: 0 2rem;
   }
 

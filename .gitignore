@@ -8,3 +8,4 @@
 .env
 /functions/*/dist/*
 /node_modules
+*.plist
