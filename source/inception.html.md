@@ -30,7 +30,7 @@ Everyone in the room is a participant in the project, from the developers, to th
 
 ## High-Level Product Concept Review
 
-All the project participants should have a clear idea of how the end goal looks and behaves. The facilitator hands control over to the product owner, who will:
+All the project participants should have a clear idea of how the end product looks and behaves. The facilitator hands control over to the product owner, who will:
 
 * Introduce the design of the project, both in terms of broad-level UX concepts and UI
 
@@ -47,7 +47,7 @@ Goals of the engagement should be Specific, Measurable, Achievable, Relevant, an
 
 ## Risks
 
-It’s important to record all risks to the project’s success. This risk is best done as a writing activity. The facilitator guides each participant through the following steps:
+It’s important to record all risks to the project’s success. This is best done as a writing activity. The facilitator guides each participant through the following steps:
 
 * Get a pile of 3x5 index cards
 * Consider the risks associated with each goal, and writes each risk on an index card, including:
@@ -70,7 +70,7 @@ No system exists as an island, and roles are played by many different kinds of a
 
 ## Story Mapping
 
-The next step is to down each activity in a workflow into a unit of work with clear requirements. The facilitator will:
+The next step is to record each activity in a workflow as a unit of work with clear requirements. The facilitator will:
 
 * Lead the conversation on what stories make up each activity.
   * Reminder: only one conversation happens at a time.
@@ -92,7 +92,7 @@ Estimates are unique for each product team, and reflect relative complexity. The
 
 ## Prioritization
 
-Once the stories are estimated, the process of forming them into a backlog of work begins.  The facilitator hands off the process to the product owner, who will:
+Once the stories are estimated, the process of forming them into a backlog begins.  The facilitator hands off the process to the product owner, who will:
 
   * Consult the project’s goals and risks
   * High-risk/high-priority/high-point stories should get done sooner than later
