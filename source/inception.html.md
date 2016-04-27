@@ -1,6 +1,6 @@
 # Ministry of Velocity Inception Playbook
 
-An inception is a strategic meeting, facilitated by a Ministry of Velocity consultant, that marks the beginning of every project at Ministry of Velocity. At the core is a sipmle question: how can we be successful?
+An inception is a strategic meeting, facilitated by a Ministry of Velocity consultant, that marks the beginning of every project at Ministry of Velocity. At the core is a simple question: how can we be successful?
 
 The main success factor for a session is full participation by an engaged audience, meaning laptop and cell phone use is heavily discouraged.  In addition to lunch, there are breaks throughout the day.
 
