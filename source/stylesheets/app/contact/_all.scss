@@ -5,6 +5,14 @@ body.thanks {
     display: flex;
   }
 
+  h3 {
+    margin: 1rem;
+
+    a {
+      color: $base-font-color;
+    }
+  }
+
   h2 a {
     flex: 1;
     color: $base-font-color;
@@ -50,12 +58,16 @@ body.thanks {
   }
 
   @include media($medium-screen) {
-    h2, form {
+    h2, form, h3 {
       max-width: $medium-screen;
     }
 
     h2 {
       margin: 3rem auto 1rem;
+    }
+
+    h3 {
+      margin: 1rem auto;
     }
 
     form {
