@@ -1,0 +1,13 @@
+<div class='minifast-header'>
+  <div class='minifast-header__container'>
+    <h1 class='minifast-header__title'>
+      <a href='/' class='minifast-header__link minifast-header__link--title' title='<%= t(:name, scope: :minifast) %>'>
+        <%= image_tag 'logos/logo-large.png', class: 'minifast-header__logo minifast-header__logo--large', alt: t(:name, scope: :minifast) %>
+        <%= image_tag 'logos/logo-small.png', class: 'minifast-header__logo minifast-header__logo--small', alt: t(:name, scope: :minifast) %>
+      </a>
+    </h1>
+    <nav class='minifast-header__navigation'>
+      <%= link_to t(:contact, scope: [:partials, :header]), '/contact', class: 'minifast-header__link' %>
+    </nav>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+en:
+  minifast:
+    name: Ministry of Velocity
+  partials:
+    contact:
+      title: Contact Us
+      description: We want to hear from you!
+    dialogue:
+      title: Let's Start a Dialogue
+      description: Meaningful engineering with a lasting impact is made possible when there clear communication and prioritization of ideas. How else can you know what matters most?
+    footer:
+      contact: Contact
+    header:
+      contact: Contact
+    hero:
+      title: We are an <span>engineering</span> consultancy.
+      subtitles:
+        - We use <span>pair programming</span> to craft sustainable code.
+    portfolio:
+      title: Our Work
+      description: Working with us means engaging in open conversation to solve problems collectively.
+    process:
+      title: Prepare. Deliver. Reflect. Repeat.
+      description: Writing code is an exercise in prioritizing tasks and making decisions. Our emphasis on communication means understanding what we're actually building – and why.

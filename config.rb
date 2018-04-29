@@ -1,41 +1,64 @@
+# Activate and configure extensions
+# https://middlemanapp.com/advanced/configuration/#configuring-extensions
+
+Dir.glob(File.expand_path('lib/**/*.rb', __dir__)).map(&:to_s).sort_by(&:length).each { |f| require(f) }
+
 configure :development do
   activate :google_analytics do |ga|
     ga.tracking_id = 'UA-NOPE'
   end
-
-  activate :dotenv
-  activate :livereload, host: '0.0.0.0'
 end
 
+activate :dotenv, env: '.env'
+activate :i18n, mount_at_root: :en
+activate :directory_indexes
+activate :autoprefixer do |prefix|
+  prefix.browsers = 'last 2 versions'
+end
+
+# Layouts
+# https://middlemanapp.com/basics/layouts/
+
 set :css_dir, 'stylesheets'
-set :js_dir, 'javascripts'
+set :js_dir, 'stylesheets'
+set :images_dir, 'images'
 set :images_dir, 'images'
 set :fonts_dir, 'fonts'
 
-activate :directory_indexes
-activate :dotenv, env: '.env'
+# Per-page layout changes
+page '/*.xml', layout: false
+page '/*.json', layout: false
+page '/*.txt', layout: false
 
-activate :sync do |sync|
-  sync.fog_provider = 'AWS'
-  sync.fog_directory = ENV['BUCKET_NAME']
-  sync.fog_region = ENV['BUCKET_REGION']
-  sync.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
-  sync.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
-  sync.existing_remote_files = 'delete'
-  sync.gzip_compression = true
+# With alternative layout
+# page '/path/to/file.html', layout: 'other_layout'
+
+# Proxy pages
+# https://middlemanapp.com/advanced/dynamic-pages/
+
+# proxy(
+#   '/this-page-has-no-template.html',
+#   '/template-file.html',
+#   locals: {
+#     which_fake_page: 'Rendering a fake page with a local variable'
+#   },
+# )
+
+# Helpers
+# Methods defined in the helpers block are available in templates
+# https://middlemanapp.com/basics/helper-methods/
+
+helpers do
 end
 
-activate :cloudfront do |cf|
-  cf.access_key_id = ENV['AWS_ACCESS_KEY_ID']
-  cf.secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
-  cf.distribution_id = ENV['CLOUDFRONT_DISTRIBUTION_ID']
-  cf.filter = /\.html$/i
-end
+# Build-specific configuration
+# https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
 configure :build do
   activate :asset_hash
   activate :minify_css
   activate :minify_javascript
+  activate :minify_html
 
   activate :google_analytics do |ga|
     ga.tracking_id = ENV['GOOGLE_ANALYTICS_TRACKING_ID']

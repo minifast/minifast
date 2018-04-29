@@ -1,0 +1,24 @@
+.minifast-portfolio {
+  &__content {
+    @extend %oceana-container;
+    padding: minifast-space(1) minifast-space(0);
+
+    @include at-size(medium) {
+      padding: minifast-space(2) minifast-space(0) minifast-space(3) minifast-space(0);
+    }
+  }
+
+  &__title {
+    @extend %oceana-title;
+    text-align: center;
+  }
+
+  &__description {
+    text-align: center;
+
+    @include at-size(medium) {
+      width: screen-width(medium);
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+$styles: (
+  "display1": (
+    "font-family": sans-serif,
+    "font-weight": 400,
+    "font-size": 32px,
+    "line-height": 38px,
+    "text-decoration": none,
+    "text-transform": uppercase
+  ),
+  "display2": (
+    "font-family": sans-serif,
+    "font-weight": 400,
+    "font-size": 24px,
+    "line-height": 30px,
+    "text-decoration": none,
+    "text-transform": uppercase
+  ),
+  "title": (
+    "font-family": sans-serif,
+    "font-weight": 400,
+    "font-size": 24px,
+    "line-height": 30px,
+    "text-decoration": none,
+    "text-transform": none
+  ),
+  "body": (
+    "font-family": sans-serif,
+    "font-weight": 400,
+    "font-size": 16px,
+    "line-height": 24px,
+    "text-decoration": none,
+    "text-transform": none
+  ),
+  "link": (
+    "font-family": sans-serif,
+    "font-weight": 400,
+    "font-size": 16px,
+    "line-height": 24px,
+    "text-decoration": none,
+    "text-transform": uppercase
+  ),
+  "caption": (
+    "font-family": sans-serif,
+    "font-weight": 400,
+    "font-size": 12px,
+    "line-height": 16px,
+    "text-decoration": none,
+    "text-transform": none
+  )
+);
+
+@mixin minifast-text($style) {
+  @if map-has-key($styles, $style) == false {
+    @warn "Font style `#{$style}` not found.";
+  }
+
+  font-family: map-get(map-get($styles, $style), "font-family");
+  font-weight: map-get(map-get($styles, $style), "font-weight");
+  font-size: map-get(map-get($styles, $style), "font-size");
+  line-height: map-get(map-get($styles, $style), "line-height");
+  text-decoration: map-get(map-get($styles, $style), "text-decoration");
+  text-transform: map-get(map-get($styles, $style), "text-transform");
+}
+
+@function minifast-space($exponent) {
+  @return space($exponent) * map-get(map-get($styles, "body"), "line-height");
+}

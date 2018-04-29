@@ -1,0 +1,15 @@
+<section class='minifast-footer'>
+  <div class='minifast-footer__content'>
+    <% link_to('/', class: 'minifast-footer__link minifast-footer__link--logo') do %>
+      <%= image_tag 'logos/logo-footer.png', class: 'minifast-footer__logo', alt: t(:name, scope: :minifast) %>
+    <% end %>
+    <nav class='minifast-footer__navigation'>
+      <%= link_to t(:contact, scope: [:partials, :footer]), '/contact', class: 'minifast-footer__link' %>
+    </nav>
+  </div>
+  <div class='minifast-footer__content minifast-footer__content--lower'>
+    <% link_to('/', class: 'minifast-footer__link minifast-footer__link--small') do %>
+       <%= Time.now.year %> &copy; <%= t(:name, scope: [:minifast]) %>
+    <% end %>
+  </div>
+</section>

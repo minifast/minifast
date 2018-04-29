@@ -1,0 +1,95 @@
+.minifast-header {
+  &__container {
+    @extend %oceana-container;
+    @extend %oceana-header;
+    background: minifast-color('red', '500');
+    color: minifast-color('white', '0');
+
+    @include at-size(small) {
+      background: transparent;
+      color: minifast-color('black', '1000');
+    }
+  }
+
+  &__title {
+    display: block;
+    margin: 0;
+  }
+
+  &__navigation {
+    display: none;
+
+    @include at-size(small) {
+      flex: 1;
+      display: block;
+      text-align: right;
+      padding-right: minifast-space(-2);
+    }
+  }
+
+  &__link {
+    @include minifast-text('link');
+    color: minifast-color('black', '1000');
+
+    &--title {
+      margin: 0;
+      display: block;
+    }
+  }
+
+  &__logo {
+    &--small {
+      position: absolute;
+      display: block;
+      margin: 0 auto;
+      left: minifast-space(-2);
+      top: 50%;
+      height: floor(header-size(portrait) / 3);
+      margin-top: floor(header-size(portrait) / 3) / -2;
+
+      @include in-landscape() {
+        height: floor(header-size(landscape) / 3);
+        margin-top: floor(header-size(landscape) / 3) / -2;
+      }
+
+      @include at-size(small) {
+        height: floor(header-size(full) / 3);
+        margin-top: floor(header-size(full) / 3) / -2;
+      }
+    }
+
+    &--large {
+      display: none;
+      position: absolute;
+      left: minifast-space(-2);
+      top: 0;
+      height: minifast-space(3);
+    }
+
+    @include at-size(small) {
+      &--large { display: block; }
+      &--small { display: none; }
+    }
+  }
+}
+
+body {
+  .minifast-header {
+    &__container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 100;
+      display: flex;
+
+      @include at-size(small) {
+        top: minifast-space(0);
+      }
+
+      @include at-size(medium) {
+        top: minifast-space(1);
+      }
+    }
+  }
+}

@@ -28,6 +28,9 @@ Then, in the name of our illustrious leaders, you should acquire
 the S3 bucket created by that stack, as well as `CreateInvalidation` access
 for CloudFormation.
 
+You must also acquire a [Google Analytics](https://analytics.google.com)
+tracking id.
+
 Create a `.env` file locally with these entries:
 
 ```
@@ -37,11 +40,8 @@ Create a `.env` file locally with these entries:
     BUCKET_REGION=
     CLOUDFRONT_DISTRIBUTION_ID=
     GOOGLE_ANALYTICS_TRACKING_ID=
-    SIMPLEFORM_API_KEY=
 ```
 
-You must also acquire a [Google Analytics](https://analytics.google.com)
-tracking id.
 
 Then, follow these important steps:
 
@@ -55,7 +55,7 @@ After 10 minutes, our adoring public will receive the new revelations.
 Contributing
 ------------
 
-1. Get hired by Ministry of Velocity
+1. Get hang out at Ministry of Velocity LLC
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

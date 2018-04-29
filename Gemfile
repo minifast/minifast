@@ -1,18 +1,43 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
 
-gem "bitters"
-gem "middleman"
-gem "middleman-cloudfront"
-gem "middleman-dotenv"
-gem "middleman-google-analytics"
-gem "middleman-livereload"
-gem "middleman-sync"
-gem "neat"
+source 'https://rubygems.org'
 
-group :test, :development do
-  gem "hashie"
-  gem "pry"
-  gem "capybara"
-  gem "rspec"
-  gem "launchy"
+ruby '2.5.0'
+
+# Rails
+gem 'middleman', '~> 4.2'
+
+gem 'middleman-autoprefixer', '~> 2.7'
+gem 'middleman-cloudfront'
+gem 'middleman-dotenv'
+gem 'middleman-google-analytics'
+gem 'middleman-minify-html'
+gem 'sass'
+gem 'sass-globbing'
+gem 'normalize-scss'
+
+# Development
+group :development do
+  gem 'middleman-livereload'
+  gem 'license_finder', require: false
+  gem 'pivotal_git_scripts', require: false
+end
+
+# Local only
+group :development, :test do
+  gem 'rspec'
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
+end
+
+# Test
+group :test do
+  gem 'axe-matchers'
+  gem 'capybara'
+  gem 'capybara-screenshot'
+  gem 'chromedriver-helper'
+  gem 'launchy'
+  gem 'rspec_junit_formatter', require: false
+  gem 'rubocop-junit-formatter', require: false
+  gem 'selenium-webdriver'
 end

@@ -1,0 +1,16 @@
+<section class='minifast-hero'>
+  <% t(:subtitles, scope: [:partials, :hero]).length.times do |slide| %>
+    <article class='minifast-hero__slide'>
+      <section class='minifast-hero__section minifast-hero__section--left'>
+        <div class='minifast-hero__container minifast-hero__container--left'>
+          <h2 class='minifast-hero__title minifast-hero__title--left'><%= t(:title, scope: [:partials, :hero]) %></h2>
+        </div>
+      </section>
+      <section class='minifast-hero__section minifast-hero__section--right'>
+        <div class='minifast-hero__container minifast-hero__container--right'>
+          <h2 class='minifast-hero__title minifast-hero__title--right'><%= t(:subtitles, scope: [:partials, :hero])[slide] %></h2>
+        </div>
+      </section>
+    </article>
+  <% end %>
+</section>

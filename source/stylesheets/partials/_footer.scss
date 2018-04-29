@@ -1,0 +1,70 @@
+.minifast-footer {
+  padding: minifast-space(-1) 0;
+  background: minifast-color("cream", "900");
+  text-align: center;
+
+  @include at-size(small) {
+    text-align: left;
+  }
+
+  &__content {
+    @extend %oceana-container;
+    position: relative;
+    padding: minifast-space(-2) 0;
+    vertical-align: middle;
+
+    &--lower { padding-top: 0; }
+
+    @include at-size(small) {
+      display: flex;
+
+      &--lower {
+        padding-top: minifast-space(-2);
+        border-top: 1px solid rgba(minifast-color("white", "0"), 1 / $golden-ratio);
+      }
+    }
+  }
+
+  &__navigation {
+    display: block;
+    padding-top: minifast-space(-2);
+
+    @include at-size(small) {
+      flex: 1;
+      text-align: right;
+      padding-top: 0;
+    }
+  }
+
+  &__link {
+    @include minifast-text("link");
+    color: minifast-color("white", "0");
+
+    &--small { @include minifast-text("caption"); }
+    &--logo {
+      display: inline-block;
+      height: header-size(portrait) / 3;
+
+      @include in-landscape() {
+        height: header-size(landscape) / 3;
+      }
+
+      @include at-size(small) {
+        height: header-size(full) / 3;
+      }
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    height: header-size(portrait) / 3;
+
+    @include in-landscape() {
+      height: header-size(landscape) / 3;
+    }
+
+    @include at-size(small) {
+      height: header-size(full) / 3;
+    }
+  }
+}

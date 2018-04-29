@@ -1,0 +1,113 @@
+.minifast-hero {
+  &__slide {
+    position: relative;
+
+    @include at-size(small) {
+      height: 100vh;
+      width: 100vw;
+      min-height: screen-width(xsmall);
+    }
+  }
+
+  &__section {
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+
+    &--left { background: minifast-color("cream", "500"); }
+    &--right { background: minifast-color("red", "500"); }
+
+    @include at-size(small) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      height: auto;
+
+      &--left {
+        left: 0;
+        right: 50%;
+      }
+
+      &--right {
+        left: 50%;
+        right: 0;
+      }
+    }
+  }
+
+  &__container {
+    width: 50%;
+    position: absolute;
+
+    &--left {
+      top: header-size(portrait);
+      left: 0;
+    }
+
+    &--right {
+      bottom: 0;
+      right: 0;
+    }
+
+    @include in-landscape() {
+      top: header-size(landscape);
+    }
+
+    @include at-size(small) {
+      width: screen-width(small) / 2;
+
+      &--left {
+        top: header-size(full) + minifast-space(3);
+        right: 0;
+        left: auto;
+      }
+
+      &--right {
+        left: 0;
+        right: auto;
+      }
+    }
+
+    @include at-size(medium) {
+      width: screen-width(medium) / 2;
+    }
+
+    @include at-size(large) {
+      width: screen-width(large) / 2;
+    }
+  }
+
+  &__title {
+    padding: 0 minifast-space(-2);
+    @include minifast-text("display2");
+
+    @include at-size(medium) {
+      @include minifast-text("display1");
+    }
+
+    &--left {
+      span { color: minifast-color("red", "500"); }
+
+      @include at-size(medium) {
+        padding-right: screen-width(medium) / 6;
+      }
+
+      @include at-size(large) {
+        padding-right: screen-width(large) / 6;
+      }
+    }
+
+    &--right {
+      text-align: right;
+      span { color: minifast-color("cream", "500"); }
+
+      @include at-size(medium) {
+        padding-left: screen-width(medium) / 6;
+      }
+
+      @include at-size(large) {
+        padding-left: screen-width(large) / 6;
+      }
+    }
+  }
+}
