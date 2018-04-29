@@ -6,6 +6,11 @@
         <%= image_tag 'logos/logo-small.png', class: 'minifast-header__logo minifast-header__logo--small', alt: t(:name, scope: :minifast) %>
       </a>
     </h1>
+    <input type='checkbox' id='minifast-header__navigation-toggle-input' class='minifast-header__navigation-toggle-input' />
+    <label class='minifast-header__navigation-toggle' for='minifast-header__navigation-toggle-input'>
+      <span class='minifast-header__navigation-toggle-bar minifast-header__navigation-toggle-bar--top'></span>
+      <span class='minifast-header__navigation-toggle-bar minifast-header__navigation-toggle-bar--bottom'></span>
+    </label>
     <nav class='minifast-header__navigation'>
       <%= link_to t(:contact, scope: [:partials, :header]), '/contact', class: 'minifast-header__link' %>
     </nav>

@@ -23,6 +23,17 @@
         border-top: 1px solid rgba(minifast-color("white", "0"), 1 / $golden-ratio);
       }
     }
+
+    @include at-size(medium) {
+      padding: minifast-space(1) 0;
+      width: screen-width(medium);
+
+      &--lower { padding-top: minifast-space(-1); }
+    }
+
+    @include at-size(large) {
+      width: screen-width(medium);
+    }
   }
 
   &__navigation {

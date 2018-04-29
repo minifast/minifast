@@ -14,8 +14,9 @@
     height: 50vh;
     overflow: hidden;
 
-    &--left { background: minifast-color("cream", "500"); }
-    &--right { background: minifast-color("red", "500"); }
+    &--cream { background: minifast-color("cream", "500"); }
+    &--red { background: minifast-color("red", "600"); }
+    &--animated { display: none; }
 
     @include at-size(small) {
       position: absolute;
@@ -23,6 +24,7 @@
       bottom: 0;
       height: auto;
 
+      &--animated { display: block; }
       &--left {
         left: 0;
         right: 50%;
@@ -81,12 +83,16 @@
     padding: 0 minifast-space(-2);
     @include minifast-text("display2");
 
+    @include at-size(small) {
+      &--static { display: none; }
+    }
+
     @include at-size(medium) {
       @include minifast-text("display1");
     }
 
     &--left {
-      span { color: minifast-color("red", "500"); }
+      span { color: minifast-color("red", "600"); }
 
       @include at-size(medium) {
         padding-right: screen-width(medium) / 6;

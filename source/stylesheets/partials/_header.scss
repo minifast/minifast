@@ -16,20 +16,14 @@
     margin: 0;
   }
 
-  &__navigation {
-    display: none;
+  &__link {
+    @include minifast-text('display3');
+    color: minifast-color('white', '0');
 
     @include at-size(small) {
-      flex: 1;
-      display: block;
-      text-align: right;
-      padding-right: minifast-space(-2);
+      @include minifast-text('link');
+      color: minifast-color('black', '1000');
     }
-  }
-
-  &__link {
-    @include minifast-text('link');
-    color: minifast-color('black', '1000');
 
     &--title {
       margin: 0;
@@ -70,6 +64,79 @@
       &--large { display: block; }
       &--small { display: none; }
     }
+  }
+
+  &__navigation-toggle-input { display: none; }
+
+  &__navigation-toggle {
+    position: absolute;
+    right: minifast-space(-2);
+    top: 50%;
+    margin-top: floor(header-size(portrait) / -6);
+    display: block;
+    width: floor(header-size(portrait) / 3);
+    height: floor(header-size(portrait) / 3);
+    cursor: pointer;
+
+    @include at-size(small) {
+      display: none;
+    }
+  }
+
+  &__navigation-toggle-bar {
+    position: absolute;
+    width: floor(header-size(portrait) / 3);
+    height: 1px;
+    background: minifast-color("white", "0");
+    transition: transform .125s ease-in-out;
+
+    &--top { transform: translatey(floor(header-size(portrait) / 3) / 4); }
+    &--bottom { transform: translatey(floor(header-size(portrait) / 3) / 4 * 3); }
+  }
+
+  &__navigation-toggle-input:checked + &__navigation-toggle &__navigation-toggle-bar {
+    &--top { transform: translatey(floor(header-size(portrait) / 3) / 2) rotate(45deg); }
+    &--bottom { transform: translatey(floor(header-size(portrait) / 3) / 2) rotate(-45deg); }
+  }
+
+  &__navigation {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: header-size(portrait);
+    height: calc(100vh - #{header-size(portrait)});
+
+    background: minifast-color("red", "500");
+    transform: translatex(100vw);
+
+    @include in-landscape() {
+      top: header-size(landscape);
+      height: calc(100vh - #{header-size(landscape)});
+    }
+
+    @include at-size(small) {
+      display: block;
+      position: relative;
+      left: initial;
+      right: initial;
+      bottom: initial;
+      top: initial;
+      height: auto;
+      background: initial;
+      flex: 1;
+      text-align: right;
+      transform: translatex(0);
+      margin: 0 minifast-space(-2);
+    }
+  }
+
+  &__navigation-toggle-input:checked + &__navigation-toggle + &__navigation {
+    display: flex;
+    transform: translatex(0);
   }
 }
 

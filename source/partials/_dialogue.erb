@@ -1,6 +1,40 @@
 <section class='minifast-dialogue'>
+  <section class='minifast-dialogue__content minifast-dialogue__content--description'>
+    <h3 class='minifast-dialogue__text minifast-dialogue__text--title'><%= t(:title, scope: [:partials, :dialogue]) %></h3>
+    <p class='minifast-dialogue__text minifast-dialogue__text--description'><%= t(:description, scope: [:partials, :dialogue]) %></p>
+  </section>
   <section class='minifast-dialogue__content'>
-    <h3 class='minifast-dialogue__title'><%= t(:title, scope: [:partials, :dialogue]) %></h3>
-    <p class='minifast-dialogue__description'><%= t(:description, scope: [:partials, :dialogue]) %></p>
+    <% t(:tabs, scope: [:partials, :dialogue]).each do |(key, tab)| %>
+      <input type='radio' name='minifast-dialogue__tab' id='minifast-dialogue__tab--<%= key %>' class='minifast-dialogue__input' <%= key == t(:tabs, scope: [:partials, :dialogue]).keys.first ? 'checked' :'' -%>>
+      <section class='minifast-dialogue__container'>
+        <label for='minifast-dialogue__tab--<%= key %>' class='minifast-dialogue__tab-label'>
+          <%= tab[:title] %>
+        </label>
+        <section class='minifast-dialogue__tab'>
+          <article class='minifast-dialogue__tab-content'>
+            <h3 class='minifast-dialogue__subtitle'><%= tab[:subtitle] %></h3>
+            <% tab[:paragraphs].each do |paragraph| %>
+              <p class='minifast-dialogue__paragraph'><%= paragraph %></p>
+            <% end %>
+          </article>
+        </section>
+      </section>
+    <% end %>
+  </section>
+  <section class='minifast-dialogue__content'>
+    <form class='minifast-dialogue__form' action='https://docs.google.com/forms/d/e/1FAIpQLSdPecDck3oFIEOJifn8fJL91XCgXr0B1wDupNXu9IOO-lUcUA/formResponse' method='POST'>
+      <article class='minifast-dialogue__field'>
+        <input class='minifast-dialogue__field-input' type='text' name='entry.980509853' required placeholder='<%= t(:question, scope: [:partials, :dialogue]) %>' aria-label='<%= t(:question, scope: [:partials, :dialogue]) %>' />
+        <div class='minifast-dialogue__field-line'></div>
+      </article>
+      <article class='minifast-dialogue__field'>
+        <input class='minifast-dialogue__field-input' type='email' autocomplete='email' name='emailAddress' required placeholder='<%= t(:email, scope: [:partials, :dialogue]) %>' aria-label='<%= t(:email, scope: [:partials, :dialogue]) %>' />
+        <div class='minifast-dialogue__field-line'></div>
+      </article>
+      <button class='minifast-dialogue__submit'>
+        <span class='minifast-dialogue__submit-text'><%= t(:submit, scope: [:partials, :dialogue]) %></span>
+        <div class='minifast-dialogue__submit-bar'></div>
+      </button>
+    </form>
   </section>
 </section>

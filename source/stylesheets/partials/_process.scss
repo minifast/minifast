@@ -1,24 +1,80 @@
+@keyframes processCadenceSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+%process-container {
+  background: minifast-color("red", "500");
+  display: flex;
+  flex-direction: column;
+
+  @include at-size(small) {
+  }
+}
+
+%process-steps {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  @include at-size(small) {
+  }
+}
+
+%process-step {
+  flex: 1;
+
+  @include at-size(small) {
+  }
+}
+
+%process-phases {
+  flex: 1;
+  position: relative;
+  height: 100vw;
+  width: 100vw;
+
+  @include at-size(small) {
+  }
+}
+
+%process-phase {
+  position: absolute;
+  top: 50vw;
+  left: 50vw;
+  width: 50vw;
+  background: white;
+
+  &--design {
+    transform: rotate(90deg) translate(40vw) rotate(-90deg);
+  }
+
+  &--retrospective {
+    transform: rotate(180deg) translate(40vw) rotate(-180deg);
+  }
+
+  &--build {
+    transform: rotate(270deg) translate(25vw) rotate(-270deg);
+  }
+
+  @include at-size(small) {
+  }
+}
+
 .minifast-process {
   &__content {
     @extend %oceana-container;
-    padding: minifast-space(1) minifast-space(0);
-
-    @include at-size(medium) {
-      padding: minifast-space(2) 0 minifast-space(3) 0;
-    }
+    text-align: center;
   }
-
   &__title {
     @extend %oceana-title;
-    text-align: center;
+    @extend %oceana-title--dotted;
+    &:before { @extend %oceana-title-dot; }
   }
-
-  &__description {
-    text-align: center;
-
-    @include at-size(medium) {
-      width: screen-width(medium);
-      margin: 0 auto;
-    }
-  }
+  &__subtitle { @extend %oceana-subtitle; }
+  &__container { @extend %process-container; }
+  &__steps { @extend %process-steps; }
+  &__step { @extend %process-step; }
+  &__phases { @extend %process-phases; }
+  &__phase { @extend %process-phase; }
 }

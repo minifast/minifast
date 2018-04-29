@@ -6,8 +6,30 @@ en:
       title: Contact Us
       description: We want to hear from you!
     dialogue:
-      title: Let's Start a Dialogue
       description: Meaningful engineering with a lasting impact is made possible when there clear communication and prioritization of ideas. How else can you know what matters most?
+      email: Enter your email
+      question: Ask us a question
+      submit: Submit
+      title: Let's Start a Dialogue
+      tabs:
+        who:
+          title: Who are we?
+          subtitle: We are a diverse team of thinkers committed to democratic principles.
+          paragraphs:
+            - When everyone has a voice, we are better equipped to understand business challenges and face them head on.
+            - We see every interaction as a chance to advocate for and uphold the egalitarian principles that make for a just and accessible society for all.
+        what:
+          title: What do we do?
+          subtitle: When it comes to code, we believe thinking is more important than typing.
+          paragraphs:
+            - We use pair programming and narrative techniques to reach true understanding – not only between people on our team and our clients, but ultimately between our clients and their customers.
+            - By working in dialogue, we create a better, more equitable process for writing sustainable code.
+        you:
+          title: Who do we work with?
+          subtitle: When it comes to code, we believe thinking is more important than typing.
+          paragraphs:
+            - We use pair programming and narrative techniques to reach true understanding – not only between people on our team and our clients, but ultimately between our clients and their customers.
+            - By working in dialogue, we create a better, more equitable process for writing sustainable code.
     footer:
       contact: Contact
     header:
@@ -22,3 +44,21 @@ en:
     process:
       title: Prepare. Deliver. Reflect. Repeat.
       description: Writing code is an exercise in prioritizing tasks and making decisions. Our emphasis on communication means understanding what we're actually building – and why.
+      goals:
+        title: Goals
+        description: Come prepared
+      scoping:
+        title: Scoping
+        description: Evaluate the possibilities
+      inception:
+        title: Inception
+        description: Kickoff meeting
+      design:
+        title: Design Research
+        description: Human-centered user validation
+      build:
+        title: Product Delivery
+        description: Iterative development
+      retrospective:
+        title: Retrospective
+        description: Refine the process

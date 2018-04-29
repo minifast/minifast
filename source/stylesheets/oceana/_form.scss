@@ -1,0 +1,10 @@
+%oceana-form {
+  display: block;
+}
+
+%oceana-form--inline {
+  @include at-size(medium) {
+    display: flex;
+    flex-direction: row;
+  }
+}

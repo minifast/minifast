@@ -1,0 +1,10 @@
+clients:
+  - name: Voom
+    thumbnail: images/clients/voom/thumbnail.png
+    subtitle: The world's most affordable on-demand helicopter booking platform.
+  - name: A^3
+    thumbnail: images/clients/a3/thumbnail.png
+    subtitle: The Silicon Valley outpost of Airbus, a global leader in aviation and aerospace innovation
+  - name: You
+    thumbnail: images/clients/wwf/thumbnail.png
+    subtitle: You're a local powerhouse, an established industry presence, or a bootstrapper.

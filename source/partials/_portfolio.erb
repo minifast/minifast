@@ -1,6 +1,17 @@
 <section class='minifast-portfolio'>
-  <section class='minifast-portfolio__content'>
+  <section class='minifast-portfolio__content minifast-portfolio__content--title'>
     <h3 class='minifast-portfolio__title'><%= t(:title, scope: [:partials, :portfolio]) %></h3>
-    <p class='minifast-portfolio__description'><%= t(:description, scope: [:partials, :portfolio]) %></p>
+    <p class='minifast-portfolio__subtitle'><%= t(:description, scope: [:partials, :portfolio]) %></p>
+  </section>
+  <section class='minifast-portfolio__content minifast-portfolio__content--clients'>
+    <% data.portfolio.clients.each do |client| %>
+      <article class='minifast-portfolio__client'>
+        <img class='minifast-portfolio__image' src='<%= client[:thumbnail] %>' alt='<%= client[:name] %>'>
+        <div class='minifast-portfolio__description'>
+          <h3 class='minifast-portfolio__text minifast-portfolio__text--name'><%= client[:name] %></h3>
+          <p class='minifast-portfolio__text'><%= client[:subtitle] %></p>
+        </div>
+      </article>
+    <% end %>
   </section>
 </section>

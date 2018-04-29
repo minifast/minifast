@@ -15,11 +15,27 @@ $styles: (
     "text-decoration": none,
     "text-transform": uppercase
   ),
+  "display3": (
+    "font-family": sans-serif,
+    "font-weight": 400,
+    "font-size": 22px,
+    "line-height": 30px,
+    "text-decoration": none,
+    "text-transform": none
+  ),
   "title": (
     "font-family": sans-serif,
     "font-weight": 400,
     "font-size": 24px,
     "line-height": 30px,
+    "text-decoration": none,
+    "text-transform": none
+  ),
+  "subtitle": (
+    "font-family": sans-serif,
+    "font-weight": 400,
+    "font-size": 22px,
+    "line-height": 26px,
     "text-decoration": none,
     "text-transform": none
   ),

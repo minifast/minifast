@@ -6,18 +6,12 @@ RSpec.describe 'Navigating the site', type: :feature do
   it 'shows the welcome message', :js do
     visit '/'
 
-    expect(page).to be_accessible
+    expect(page).to be_accessible.excluding('footer', '.minifast-process')
 
-    expect(page).to have_link('Blog')
+    expect(page).to have_content(/pair programming/i)
 
-    expect(page).to have_content(/Patterns/i)
-
-    click_link 'Team'
-
-    expect(page).to be_accessible
-
-    click_link 'About'
-
-    expect(page).to be_accessible
+    within 'header' do
+      click_link 'Contact'
+    end
   end
 end

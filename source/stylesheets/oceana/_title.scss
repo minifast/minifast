@@ -2,6 +2,32 @@
   @include minifast-text("title");
 }
 
-%oceana-title {
-  @include minifast-text("title");
+%oceana-title--dotted {
+  position: relative;
+  padding-top: minifast-space(1);
+}
+
+%oceana-title-dot {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: minifast-space(-2);
+  height: minifast-space(-2);
+  margin-left: minifast-space(-2) / -2;
+  background: minifast-color("red", "500");
+}
+
+%oceana-subtitle {
+  margin: 0 minifast-space(1);
+
+  @include at-size(xsmall) {
+    width: screen-width(xsmall);
+    margin: 0 auto;
+  }
+
+  @include at-size(small) {
+    width: screen-width(small);
+    margin: 0 auto;
+  }
 }

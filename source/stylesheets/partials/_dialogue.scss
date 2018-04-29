@@ -1,24 +1,155 @@
 .minifast-dialogue {
   &__content {
     @extend %oceana-container;
-    padding: minifast-space(1) minifast-space(0);
+    position: relative;
+    margin: minifast-space(2) auto;
 
     @include at-size(medium) {
-      padding: minifast-space(2) minifast-space(0) minifast-space(3) minifast-space(0);
+      margin: minifast-space(3) auto;
     }
   }
 
-  &__title {
-    @extend %oceana-title;
+  &__text {
     text-align: center;
+    & + & { margin-top: minifast-space(0); }
+    &--title { @extend %oceana-title; }
+    &--description { @extend %oceana-subtitle; }
   }
 
-  &__description {
-    text-align: center;
+  &__input { display: none; }
+  &__tab-label {
+    @include minifast-text("title");
+    color: minifast-color("black", "500");
+    border-top: minifast-space(-5) dotted minifast-color("black", "500");
+    border-bottom: minifast-space(-5) dotted transparent;
+    padding: minifast-space(-1);
+    display: block;
+    cursor: pointer;
+    transition: background 0.125s ease-in-out,  width 0.125s ease-in-out, border-color 0.125s ease-in-out;
 
     @include at-size(medium) {
-      width: screen-width(medium);
-      margin: 0 auto;
+      width: screen-width(medium) / 5 * 2;
+      background: rgba(minifast-color("white", "0"), 0);
+      padding: minifast-space(1) minifast-space(-1);
     }
+  }
+
+  &__container {
+    display: block;
+  }
+
+  &__tab {
+    height: 0;
+    overflow: hidden;
+
+    @include at-size(medium) {
+      position: absolute;
+      top: 0;
+      left: ((screen-width(medium) / 5) * 2) + minifast-space(-1) + minifast-space(-1);
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+  }
+
+  &__tab-content {
+    border: minifast-space(-5) dotted minifast-color("red", "500");
+    padding: minifast-space(-1) minifast-space(-1) 0 minifast-space(-1);
+    margin: 0 minifast-space(-1);
+
+    @include at-size(medium) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      padding: minifast-space(1) minifast-space(2);
+    }
+  }
+
+  &__subtitle {
+    @include minifast-text("subtitle");
+    color: minifast-color("red", "500");
+    margin: 0;
+    transition: all 0.125s ease-in-out;
+  }
+
+  &__paragraph {
+    @include minifast-text("body");
+    color: minifast-color("red", "500");
+  }
+
+  &__input + &__container &__tab-label {
+    @include at-size(medium) {
+      width: (screen-width(medium) / 5 * 2) - minifast-space(-1);
+    }
+  }
+
+  &__input:checked + &__container &__tab-label {
+    border-top-color: minifast-color("red", "500");
+    color: minifast-color("red", "500");
+    background: rgba(minifast-color("white", "0"), 1);
+
+    @include at-size(medium) {
+      border-bottom-color: minifast-color("red", "500");
+      width: (screen-width(medium) / 5 * 2) + minifast-space(-5);
+    }
+  }
+
+  &__input:checked + &__container + &__input + &__container &__tab-label {
+    border-top-color: transparent;
+
+    @include at-size(medium) {
+      width: (screen-width(medium) / 5 * 2);
+    }
+  }
+
+  &__input:checked + &__container &__tab {
+    height: auto;
+  }
+
+  &__form {
+    @extend %oceana-form;
+    @extend %oceana-form--inline;
+    margin: minifast-space(-1);
+  }
+
+  &__field {
+    @extend %oceana-text-field;
+  }
+
+  &__field-input {
+    @extend %oceana-text-field__input;
+  }
+
+  &__field-input:focus {
+    @extend %oceana-text-field__input--focus;
+  }
+
+  &__field-line {
+    @extend %oceana-text-field__line;
+  }
+
+  &__field-input:focus + &__field-line {
+    @extend %oceana-text-field__line--focus;
+  }
+
+  &__submit {
+    @extend %oceana-submit;
+  }
+
+  &__submit-text {
+    @extend %oceana-submit__text;
+  }
+
+  &__submit-bar {
+    @extend %oceana-submit__bar;
+  }
+
+  &__submit:focus &__submit-bar,
+  &__submit:hover &__submit-bar,
+  &__submit:active &__submit-bar {
+    @extend %oceana-submit__bar--focus;
   }
 }

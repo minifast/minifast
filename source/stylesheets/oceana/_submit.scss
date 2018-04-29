@@ -1,0 +1,35 @@
+%oceana-submit {
+  position: relative;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  display: inline-block;
+  padding-bottom: minifast-space(-4);
+
+  &:focus {
+    border: none;
+    box-shadow: none;
+  }
+}
+
+%oceana-submit__text {
+  @include minifast-text("link");
+  color: minifast-color("red", "500");
+}
+
+%oceana-submit__bar {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: floor(minifast-space(-5));
+  background: minifast-color("red", "500");
+  transition: transform 0.25s ease-in-out;
+  transform: scaleX(0);
+}
+
+%oceana-submit__bar--focus {
+  transform: scaleX(1);
+}

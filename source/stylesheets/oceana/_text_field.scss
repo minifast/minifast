@@ -1,0 +1,56 @@
+%oceana-text-field {
+  position: relative;
+  margin-bottom: minifast-space(1);
+
+  @include at-size(medium) {
+    flex: 1;
+    margin-bottom: 0;
+    margin-right: minifast-space(-1);
+  }
+}
+
+%oceana-text-field__input {
+  @include minifast-text("body");
+  background: 0;
+  border: 0 none;
+  outline: none;
+  margin-bottom: minifast-space(-4);
+  display: block;
+  width: 100%;
+
+  &::placeholder {
+    transition: color 0.25s ease-in-out;
+    color: minifast-color("black", "1000");
+  }
+}
+
+%oceana-text-field__input--focus {
+  &::placeholder { color: minifast-color("black", "500"); }
+}
+
+%oceana-text-field__line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: floor(minifast-space(-5));
+  background-color: minifast-color("black", "1000");
+  transition: background-color 0.25s ease-in-out;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: floor(minifast-space(-5));
+    background: minifast-color("red", "500");
+    transform: scaleX(0);
+    transition: transform 0.25s ease-in-out;
+  }
+}
+
+%oceana-text-field__line--focus {
+  background-color: minifast-color("black", "500");
+  &:after { transform: scaleX(1); }
+}
