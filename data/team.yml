@@ -1,6 +1,6 @@
 members:
   - name: Doc Ritezel
-    image: images/photoshoot/doc_ritezel.jpg
+    image: images/photoshoot/doc.jpg
     image_side: right
     title: CEO + Co-Founder
     email: doc@ministryofvelocity.com
@@ -12,22 +12,14 @@ members:
       from HTTP parsers to distributed systems design,
       from W3C specifications to large-scale CSS organization.
       In his free time, Doc loves spinning a globe and flying to wherever his finger lands.
-  - name: Rob Head
-    image: images/photoshoot/rob_head.jpg
-    image_side: left
-    title: Consultant
-    email: rob@ministryofvelocity.com
-    twitter: roberthead
-    story: |
-      Robert Head revels in spreading the joys of agile collaboration,
-      remote pair programming, and humane, effective development processes.
-      He's based in the little mountain town of Ashland, Oregon,
-      midway between Seattle and San Francisco. When he's not coding,
-      he creates ephemeral aesthetic artifacts such as music and choreography.
-  - name: CJ Bryan
-    image: images/photoshoot/cj_bryan.jpg
+  - name: Erika Pacheco
+    image: images/photoshoot/erika.jpg
     image_side: right
-    title: Consultant
+    title: Lead Consultant
+  - name: CJ Bryan
+    image: images/photoshoot/cj.jpg
+    image_side: right
+    title: Lead Consultant
     email: cj@minifast.co
     twitter: waltz
     story: |
@@ -37,9 +29,9 @@ members:
       building sustainable software, you can find him in his metal shop welding
       bicycles.
   - name: Damien Burke
-    image: images/photoshoot/damien_burke.jpg
+    image: images/photoshoot/damien.jpg
     image_side: left
-    title: Consultant
+    title: Lead Consultant
     email: damien@ministryofvelocity.com
     twitter: exmember
     story: |
@@ -49,8 +41,20 @@ members:
       an engineer to his experience and training as poker player, actor, and
       hypnotist. When he is not building software and software teams he keeps
       busy doing things he doesn't know how to do.
+  - name: Rob Head
+    image: images/photoshoot/rob.jpg
+    image_side: left
+    title: Lead Consultant
+    email: rob@ministryofvelocity.com
+    twitter: roberthead
+    story: |
+      Robert Head revels in spreading the joys of agile collaboration,
+      remote pair programming, and humane, effective development processes.
+      He's based in the little mountain town of Ashland, Oregon,
+      midway between Seattle and San Francisco. When he's not coding,
+      he creates ephemeral aesthetic artifacts such as music and choreography.
   - name: Jeff Parr
-    image: images/photoshoot/jeff_parr.jpg
+    image: images/photoshoot/jeff.jpg
     image_side: right
     title: Consultant
     email: jeff@ministryofvelocity.com
@@ -61,19 +65,28 @@ members:
       driven to identify and fulfill unmet needs. An enthusiastic spirit with a
       playful mind, he spends his offscreen time dancing and riding horses and
       exploring the world with his daughter.
-members_emeritus:
-  - name: Sarah Mei
+  - name: Hadiyah Mujhid
+    image: images/photoshoot/hadiyah.jpg
     title: Consultant
+    image_side: right
   - name: Pat Arbona
+    image: images/photoshoot/patricia.jpg
     title: Consultant
+    image_side: left
   - name: Will Rogers
+    image: images/photoshoot/will.jpg
     title: Principal Design Consultant
+    image_side: right
+  - name: Nicole Landry
+    image: images/photoshoot/nicole.jpg
+    title: Design Consultant
+    image_side: left
   - name: Jim Haungs
-    image: images/photoshoot/jim_haungs.jpg
+    image: images/photoshoot/jim.jpg
     image_side: left
     title: Consultant
   - name: Kane Baccigalupi
-    image: images/photoshoot/kane_baccigalupi.jpg
+    image: images/photoshoot/kane.jpg
     image_side: right
     title: Consultant
     twitter: rubyghetto
@@ -82,3 +95,6 @@ members_emeritus:
       She has held a variety of roles from Founder/CTO to Agile Development
       Consultant.  Before working in the startup world, she did engineering work
       on the LHC.
+members_emeritus:
+  - name: Sarah Mei
+    title: Co-Founder + CTO
