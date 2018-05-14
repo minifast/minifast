@@ -1,0 +1,61 @@
+<section class='minifast-careers'>
+  <section class='minifast-careers__content'>
+    <h3 class='minifast-careers__title'><%= t(:title, scope: [:partials, :careers]) %></h3>
+    <p class='minifast-careers__subtitle'><%= t(:description, scope: [:partials, :careers]) %></p>
+  </section>
+  <section class='minifast-careers__hidden minifast-careers__hidden--small-up'>
+    <section class='minifast-careers__content'>
+      <h4 class='minifast-careers__slug'><%= t(:current_opening, scope: [:partials, :careers], count: t(:current_openings, scope: [:partials, :careers]).count) %></h4>
+      <% t(:current_openings, scope: [:partials, :careers]).each do |current_opportunity| %>
+        <h3 class='minifast-careers__job-title'><%= current_opportunity %></h3>
+      <% end %>
+    </section>
+  </section>
+  <section class='minifast-careers__super-container'>
+    <section class='minifast-careers__container minifast-careers__container--right'>
+      <article class='minifast-careers__duty'>
+        <h4 class='minifast-careers__headline'><%= t(:title, scope: [:partials, :careers, :communication]) %></h3>
+        <p class='minifast-careers__description'><%= t(:description, scope: [:partials, :careers, :communication]) %></p>
+      </article>
+      <article class='minifast-careers__duty'>
+        <h4 class='minifast-careers__headline'><%= t(:title, scope: [:partials, :careers, :pairing]) %></h3>
+        <p class='minifast-careers__description'><%= t(:description, scope: [:partials, :careers, :pairing]) %></p>
+      </article>
+      <article class='minifast-careers__duty'>
+        <h4 class='minifast-careers__headline'><%= t(:title, scope: [:partials, :careers, :curiosity]) %></h3>
+        <p class='minifast-careers__description'><%= t(:description, scope: [:partials, :careers, :curiosity]) %></p>
+      </article>
+      <article class='minifast-careers__duty'>
+        <h4 class='minifast-careers__headline'><%= t(:title, scope: [:partials, :careers, :clients]) %></h3>
+        <p class='minifast-careers__description'><%= t(:description, scope: [:partials, :careers, :clients]) %></p>
+      </article>
+    </section>
+    <section class='minifast-careers__container minifast-careers__container--left'>
+      <section class='minifast-careers__hidden minifast-careers__hidden--small-down'>
+        <h4 class='minifast-careers__slug'><%= t(:current_opening, scope: [:partials, :careers], count: t(:current_openings, scope: [:partials, :careers]).count) %></h4>
+        <% t(:current_openings, scope: [:partials, :careers]).each do |current_opportunity| %>
+          <h3 class='minifast-careers__job-title'><%= current_opportunity %></h3>
+        <% end %>
+      </section>
+      <h3 class='minifast-careers__title minifast-careers__hidden--small-up'><%= t(:apply, scope: [:partials, :careers]) %></h3>
+      <form class='minifast-careers__form' action='https://docs.google.com/forms/d/e/1FAIpQLSdPecDck3oFIEOJifn8fJL91XCgXr0B1wDupNXu9IOO-lUcUA/formResponse' method='POST'>
+        <article class='minifast-careers__field'>
+          <input class='minifast-careers__field-input' type='text' autocomplete='name' name='name' required placeholder='<%= t(:name, scope: [:partials, :careers]) %>' aria-label='<%= t(:name, scope: [:partials, :careers]) %>' />
+          <div class='minifast-careers__field-line'></div>
+        </article>
+        <article class='minifast-careers__field'>
+          <input class='minifast-careers__field-input' type='email' autocomplete='email' name='emailAddress' required placeholder='<%= t(:email, scope: [:partials, :careers]) %>' aria-label='<%= t(:email, scope: [:partials, :careers]) %>' />
+          <div class='minifast-careers__field-line'></div>
+        </article>
+        <article class='minifast-careers__field'>
+          <input class='minifast-careers__field-input' type='text' name='entry.980509853' required placeholder='<%= t(:subject, scope: [:partials, :careers]) %>' aria-label='<%= t(:subject, scope: [:partials, :careers]) %>' />
+          <div class='minifast-careers__field-line'></div>
+        </article>
+        <button class='minifast-careers__submit'>
+          <span class='minifast-careers__submit-text'><%= t(:submit, scope: [:partials, :careers]) %></span>
+          <div class='minifast-careers__submit-bar'></div>
+        </button>
+      </form>
+    </section>
+  </section>
+</section>

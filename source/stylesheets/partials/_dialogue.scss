@@ -19,8 +19,8 @@
   &__input { display: none; }
   &__tab-label {
     @include minifast-text("title");
-    color: minifast-color("black", "500");
-    border-top: minifast-space(-5) dotted minifast-color("black", "500");
+    color: minifast-color("grey", "500");
+    border-top: minifast-space(-5) dotted minifast-color("grey", "500");
     border-bottom: minifast-space(-5) dotted transparent;
     padding: minifast-space(-1);
     display: block;
@@ -68,11 +68,15 @@
     }
   }
 
-  &__subtitle {
-    @include minifast-text("subtitle");
+  &__heading {
+    @include minifast-text("dialogue-heading");
     color: minifast-color("red", "500");
     margin: 0;
     transition: all 0.125s ease-in-out;
+
+    @include at-size(medium) {
+      @include minifast-text("title");
+    }
   }
 
   &__paragraph {
@@ -117,6 +121,7 @@
 
   &__field {
     @extend %oceana-text-field;
+    @extend %oceana-text-field--inline;
   }
 
   &__field-input {

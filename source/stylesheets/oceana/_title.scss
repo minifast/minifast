@@ -19,6 +19,7 @@
 }
 
 %oceana-subtitle {
+  @include minifast-text("subtitle");
   margin: 0 minifast-space(1);
 
   @include at-size(xsmall) {

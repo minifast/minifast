@@ -1,0 +1,159 @@
+.minifast-team {
+  &__content {
+    @extend %oceana-container;
+
+    @include at-size(medium) {
+      max-width: screen-width(medium);
+    }
+
+    &--description {
+      text-align: center;
+      padding-top: header-size(portrait) + minifast-space(0);
+      height: calc(100vw - #{header-size(portrait) + minifast-space(0)});
+
+      @include in-landscape() {
+        height: calc(100vw - #{header-size(landscape) + minifast-space(0)});
+        padding-top: header-size(landscape) + minifast-space(0);
+      }
+
+      @include at-size(small) {
+        height: screen-width(small) / 3 * 2;
+        padding: 0;
+      }
+
+      @include at-size(medium) {
+        height: (screen-width(medium) / 3 * 2) - (screen-width(medium) / 5);
+        padding: 0;
+      }
+    }
+
+    &--members {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &--members-emeritus { text-align: center; }
+  }
+
+  &__title {
+    @extend %oceana-title;
+
+    &--headline {
+      margin-top: 0;
+
+      @include at-size(small) {
+        padding-top: screen-width(small) / 3 - minifast-space(2);
+      }
+    }
+  }
+
+  &__subtitle { @extend %oceana-subtitle; }
+
+  &__container {
+    flex: 0 0 50vw;
+    height: 100vw;
+    width: 50vw;
+    position: relative;
+    margin-top: -1 * minifast-space(-8) * 2;
+
+    @include at-size(small) {
+      flex: 0 0 screen-width(small) / 3;
+      width: screen-width(small) / 3;
+      height: screen-width(small) / 3 * 2;
+    }
+
+    @include at-size(medium) {
+      flex: 0 0 screen-width(medium) / 3;
+      width: screen-width(medium) / 3;
+      height: screen-width(medium) / 3 * 2;
+    }
+  }
+
+  &__image-wrapper {
+    width: calc(50vw - #{minifast-space(-2) * 2});
+    height: calc(50vw - #{minifast-space(-2) * 2});
+    overflow: hidden;
+    margin: minifast-space(-2);
+    position: relative;
+
+    @include at-size(small) {
+      width: screen-width(small) / 3 - minifast-space(-2) * 2;
+      height: screen-width(small) / 3 - minifast-space(-2) * 2;
+    }
+
+    @include at-size(medium) {
+      width: screen-width(medium) / 3 - minifast-space(-2) * 2;
+      height: screen-width(medium) / 3 - minifast-space(-2) * 2;
+    }
+  }
+
+  &__image {
+    height: 50vw;
+    position: absolute;
+    top: 0;
+    &--left { left: 0; }
+    &--right { right: 0; }
+
+    @include at-size(small) {
+      height: screen-width(small) / 3;
+    }
+
+    @include at-size(medium) {
+      height: screen-width(medium) / 3;
+    }
+  }
+
+  &__caption {
+    position: relative;
+    padding: minifast-space(1) minifast-space(0);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -1 * minifast-space(1);
+      left: minifast-space(0);
+      height: minifast-space(2);
+      width: 0;
+      border-left: minifast-space(-5) solid minifast-color("red", "500");
+    }
+  }
+
+  &__heading {
+    @include minifast-text("display3");
+    margin: 0;
+    &--inline { display: inline; }
+  }
+
+  &__description {
+    margin: 0;
+    &--inline { display: inline; }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: minifast-space(2) 0;
+  }
+
+  &__list-item {
+    & + & { margin-top: minifast-space(-1); }
+  }
+}
+
+body.team {
+  background:
+    linear-gradient(0deg, minifast-color("red", "500") 0.5px, rgba(0, 0, 0, 0) 0.5px),
+    linear-gradient(90deg, minifast-color("red", "500") 0.5px, rgba(0, 0, 0, 0) 0.5px);
+  background-size: 50vw 50vw, 50vw 50vw;
+  background-position: 50vw 50vw;
+
+  @include at-size(small) {
+    background-size: screen-width(small) / 3 screen-width(small) / 3, screen-width(small) / 3 screen-width(small) / 3;
+    background-position: 50% 0;
+  }
+
+  @include at-size(medium) {
+    background-size: screen-width(medium) / 3 screen-width(medium) / 3, screen-width(medium) / 3 screen-width(medium) / 3;
+    background-position: 50% -1 * (screen-width(medium) / 5);
+  }
+}

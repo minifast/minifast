@@ -1,10 +1,12 @@
 .minifast-hero {
   &__slide {
     position: relative;
+    min-height: screen-width(xsmall);
 
     @include at-size(small) {
       height: 100vh;
       width: 100vw;
+      max-height: screen-width(small);
       min-height: screen-width(xsmall);
     }
   }
@@ -13,10 +15,10 @@
     position: relative;
     height: 50vh;
     overflow: hidden;
+    min-height: screen-width(xsmall) / 2;
 
     &--cream { background: minifast-color("cream", "500"); }
     &--red { background: minifast-color("red", "600"); }
-    &--animated { display: none; }
 
     @include at-size(small) {
       position: absolute;
@@ -24,7 +26,6 @@
       bottom: 0;
       height: auto;
 
-      &--animated { display: block; }
       &--left {
         left: 0;
         right: 50%;
@@ -38,8 +39,9 @@
   }
 
   &__container {
-    width: 50%;
+    width: 100% / 3 * 2;
     position: absolute;
+    padding: minifast-space(0);
 
     &--left {
       top: header-size(portrait);
@@ -52,7 +54,9 @@
     }
 
     @include in-landscape() {
-      top: header-size(landscape);
+      &--left {
+        top: header-size(landscape);
+      }
     }
 
     @include at-size(small) {
@@ -80,8 +84,8 @@
   }
 
   &__title {
-    padding: 0 minifast-space(-2);
     @include minifast-text("display2");
+    margin: 0;
 
     @include at-size(small) {
       &--static { display: none; }

@@ -1,33 +1,34 @@
 .minifast-footer {
-  padding: minifast-space(-1) 0;
-  background: minifast-color("cream", "900");
+  background: minifast-color("gold", "700");
   text-align: center;
 
   @include at-size(small) {
+    padding: minifast-space(-1) 0;
     text-align: left;
   }
 
   &__content {
     @extend %oceana-container;
     position: relative;
-    padding: minifast-space(-2) 0;
     vertical-align: middle;
 
-    &--lower { padding-top: 0; }
+    &--upper { padding: minifast-space(2) 0 minifast-space(1) 0; }
+    &--lower {
+      border-top: 1px solid rgba(minifast-color("white", "0"), 1 / $golden-ratio);
+      margin: 0 minifast-space(0);
+      padding: minifast-space(0) 0;
+    }
 
     @include at-size(small) {
       display: flex;
-
-      &--lower {
-        padding-top: minifast-space(-2);
-        border-top: 1px solid rgba(minifast-color("white", "0"), 1 / $golden-ratio);
-      }
+      &--upper { padding: minifast-space(-2) 0; }
+      &--lower { margin: 0 auto; }
     }
 
     @include at-size(medium) {
-      padding: minifast-space(1) 0;
       width: screen-width(medium);
 
+      &--upper { padding: minifast-space(2) 0; }
       &--lower { padding-top: minifast-space(-1); }
     }
 
@@ -37,8 +38,9 @@
   }
 
   &__navigation {
+    @include minifast-text("footer-navigation");
     display: block;
-    padding-top: minifast-space(-2);
+    color: minifast-color("white", "0");
 
     @include at-size(small) {
       flex: 1;
@@ -47,11 +49,37 @@
     }
   }
 
+  &__links {
+    margin: minifast-space(0) 0 minifast-space(-2) 0;
+    padding: 0;
+    list-style: none;
+
+    @include at-size(small) {
+      margin: 0;
+    }
+  }
+
+  &__link-container {
+    & + & { margin-top: minifast-space(-1); }
+
+    @include at-size(small) {
+      display: inline;
+
+      & + & {
+        &::before {
+          content: '/';
+          padding: 0 minifast-space(-3);
+          margin-right: minifast-space(-3);
+        }
+      }
+    }
+  }
+
   &__link {
-    @include minifast-text("link");
     color: minifast-color("white", "0");
 
-    &--small { @include minifast-text("caption"); }
+    &--navigation { @include minifast-text("footer-navigation"); }
+    &--small { @include minifast-text("footer-legal"); }
     &--logo {
       display: inline-block;
       height: header-size(portrait) / 3;

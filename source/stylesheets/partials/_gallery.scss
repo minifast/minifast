@@ -1,0 +1,32 @@
+.minifast-gallery {
+  &__slide {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    background-size: cover;
+    background-position: 50% 50%;
+
+    @include at-size(small) {
+      min-height: screen-width(xsmall);
+      max-height: screen-width(small);
+    }
+  }
+
+  &__title {
+    @include minifast-text("display2");
+    color: minifast-color("black", "1000");
+    text-transform: none;
+    text-align: center;
+    margin: 0;
+  }
+
+  &__description {
+    @include minifast-text("display3");
+    color: minifast-color("black", "1000");
+    text-transform: uppercase;
+    text-align: center;
+    margin: minifast-space(0) 0 minifast-space(1) 0;
+  }
+}

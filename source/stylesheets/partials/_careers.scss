@@ -1,0 +1,147 @@
+.minifast-careers {
+  &__content {
+    @extend %oceana-container;
+  }
+
+  &__hidden {
+    &--small-down { display: none; }
+
+    @include at-size(small) {
+      &--small-down { display: initial; }
+      &--small-up { display: none; }
+    }
+  }
+
+  &__super-container {
+    @extend %oceana-container;
+    @include at-size(medium) {
+      display: flex;
+      margin-bottom: minifast-space(2);
+    }
+  }
+
+  &__container {
+    @include at-size(small) {
+      &--left { order: 0; }
+      &--right {
+        order: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
+
+    @include at-size(medium) {
+      flex: 1;
+      &--left { order: 0; }
+      &--right { order: 1; }
+    }
+  }
+
+  &__duty {
+    margin: 0 minifast-space(-1);
+    @include at-size(small) {
+      flex: 0 0 calc(50% - #{minifast-space(0) + minifast-space(-1)});
+    }
+    @include at-size(medium) {
+      margin: 0;
+      flex: 0 0 calc(50% - #{minifast-space(0)});
+    }
+  }
+
+  &__title {
+    @extend %oceana-title;
+    text-align: center;
+    margin-top: minifast-space(2);
+  }
+
+  &__subtitle {
+    @extend %oceana-subtitle;
+    text-align: center;
+    margin-bottom: minifast-space(2);
+  }
+
+  &__slug {
+    @include minifast-text("button");
+    color: minifast-color("grey", "500");
+    text-align: center;
+    margin: 0;
+    @include at-size(small) {
+      margin: minifast-space(-1);
+      text-align: left;
+    }
+  }
+
+  &__job-title {
+    @extend %oceana-title;
+    text-align: center;
+    margin: minifast-space(-1) 0;
+    @include at-size(small) {
+      margin: minifast-space(-1);
+      text-align: left;
+    }
+  }
+
+  &__headline {
+    @include minifast-text("title");
+    margin: minifast-space(1) 0 minifast-space(-1) 0;
+    line-height: 1.3;
+    @include at-size(small) {
+      margin-top: 0;
+    }
+  }
+
+  &__form {
+    @extend %oceana-form;
+    margin: minifast-space(-2) minifast-space(0) minifast-space(2) minifast-space(-1);
+
+    @include at-size(medium) {
+      margin: minifast-space(-2) minifast-space(2) minifast-space(2) minifast-space(-1);
+    }
+  }
+
+  &__field {
+    @extend %oceana-text-field;
+    ::placeholder { color: minifast-color("red", "500"); }
+  }
+
+  &__select-input {
+    @extend %oceana-select;
+  }
+
+  &__field-input {
+    @extend %oceana-text-field__input;
+  }
+
+  &__field-input:focus {
+    @extend %oceana-text-field__input--focus;
+  }
+
+  &__field-line {
+    @extend %oceana-text-field__line;
+    @extend %oceana-text-field__line--dashed;
+  }
+
+  &__select-input:focus + &__field-line,
+  &__field-input:focus + &__field-line {
+    @extend %oceana-text-field__line--focus;
+  }
+
+  &__submit {
+    @extend %oceana-submit;
+  }
+
+  &__submit-text {
+    @extend %oceana-submit__text;
+  }
+
+  &__submit-bar {
+    @extend %oceana-submit__bar;
+  }
+
+  &__submit:focus &__submit-bar,
+  &__submit:hover &__submit-bar,
+  &__submit:active &__submit-bar {
+    @extend %oceana-submit__bar--focus;
+  }
+}

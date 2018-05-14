@@ -1,0 +1,33 @@
+<section class='minifast-playbooks'>
+  <section class='minifast-playbooks__content minifast-playbooks__content--title'>
+    <h3 class='minifast-playbooks__title'><%= t(:title, scope: [:partials, :playbooks]) %></h3>
+    <p class='minifast-playbooks__subtitle'><%= t(:description, scope: [:partials, :playbooks]) %></p>
+  </section>
+  <section class='minifast-playbooks__content minifast-playbooks__content--goals'>
+    <article class='minifast-playbooks__container minifast-playbooks__container--image'>
+      <%= image_tag 'playbooks/goals.png', class: 'minifast-playbooks__image', alt: t(:title, scope: [:partials, :playbooks, :goals]) %>
+    </article>
+    <article class='minifast-playbooks__container minifast-playbooks__container--text'>
+      <h3 class='minifast-playbooks__heading'><%= t(:title, scope: [:partials, :playbooks, :goals]) %></h3>
+      <p class='minifast-playbooks__text'><%= t(:description, scope: [:partials, :playbooks, :goals]) %></p>
+    </article>
+  </section>
+  <section class='minifast-playbooks__content minifast-playbooks__content--scoping'>
+    <article class='minifast-playbooks__container minifast-playbooks__container--image'>
+      <%= image_tag 'playbooks/scoping.png', class: 'minifast-playbooks__image', alt: t(:title, scope: [:partials, :playbooks, :scoping]) %>
+    </article>
+    <article class='minifast-playbooks__container minifast-playbooks__container--text'>
+      <h3 class='minifast-playbooks__heading'><%= t(:title, scope: [:partials, :playbooks, :scoping]) %></h3>
+      <p class='minifast-playbooks__text'><%= t(:description, scope: [:partials, :playbooks, :scoping]) %></p>
+    </article>
+  </section>
+  <section class='minifast-playbooks__content minifast-playbooks__content--inception'>
+    <article class='minifast-playbooks__container minifast-playbooks__container--image'>
+      <%= image_tag 'playbooks/inception.png', class: 'minifast-playbooks__image', alt: t(:title, scope: [:partials, :playbooks, :inception]) %>
+    </article>
+    <article class='minifast-playbooks__container minifast-playbooks__container--text'>
+      <h3 class='minifast-playbooks__heading'><%= t(:title, scope: [:partials, :playbooks, :inception]) %></h3>
+      <p class='minifast-playbooks__text'><%= t(:description, scope: [:partials, :playbooks, :inception]) %></p>
+    </article>
+  </section>
+</section>

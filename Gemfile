@@ -18,7 +18,7 @@ gem 'normalize-scss'
 
 # Development
 group :development do
-  gem 'middleman-livereload'
+  gem 'guard-livereload', require: false
   gem 'license_finder', require: false
   gem 'pivotal_git_scripts', require: false
 end

@@ -2,18 +2,52 @@ en:
   minifast:
     name: Ministry of Velocity
   partials:
+    brands:
+      title: Additional Clients
+    careers:
+      apply: Apply
+      communication:
+        description: The role will use pair programming and test-driven development to deliver products for our clients across industries.
+        title: We're looking for a communicative consultant to add to our engineering team.
+      clients:
+        description: We believe coding is not an isolated endeavor.
+        title: This position requires a willingness to work closely with our team and our clients.
+      curiosity:
+        description: The people who thrive here genuinely enjoy answering complex questions. We're looking for someone who is also methodical and pragmatic, with a fundamental belief in collaborating to solve problems.
+        title: We hope you are curious.
+      current_opening:
+        one: Current Opening
+        other: Current Openings
+      current_openings:
+        - Engineering Consultant
+      description: Our team is driven by intrinsic curiosity and uncanny communication skills. We're only successful if you have a voice and your ideas are heard.
+      email: Your email
+      name: Your name
+      pairing:
+        description: We are a small team using open dialogue to help the companies we partner with to understand their challenges, reach their goals, and ultimately grow their business.
+        title: We only program in pairs.
+      subject: A quick note
+      submit: Submit
+      title: Join Our Team
     contact:
       title: Contact Us
       description: We want to hear from you!
+      name: Your Name
+      email: Your Email
+      subject: What's Up?
+      subjects:
+        - I've got work to be done!
+        - I'd like to work on your team!
+        - Let's talk about something else!
+      submit: Submit
     dialogue:
-      description: Meaningful engineering with a lasting impact is made possible when there clear communication and prioritization of ideas. How else can you know what matters most?
+      description: "Questions are an intrinsic part of our process – because curiosity is crucial to problem solving. We know we're not the only ones with questions – here are some you might have for us:"
       email: Enter your email
       question: Ask us a question
       submit: Submit
-      title: Let's Start a Dialogue
       tabs:
         who:
-          title: Who are we?
+          title: Who Are You?
           subtitle: We are a diverse team of thinkers committed to democratic principles.
           paragraphs:
             - When everyone has a voice, we are better equipped to understand business challenges and face them head on.
@@ -30,35 +64,62 @@ en:
           paragraphs:
             - We use pair programming and narrative techniques to reach true understanding – not only between people on our team and our clients, but ultimately between our clients and their customers.
             - By working in dialogue, we create a better, more equitable process for writing sustainable code.
+      title: Let's Start a Dialogue
     footer:
+      careers: Careers
       contact: Contact
+      process: Process
+      team: Team
+      work: Work
     header:
+      careers: Careers
       contact: Contact
+      process: Process
+      team: Team
+      work: Work
     hero:
-      title: We are an <span>engineering</span> consultancy.
       subtitles:
         - We use <span>pair programming</span> to craft sustainable code.
+      title: We are an <span>engineering</span> consultancy.
     portfolio:
+      description: We partner with peopole who want to rethink the inner workings of their business.
       title: Our Work
-      description: Working with us means engaging in open conversation to solve problems collectively.
-    process:
-      title: Prepare. Deliver. Reflect. Repeat.
-      description: Writing code is an exercise in prioritizing tasks and making decisions. Our emphasis on communication means understanding what we're actually building – and why.
+    playbooks:
+      description: Pairing is not just our mode for programming – it's how we structure our partner relationships throughout every project. Our approach is designed around dialogue – to uncover needs, prioritize strategically, and impart our methodology to your team.
       goals:
         title: Goals
-        description: Come prepared
-      scoping:
-        title: Scoping
-        description: Evaluate the possibilities
+        description: Starting at the end helps us know how to begin. Before we write a single line of code, we have to articulate what we're trying to accomplish. We use targeted and measurable goals to inform how we approach the work ahead of us. Together we look at what you want to build and, more importantly, how it will impact your business.
       inception:
         title: Inception
-        description: Kickoff meeting
-      design:
-        title: Design Research
-        description: Human-centered user validation
+        description: "At the heart of this conversation is a simple question: How can we be successful? We mark the beginning of every project with an informational session to define goals, ask the hard questions, put our goals under the proverbial microscope, and prioritize the immediate tasks at hand. You can think of it as a day-long transfer of knowledge so that we can get to work the very next day."
+        download: Download Inception Agenda
+      scoping:
+        title: Scoping
+        description: Once we know how much work is on the docket, we can start to strategize. We create a framework for the human practicalities of what we're aiming to do. This creates a clear picture of how we can best work together to meet your goals.
+        download: Download Scoping Agenda
+      title: A project cycle designed for collaboration
+    process:
       build:
         title: Product Delivery
         description: Iterative development
+      description: We have a structured approach designed to negotiate priorities at every step of development. Our clients come to us to create a product. They leave with a process for collaboration that can be implemented throughout their organization.
+      design:
+        title: Design Research
+        description: Human-centered user validation
+      goals:
+        title: Goals
+        description: Come prepared
+      inception:
+        title: Inception
+        description: Kickoff meeting
       retrospective:
         title: Retrospective
         description: Refine the process
+      scoping:
+        title: Scoping
+        description: Evaluate the possibilities
+      title: Prepare. Deliver. Reflect. Repeat.
+    team:
+      description: Every voice that joins our team strengthens it. Our belief in inclusivity is not just good for productivity – it creates a culture that values people on a much larger scale. We only program in pairs because two minds can solve problems better than one. Which means everyone gets to learn from diverse perspectives.
+      title: Teams of Two
+      members_emeritus: Esteemed Emeritus

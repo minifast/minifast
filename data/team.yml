@@ -1,6 +1,7 @@
 members:
   - name: Doc Ritezel
     image: images/photoshoot/doc_ritezel.jpg
+    image_side: right
     title: CEO + Co-Founder
     email: doc@ministryofvelocity.com
     twitter: ohrite
@@ -13,6 +14,7 @@ members:
       In his free time, Doc loves spinning a globe and flying to wherever his finger lands.
   - name: Rob Head
     image: images/photoshoot/rob_head.jpg
+    image_side: left
     title: Consultant
     email: rob@ministryofvelocity.com
     twitter: roberthead
@@ -24,6 +26,7 @@ members:
       he creates ephemeral aesthetic artifacts such as music and choreography.
   - name: CJ Bryan
     image: images/photoshoot/cj_bryan.jpg
+    image_side: right
     title: Consultant
     email: cj@minifast.co
     twitter: waltz
@@ -35,6 +38,7 @@ members:
       bicycles.
   - name: Damien Burke
     image: images/photoshoot/damien_burke.jpg
+    image_side: left
     title: Consultant
     email: damien@ministryofvelocity.com
     twitter: exmember
@@ -47,6 +51,7 @@ members:
       busy doing things he doesn't know how to do.
   - name: Jeff Parr
     image: images/photoshoot/jeff_parr.jpg
+    image_side: right
     title: Consultant
     email: jeff@ministryofvelocity.com
     twitter: _JeffParr
@@ -56,12 +61,21 @@ members:
       driven to identify and fulfill unmet needs. An enthusiastic spirit with a
       playful mind, he spends his offscreen time dancing and riding horses and
       exploring the world with his daughter.
+members_emeritus:
+  - name: Sarah Mei
+    title: Consultant
+  - name: Pat Arbona
+    title: Consultant
+  - name: Will Rogers
+    title: Principal Design Consultant
   - name: Jim Haungs
     image: images/photoshoot/jim_haungs.jpg
-    title: Consultant Emeritus
+    image_side: left
+    title: Consultant
   - name: Kane Baccigalupi
     image: images/photoshoot/kane_baccigalupi.jpg
-    title: Consultant Emeritus
+    image_side: right
+    title: Consultant
     twitter: rubyghetto
     story: |
       Kane Baccigalupi has been building technology-based startups since 2005.

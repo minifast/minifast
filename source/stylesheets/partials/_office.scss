@@ -1,0 +1,16 @@
+.minifast-office {
+  &__slide {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    background-size: cover;
+    background-position: 50% 50%;
+
+    @include at-size(small) {
+      min-height: screen-width(xsmall);
+      max-height: screen-width(small);
+    }
+  }
+}

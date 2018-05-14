@@ -1,7 +1,9 @@
 %oceana-text-field {
   position: relative;
   margin-bottom: minifast-space(1);
+}
 
+%oceana-text-field--inline {
   @include at-size(medium) {
     flex: 1;
     margin-bottom: 0;
@@ -25,7 +27,7 @@
 }
 
 %oceana-text-field__input--focus {
-  &::placeholder { color: minifast-color("black", "500"); }
+  &::placeholder { color: minifast-color("grey", "500"); }
 }
 
 %oceana-text-field__line {
@@ -33,24 +35,25 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: floor(minifast-space(-5));
-  background-color: minifast-color("black", "1000");
+  border-bottom: floor(minifast-space(-5)) solid minifast-color("black", "1000");
   transition: background-color 0.25s ease-in-out;
 
   &:after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -1 * floor(minifast-space(-5));
     left: 0;
     right: 0;
-    height: floor(minifast-space(-5));
-    background: minifast-color("red", "500");
+    border-bottom: floor(minifast-space(-5)) solid minifast-color("red", "500");
     transform: scaleX(0);
     transition: transform 0.25s ease-in-out;
   }
 }
 
+%oceana-text-field__line--dashed {
+  border-bottom: floor(minifast-space(-5)) dotted minifast-color("red", "500");
+}
+
 %oceana-text-field__line--focus {
-  background-color: minifast-color("black", "500");
   &:after { transform: scaleX(1); }
 }

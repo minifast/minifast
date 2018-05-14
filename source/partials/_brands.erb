@@ -1,0 +1,14 @@
+<section class='minifast-brands'>
+  <section class='minifast-brands__content minifast-brands__content--title'>
+    <h3 class='minifast-brands__title'><%= t(:title, scope: [:partials, :brands]) %></h3>
+  </section>
+  <section class='minifast-brands__content minifast-brands__content--brands'>
+    <ul class='minifast-brands__list'>
+    <% data.portfolio.brands.each do |client| %>
+      <li class='minifast-brands__list-item'>
+        <img class='minifast-brands__image' src='<%= client.thumbnail %>' alt='<%= client.name %>'>
+      </li>
+    <% end %>
+    </ul>
+  </section>
+</section>

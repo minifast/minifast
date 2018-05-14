@@ -68,10 +68,8 @@
   }
 
   &__text {
-    @include minifast-text("body");
-    margin: 0;
     &--name {
-      @include minifast-text("title");
+      @include minifast-text("display3");
       margin: 0 0 minifast-space(-1) 0;
     }
   }

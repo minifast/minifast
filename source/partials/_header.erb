@@ -12,6 +12,10 @@
       <span class='minifast-header__navigation-toggle-bar minifast-header__navigation-toggle-bar--bottom'></span>
     </label>
     <nav class='minifast-header__navigation'>
+      <%= link_to t(:process, scope: [:partials, :header]), '/process', class: 'minifast-header__link' %>
+      <%= link_to t(:team, scope: [:partials, :header]), '/team', class: 'minifast-header__link' %>
+      <%= link_to t(:work, scope: [:partials, :header]), '/work', class: 'minifast-header__link' %>
+      <%= link_to t(:careers, scope: [:partials, :header]), '/careers', class: 'minifast-header__link' %>
       <%= link_to t(:contact, scope: [:partials, :header]), '/contact', class: 'minifast-header__link' %>
     </nav>
   </div>

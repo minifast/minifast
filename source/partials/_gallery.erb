@@ -1,0 +1,10 @@
+<section class='minifast-gallery'>
+  <section class='minifast-gallery__content'>
+    <% data.portfolio.gallery.each do |slide| %>
+      <article class='minifast-gallery__slide' style='background-image: url("<%= slide.image %>")'>
+        <h2 class='minifast-gallery__title'><%= slide.title %></h2>
+        <h4 class='minifast-gallery__description'><%= slide.client %></h4>
+      </article>
+    <% end %>
+  </section>
+</section>

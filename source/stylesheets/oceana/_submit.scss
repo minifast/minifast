@@ -6,6 +6,7 @@
   margin: 0;
   outline: none;
   display: inline-block;
+  background: transparent;
   padding-bottom: minifast-space(-4);
 
   &:focus {
@@ -15,7 +16,7 @@
 }
 
 %oceana-submit__text {
-  @include minifast-text("link");
+  @include minifast-text("button");
   color: minifast-color("red", "500");
 }
 

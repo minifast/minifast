@@ -8,3 +8,16 @@ clients:
   - name: You
     thumbnail: images/clients/wwf/thumbnail.png
     subtitle: You're a local powerhouse, an established industry presence, or a bootstrapper.
+brands:
+  - name: IBM
+    thumbnail: images/clients/ibm/logo.png
+  - name: Live Nation
+    thumbnail: images/clients/live-nation/logo.png
+  - name: Code for America
+    thumbnail: images/clients/code-for-america/logo.png
+  - name: UserTesting
+    thumbnail: images/clients/user-testing/logo.png
+gallery:
+  - client: Voom
+    title: Ushering in a New Era of Urban Mobility
+    image: images/clients/voom/gallery.png

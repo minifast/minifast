@@ -1,0 +1,125 @@
+.minifast-playbooks {
+  &__content {
+    @extend %oceana-container;
+
+    &--title {
+      text-align: center;
+      margin-top: header-size(portrait);
+      padding-top:  minifast-space(0);
+
+      @include in-landscape() {
+        margin-top: header-size(landscape);
+      }
+
+      @include at-size(small) {
+        margin-top: minifast-space(4);
+      }
+    }
+
+    @include at-size(small) {
+      &--goals, &--inception, &--scoping {
+        display: flex;
+        align-items: stretch;
+      }
+
+      &--goals, &--inception {
+        flex-direction: row;
+      }
+
+      &--scoping {
+        flex-direction: row-reverse;
+        text-align: right;
+      }
+    }
+  }
+
+  &__title { @extend %oceana-title; }
+  &__subtitle {
+    @extend %oceana-subtitle;
+    margin-bottom: minifast-space(2);
+  }
+
+  &__container {
+    position: relative;
+    margin-left: minifast-space(-1) + minifast-space(-1) + minifast-space(-4);
+    margin-right: minifast-space(-1);
+
+    @include at-size(small) {
+      margin: 0;
+      flex: 1;
+      padding-bottom: minifast-space(2);
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -1 * minifast-space(-1);
+      border-left: minifast-space(-4) dotted minifast-color("red", "500");
+    }
+  }
+
+  &__content--goals &__container--image {
+    &:before {
+      border-left-color: transparent;
+    }
+  }
+
+  @include at-size(small) {
+    &__content--goals &__container--image,
+    &__content--scoping &__container--text,
+    &__content--inception &__container--image {
+      margin-right: minifast-space(0);
+      &:before {
+        border-left-color: transparent;
+      }
+    }
+  }
+
+  &__content--goals &__container--text {
+    padding-top: minifast-space(2);
+    margin-top: -1 * minifast-space(2);
+
+    @include at-size(small) {
+      padding-top: 0;
+      margin-top: 0;
+    }
+  }
+
+  &__content--inception &__container {
+    &:before {
+      border-left-style: solid;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100vw;
+    margin-left: -1 * (minifast-space(-1) + minifast-space(-1) + minifast-space(-4));
+    z-index: -1;
+
+    @include at-size(small) {
+      width: 100%;
+      margin: 0 auto;
+      z-index: unset;
+    }
+  }
+
+  &__heading {
+    @include minifast-text("title");
+    margin: 0;
+    padding: minifast-space(1) 0 minifast-space(-1) 0;
+    @include at-size(small) {
+      padding: 0 0 minifast-space(-1) 0;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    padding-bottom: minifast-space(2);
+    @include at-size(small) {
+      padding: 0;
+    }
+  }
+}
