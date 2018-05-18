@@ -17,7 +17,7 @@
 
 %oceana-submit__text {
   @include minifast-text("button");
-  color: minifast-color("red", "500");
+  color: minifast-color("red", "600");
 }
 
 %oceana-submit__bar {
@@ -26,7 +26,7 @@
   right: 0;
   left: 0;
   height: floor(minifast-space(-5));
-  background: minifast-color("red", "500");
+  background: minifast-color("red", "600");
   transition: transform 0.25s ease-in-out;
   transform: scaleX(0);
 }

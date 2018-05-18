@@ -3,7 +3,7 @@
     <% data.portfolio.gallery.each do |slide| %>
       <article class='minifast-gallery__slide' style='background-image: url("<%= slide.image %>")'>
         <h2 class='minifast-gallery__title'><%= slide.title %></h2>
-        <h4 class='minifast-gallery__description'><%= slide.client %></h4>
+        <h3 class='minifast-gallery__description'><%= slide.client %></h3>
       </article>
     <% end %>
   </section>

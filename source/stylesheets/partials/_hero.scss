@@ -18,7 +18,7 @@
     min-height: screen-width(xsmall) / 2;
 
     &--cream { background: minifast-color("cream", "500"); }
-    &--red { background: minifast-color("red", "600"); }
+    &--red { background: minifast-color("red", "400"); }
 
     @include at-size(small) {
       position: absolute;
@@ -96,7 +96,7 @@
     }
 
     &--left {
-      span { color: minifast-color("red", "600"); }
+      span { color: minifast-color("red", "400"); }
 
       @include at-size(medium) {
         padding-right: screen-width(medium) / 6;
