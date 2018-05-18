@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
@@ -27,7 +29,7 @@ guard 'livereload' do
     png: :png,
     gif: :gif,
     jpg: :jpg,
-    jpeg: :jpeg,
+    jpeg: :jpeg
   }
 
   # file types LiveReload may optimize refresh for
@@ -49,5 +51,5 @@ guard 'livereload' do
   # file needing a full reload of the page anyway
   watch(%r{data/.+\.yml})
   watch(%r{locales/.+\.yml})
-  watch(%r{config.rb\z})
+  watch(/config.rb\z/)
 end

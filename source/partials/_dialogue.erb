@@ -22,9 +22,9 @@
     <% end %>
   </section>
   <section class='minifast-dialogue__content'>
-    <form class='minifast-dialogue__form' action='https://docs.google.com/forms/d/e/1FAIpQLSdPecDck3oFIEOJifn8fJL91XCgXr0B1wDupNXu9IOO-lUcUA/formResponse' method='POST'>
+    <form class='minifast-dialogue__form' action='<%= config[:contact_form_url] %>' method='POST'>
       <article class='minifast-dialogue__field'>
-        <input class='minifast-dialogue__field-input' type='text' name='entry.980509853' required placeholder='<%= t(:question, scope: [:partials, :dialogue]) %>' aria-label='<%= t(:question, scope: [:partials, :dialogue]) %>' />
+        <input class='minifast-dialogue__field-input' type='text' name='<%= config[:contact_subject_id] %>' required placeholder='<%= t(:question, scope: [:partials, :dialogue]) %>' aria-label='<%= t(:question, scope: [:partials, :dialogue]) %>' />
         <div class='minifast-dialogue__field-line'></div>
       </article>
       <article class='minifast-dialogue__field'>

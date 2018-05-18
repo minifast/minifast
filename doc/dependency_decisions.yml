@@ -1,0 +1,110 @@
+---
+- - :whitelist
+  - MIT
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-05-18 00:33:43.900514000 Z
+- - :whitelist
+  - ISC
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-05-18 00:33:47.306010000 Z
+- - :whitelist
+  - ruby
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-05-18 00:33:50.196437000 Z
+- - :whitelist
+  - Apache 2.0
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-05-18 00:33:56.015563000 Z
+- - :whitelist
+  - Simplified BSD
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-05-18 00:34:16.439207000 Z
+- - :whitelist
+  - New BSD
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-05-18 00:35:57.528480000 Z
+- - :whitelist
+  - Mozilla Public License 2.0
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-05-18 00:36:08.367935000 Z
+- - :whitelist
+  - CC-BY-3.0
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-05-18 00:36:15.417105000 Z
+- - :whitelist
+  - CC0-1.0
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-05-18 00:36:20.171639000 Z
+- - :license
+  - path-is-inside
+  - MIT
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-05-18 03:18:56.713026000 Z
+- - :license
+  - map
+  - ruby
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-05-18 03:19:05.156895000 Z
+- - :license
+  - em-websocket
+  - MIT
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-05-18 03:19:31.725484000 Z
+- - :whitelist
+  - BSD 2-Clause
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-05-18 03:20:19.169927000 Z
+- - :license
+  - unf
+  - BSD 2-Clause
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-05-18 03:20:27.154306000 Z
+- - :license
+  - contracts
+  - BSD 2-Clause
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-05-18 03:20:32.176601000 Z
+- - :license
+  - htmlcompressor
+  - Apache 2.0
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-05-18 03:20:56.857919000 Z
+- - :license
+  - bundler
+  - MIT
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-05-18 03:27:21.095185000 Z

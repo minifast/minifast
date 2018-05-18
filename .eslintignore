@@ -1,0 +1,6 @@
+data/
+doc/
+node_modules/
+tmp/
+vendor/
+build/

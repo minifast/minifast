@@ -4,9 +4,9 @@
     <p class='minifast-contact__text minifast-contact__text--description'><%= t(:description, scope: [:partials, :contact]) %></p>
   </section>
   <section class='minifast-contact__content'>
-    <form class='minifast-contact__form' action='https://docs.google.com/forms/d/e/1FAIpQLSdPecDck3oFIEOJifn8fJL91XCgXr0B1wDupNXu9IOO-lUcUA/formResponse' method='POST'>
+    <form class='minifast-contact__form' action='<%= config[:contact_form_url] %>' method='POST'>
       <article class='minifast-contact__field'>
-        <input class='minifast-contact__field-input' type='text' autocomplete='name' name='name' required placeholder='<%= t(:name, scope: [:partials, :contact]) %>' aria-label='<%= t(:name, scope: [:partials, :contact]) %>' />
+        <input class='minifast-contact__field-input' type='text' autocomplete='name' name='<%= config[:contact_name_id] %>' required placeholder='<%= t(:name, scope: [:partials, :contact]) %>' aria-label='<%= t(:name, scope: [:partials, :contact]) %>' />
         <div class='minifast-contact__field-line'></div>
       </article>
       <article class='minifast-contact__field'>
@@ -14,7 +14,7 @@
         <div class='minifast-contact__field-line'></div>
       </article>
       <article class='minifast-contact__field'>
-        <select class='minifast-contact__select-input' name='entry.980509853' required aria-label='<%= t(:subject, scope: [:partials, :contact]) %>'>
+        <select class='minifast-contact__select-input' name='<%= config[:contact_subject_id] %>' required aria-label='<%= t(:subject, scope: [:partials, :contact]) %>'>
           <option value='' disabled selected hidden><%= t(:subject, scope: [:partials, :contact]) %></option>
           <% t(:subjects, scope: [:partials, :contact]).each do |subject| %>
             <option><%= subject %></option>

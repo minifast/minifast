@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-ruby '2.5.0'
+ruby '2.5.1'
 
 # Rails
 gem 'middleman', '~> 4.2'
@@ -12,9 +12,10 @@ gem 'middleman-cloudfront'
 gem 'middleman-dotenv'
 gem 'middleman-google-analytics'
 gem 'middleman-minify-html'
+gem 'middleman-s3_sync'
+gem 'normalize-scss'
 gem 'sass'
 gem 'sass-globbing'
-gem 'normalize-scss'
 
 # Development
 group :development do

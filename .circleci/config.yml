@@ -1,0 +1,173 @@
+version: 2
+jobs:
+  build:
+    parallelism: 1
+    docker:
+      - image: circleci/ruby:2.5-node-browsers
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
+    steps:
+      - checkout
+
+      - run: mkdir -p /tmp/test_results
+
+      # Which version of bundler?
+      - run:
+          name: Which bundler?
+          command: bundle -v
+
+      # Restore bundle cache
+      - restore_cache:
+          keys:
+            - minifast-bundle--{{ checksum ".circleci/config.yml" }}-{{ checksum "Gemfile.lock" }}
+            - minifast-bundle--{{ checksum ".circleci/config.yml" }}-
+            - minifast-bundle-
+
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+
+      # Store bundle cache
+      - save_cache:
+          key: minifast-bundle--{{ checksum ".circleci/config.yml" }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      # Only necessary if app uses webpacker or yarn in some other way
+      - restore_cache:
+          keys:
+            - minifast-yarn--{{ checksum ".circleci/config.yml" }}-{{ checksum "yarn.lock" }}
+            - minifast-yarn--{{ checksum ".circleci/config.yml" }}-
+            - minifast-yarn-
+
+      - run:
+          name: Yarn Install
+          command: yarn install --cache-folder ~/.cache/yarn
+
+      # Store yarn / webpacker cache
+      - save_cache:
+          key: minifast-yarn--{{ checksum ".circleci/config.yml" }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+
+      - persist_to_workspace:
+          root: /home/circleci
+          paths:
+            - project
+
+  rspec:
+    parallelism: 1
+    docker:
+      - image: circleci/ruby:2.5-node-browsers
+        environment:
+          BUNDLE_PATH: vendor/bundle
+    steps:
+      - attach_workspace:
+          at: ~/
+
+      # Run rspec in parallel
+      - type: shell
+        command: |
+          bundle exec rspec --profile 10 \
+                            --format RspecJunitFormatter \
+                            --out /tmp/test_results/rspec.xml \
+                            --format progress \
+                            $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+
+
+      # Save test results for timing analysis
+      - store_test_results:
+          path: /tmp/test_results
+
+  linter:
+    parallelism: 1
+    docker:
+      - image: circleci/ruby:2.5-node-browsers
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
+    steps:
+      - attach_workspace:
+          at: ~/
+
+      - restore_cache:
+          keys:
+            - minifast-rubocop--{{ checksum ".circleci/config.yml" }}-{{ checksum ".rubocop.yml" }}
+            - minifast-rubocop--{{ checksum ".circleci/config.yml" }}-
+            - minifast-rubocop-
+
+      - run:
+          name: Rubocop
+          command: |
+            bundle exec rubocop --parallel \
+                                --cache true \
+                                -r $(bundle show rubocop-junit-formatter)/lib/rubocop/formatter/junit_formatter.rb \
+                                --format RuboCop::Formatter::JUnitFormatter \
+                                --out /tmp/test_results/rubocop.xml
+
+      - type: cache-save
+        key: minifast-rubocop--{{ checksum ".circleci/config.yml" }}-{{ checksum ".rubocop.yml" }}
+        paths:
+          - ~/.cache/rubocop_cache/
+
+      - run:
+          name: ESLint
+          command: yarn eslint --format=junit --output-file="/tmp/test_results/eslint.xml" .
+
+      - run:
+          name: License Finder
+          command: bundle exec license_finder
+
+      - type: store_test_results
+        path: /tmp/test_results
+
+  deploy:
+    parallelism: 1
+    docker:
+      - image: circleci/ruby:2.5-node-browsers
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
+    steps:
+      - attach_workspace:
+          at: ~/
+
+      - run:
+          name: Build Site
+          command: bundle exec middleman build
+
+      - run:
+          name: Configure Site
+          command: aws cloudformation update-stack --stack-name www --capabilities CAPABILITY_IAM --region us-west-2 --template-body "`cat ./doc/cloudformation.json`" --parameters '[{"ParameterKey":"HostedZone","UsePreviousValue":true},{"ParameterKey":"AlternateHostedZone","UsePreviousValue":true},{"ParameterKey":"CertificateArn","UsePreviousValue":true}]' || echo 'No updates'
+
+      - run:
+          name: Deploy Site
+          command: bundle exec middleman sync
+
+      - run:
+          name: Invalidate CDN
+          command: bundle exec middleman invalidate
+
+workflows:
+  version: 2
+  minifast:
+    jobs:
+      - build
+      - linter:
+          requires:
+            - build
+      - rspec:
+          requires:
+            - build
+      - deploy:
+          requires:
+            - rspec
+            - linter
+          filters:
+            branches:
+              only:
+                - production

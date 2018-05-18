@@ -32,13 +32,10 @@ Layout/SpaceInsideHashLiteralBraces:
 
 # Configuration parameters: CountComments, ExcludedMethods.
 Metrics/BlockLength:
-  Max: 29
+  Enabled: false
 
 Style/Documentation:
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'helpers/api_gateway_helpers.rb'
+  Enabled: false
 
 # Cop supports --auto-correct.
 Style/ExpandPathArguments:
@@ -68,9 +65,12 @@ RSpec/AnyInstance:
   Exclude:
     - 'spec/features/team_spec.rb'
 
+RSpec/ExampleLength:
+  Enabled: false
+
 # Configuration parameters: AggregateFailuresByDefault.
 RSpec/MultipleExpectations:
-  Enabled: true
+  Enabled: false
 
 RSpec/NestedGroups:
   Enabled: true
