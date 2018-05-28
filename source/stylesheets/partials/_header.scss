@@ -133,6 +133,7 @@
     @include at-size(small) {
       flex-direction: row;
       justify-content: flex-end;
+      align-items: flex-start;
       position: relative;
       left: initial;
       right: initial;
