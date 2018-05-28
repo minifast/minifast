@@ -13,9 +13,11 @@
         <section class='minifast-dialogue__tab'>
           <article class='minifast-dialogue__tab-content'>
             <h3 class='minifast-dialogue__heading'><%= tab[:subtitle] %></h3>
+            <ul class='minifast-dialogue__paragraphs'>
             <% tab[:paragraphs].each do |paragraph| %>
-              <p class='minifast-dialogue__paragraph'><%= paragraph %></p>
+              <li class='minifast-dialogue__paragraph'><%= paragraph %></li>
             <% end %>
+            </ul>
           </article>
         </section>
       </section>

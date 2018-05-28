@@ -6,6 +6,7 @@
 
     @include at-size(medium) {
       margin: minifast-space(3) auto;
+      width: screen-width(medium);
     }
   }
 
@@ -25,12 +26,47 @@
     padding: minifast-space(-1);
     display: block;
     cursor: pointer;
-    transition: background 0.125s ease-in-out,  width 0.125s ease-in-out, border-color 0.125s ease-in-out;
 
     @include at-size(medium) {
-      width: screen-width(medium) / 5 * 2;
+      width: screen-width(medium) / 2;
       background: rgba(minifast-color("white", "0"), 0);
-      padding: minifast-space(1) minifast-space(-1);
+      padding: minifast-space(0) 0;
+      position: relative;
+      border: none;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -1 * minifast-space(-5) / 2;
+        left: 0;
+        right: minifast-space(1);
+        border-top: minifast-space(-5) dotted minifast-color("grey", "500");
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -1 * minifast-space(-5) / 2;
+        left: 0;
+        right: minifast-space(1);
+        border-bottom: 0 dotted minifast-color("grey", "500");
+      }
+    }
+  }
+
+  &__input:first-of-type + &__container &__tab-label {
+    @include at-size(medium) {
+      &::before {
+        top: 0;
+      }
+    }
+  }
+
+  &__input:last-of-type + &__container &__tab-label {
+    @include at-size(medium) {
+      &::after {
+        bottom: 0;
+      }
     }
   }
 
@@ -45,7 +81,7 @@
     @include at-size(medium) {
       position: absolute;
       top: 0;
-      left: ((screen-width(medium) / 5) * 2) + minifast-space(-1) + minifast-space(-1);
+      left: screen-width(medium) / 2;
       right: 0;
       bottom: 0;
       z-index: -1;
@@ -64,7 +100,7 @@
       right: 0;
       bottom: 0;
       margin: 0;
-      padding: minifast-space(1) minifast-space(2);
+      padding: minifast-space(0) minifast-space(1);
     }
   }
 
@@ -79,34 +115,52 @@
     }
   }
 
-  &__paragraph {
-    @include minifast-text("body");
-    color: minifast-color("red", "500");
-  }
+  &__paragraphs {
+    list-style: none;
+    margin: minifast-space(0) 0;
+    padding: 0;
 
-  &__input + &__container &__tab-label {
     @include at-size(medium) {
-      width: (screen-width(medium) / 5 * 2) - minifast-space(-1);
+      list-style: square;
+      padding: 0 minifast-space(0);
     }
   }
 
+  &__paragraph {
+    @include minifast-text("body");
+    color: minifast-color("red", "500");
+    & + & { margin-top: minifast-space(0); }
+  }
+
   &__input:checked + &__container &__tab-label {
-    border-top-color: minifast-color("red", "500");
     color: minifast-color("red", "500");
     background: rgba(minifast-color("white", "0"), 1);
 
     @include at-size(medium) {
-      border-bottom-color: minifast-color("red", "500");
-      width: (screen-width(medium) / 5 * 2) + minifast-space(-5);
+      border-right: minifast-space(-5) solid minifast-color("white", "0");
+
+      &::before {
+        border-top: minifast-space(-5) dotted minifast-color("red", "500");
+        right: 0;
+      }
+
+      &::after {
+        border-bottom: minifast-space(-5) dotted minifast-color("red", "500");
+        right: 0;
+      }
+    }
+  }
+
+  &__input:checked + &__container + &__input + &__container &__tab-label {
+    @include at-size(medium) {
+      &::before {
+        border-top: 0 dotted minifast-color("red", "500");
+      }
     }
   }
 
   &__input:checked + &__container + &__input + &__container &__tab-label {
     border-top-color: transparent;
-
-    @include at-size(medium) {
-      width: (screen-width(medium) / 5 * 2);
-    }
   }
 
   &__input:checked + &__container &__tab {
