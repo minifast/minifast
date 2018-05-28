@@ -1,5 +1,6 @@
 %oceana-title {
   @include minifast-text("title");
+  margin: minifast-space(0) 0 minifast-space(-2) 0;
 }
 
 %oceana-title--dotted {
