@@ -47,23 +47,35 @@ en:
       submit: Submit
       tabs:
         who:
-          title: Who Are You?
-          subtitle: We are a diverse team of thinkers committed to democratic principles.
+          title: Who are you?
+          subtitle: We're a diverse team of engineers and designers committed to democratic principles.
           paragraphs:
-            - When everyone has a voice, we are better equipped to understand business challenges and face them head on.
-            - We see every interaction as a chance to advocate for and uphold the egalitarian principles that make for a just and accessible society for all.
-        what:
-          title: What do we do?
+            - When everyone has a voice, we are better equipped to build software that faces business challenges head on.
+            - We see every interaction as a chance to advocate for and uphold the egalitarian principles that make just and accessible societies.
+        why:
+          title: What do you do?
           subtitle: When it comes to code, we believe thinking is more important than typing.
           paragraphs:
-            - We use pair programming and narrative techniques to reach true understanding – not only between people on our team and our clients, but ultimately between our clients and their customers.
-            - By working in dialogue, we create a better, more equitable process for writing sustainable code.
+            - We use pair programming and narrative techniques to reach true understanding—not only between people on our team and yours, but ultimately between you and your customers.
+            - By working in dialogue, we create a better, more equitable process for writing sustainable software.
         you:
-          title: Who do we work with?
-          subtitle: When it comes to code, we believe thinking is more important than typing.
+          title: Who do you work with?
+          subtitle: We work in tandem with teams who are looking for more than just engineering.
           paragraphs:
-            - We use pair programming and narrative techniques to reach true understanding – not only between people on our team and our clients, but ultimately between our clients and their customers.
-            - By working in dialogue, we create a better, more equitable process for writing sustainable code.
+            - They want to get to the heart of the matter through the process of building software.
+            - Our collaboration is rooted in the exchange of information to uncover the true story of their business.
+        what:
+          title: What problems do you solve?
+          subtitle: On the surface we make businesses run more efficiently.
+          paragraphs:
+            - But we're really solving a much larger problem. By bringing more voices to every problem we solve, we incorporate a diversity of perspectives into every product we build.
+            - Transparency goes beyond honesty. It's a way for us to see and understand the goals of your business. And for you to see and understand what we're building and how we're building it.
+        how:
+          title: How are you different?
+          subtitle: We work slowly and methodically to help you get where you're going faster. This isn't a paradox.
+          paragraphs:
+            - Breaking down the whole into discrete steps allows us to understand the purpose of every task and its part in a larger process—because this is what affects real people.
+            - By prioritizing every action during every stage of development, the products we create together are useful from day one and continue to get better over time.
       title: Let's Start a Dialogue
     footer:
       careers: Careers
@@ -82,7 +94,7 @@ en:
         - We use <span>pair programming</span> to craft sustainable code.
       title: We are an <span>engineering</span> consultancy.
     portfolio:
-      description: We partner with peopole who want to rethink the inner workings of their business.
+      description: We partner with people who want to rethink the inner workings of their business.
       title: Our Work
     playbooks:
       description: Pairing is not just our mode for programming – it's how we structure our partner relationships throughout every project. Our approach is designed around dialogue – to uncover needs, prioritize strategically, and impart our methodology to your team.
