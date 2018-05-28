@@ -1,13 +1,82 @@
+@keyframes horizontal-mobile {
+  0% { transform: perspective(#{screen-width(large)}) rotate3d(0, 1, 0, 0deg); }
+  33% { transform: perspective(#{screen-width(large)}) rotate3d(0, 1, 0, 345deg); }
+  100% { transform: perspective(#{screen-width(large)}) rotate3d(0, 1, 0, 0deg); }
+}
+
+@keyframes vertical-mobile {
+  0% { transform: rotate(-90deg) perspective(#{screen-width(large)}) rotate3d(0, 1, 0, 180deg); }
+  33% { transform: rotate(-90deg) perspective(#{screen-width(large)}) rotate3d(0, 1, 0, 525deg); }
+  100% { transform: rotate(-90deg) perspective(#{screen-width(large)}) rotate3d(0, 1, 0, 180deg); }
+}
+
 .minifast-hero {
   &__slide {
     position: relative;
     min-height: screen-width(xsmall);
 
     @include at-size(small) {
-      height: 100vh;
       width: 100vw;
-      max-height: screen-width(small);
-      min-height: screen-width(xsmall);
+      height: screen-width(small) / 3 * 2;
+    }
+
+    @include at-size(medium) {
+      height: minifast-space(1) + screen-width(small);
+    }
+  }
+
+  &__diagram {
+    transform: rotate(-90deg) rotate3d(0, 1, 0, 180deg);
+    position: absolute;
+    left: -1 * minifast-space(0);
+    height: calc(100vh / 3 * 2);
+    max-width: calc(100vw - #{minifast-space(0)});
+    animation: vertical-mobile 30s infinite ease-in-out;
+
+    @include in-landscape() {
+      display: none;
+    }
+
+    @include at-size(small) {
+      display: initial;
+      animation: horizontal-mobile 30s infinite ease-in-out;
+      top: 0;
+      left: unset;
+      width: screen-width(small) / 3 * 2;
+      height: unset;
+      max-width: unset;
+    }
+
+    @include at-size(medium) {
+      width: screen-width(medium) / 3 * 2;
+    }
+
+    polygon { fill: minifast-color("black", "1000"); }
+
+    &--cream {
+      path { fill: minifast-color("red", "400"); }
+      bottom: calc(100vh / 3 * 2 / -2);
+
+      @include at-size(small) {
+        bottom: unset;
+        right: screen-width(small) / 3 * 2 / -2;
+      }
+      @include at-size(medium) {
+        right: screen-width(medium) / 3 * 2 / -2;
+      }
+    }
+
+    &--red {
+      path { fill: minifast-color("cream", "500"); }
+      top: calc(100vh / 3 * 2 / -2);
+
+      @include at-size(small) {
+        top: unset;
+        left: screen-width(small) / 3 * 2 / -2;
+      }
+      @include at-size(medium) {
+        left: screen-width(medium) / 3 * 2 / -2;
+      }
     }
   }
 
@@ -61,6 +130,7 @@
 
     @include at-size(small) {
       width: screen-width(small) / 2;
+      padding: minifast-space(0) 0;
 
       &--left {
         top: header-size(full) + minifast-space(3);
@@ -87,10 +157,6 @@
     @include minifast-text("display2");
     margin: 0;
 
-    @include at-size(small) {
-      &--static { display: none; }
-    }
-
     @include at-size(medium) {
       @include minifast-text("display1");
     }
@@ -98,8 +164,14 @@
     &--left {
       span { color: minifast-color("red", "400"); }
 
+      @include at-size(small) {
+        padding-right: screen-width(small) / 6;
+        padding-left: minifast-space(-1);
+      }
+
       @include at-size(medium) {
         padding-right: screen-width(medium) / 6;
+        padding-left: minifast-space(0);
       }
 
       @include at-size(large) {
@@ -111,8 +183,14 @@
       text-align: right;
       span { color: minifast-color("cream", "500"); }
 
+      @include at-size(small) {
+        padding-left: screen-width(small) / 6;
+        padding-right: minifast-space(-1);
+      }
+
       @include at-size(medium) {
         padding-left: screen-width(medium) / 6;
+        padding-right: minifast-space(0);
       }
 
       @include at-size(large) {
