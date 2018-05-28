@@ -56,14 +56,10 @@
   }
 
   &__description {
-    margin: minifast-space(1) minifast-space(-2);
+    margin: minifast-space(0) minifast-space(-2) minifast-space(1) minifast-space(-2);
 
-    @include at-size(xsmall) {
-      margin: minifast-space(0) 0 minifast-space(2) 0;
-    }
-
-    @include at-size(medium) {
-      margin: minifast-space(1) 0;
+    @include at-size(small) {
+      margin: minifast-space(0) 0;
     }
   }
 
