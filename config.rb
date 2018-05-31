@@ -17,6 +17,26 @@ activate :autoprefixer do |prefix|
   prefix.browsers = 'last 2 versions'
 end
 
+activate :cloudfront do |cloudfront|
+  cloudfront.access_key_id = ENV['AWS_ACCESS_KEY_ID']
+  cloudfront.secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+  cloudfront.distribution_id = ENV['CLOUDFRONT_DISTRIBUTION_ID']
+end
+
+activate :s3_sync do |s3_sync|
+  s3_sync.bucket = ENV['BUCKET_NAME']
+  s3_sync.region = ENV['BUCKET_REGION']
+  s3_sync.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
+  s3_sync.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+  s3_sync.prefer_gzip = true
+  s3_sync.path_style = true
+  s3_sync.after_build = false
+  s3_sync.reduced_redundancy_storage = false
+  s3_sync.version_bucket = true
+  s3_sync.index_document = 'index.html'
+  s3_sync.error_document = '404.html'
+end
+
 config[:contact_form_url] = ENV.fetch('GOOGLE_FORM_URL', 'http://example.com')
 config[:contact_name_id] = ENV.fetch('GOOGLE_FORM_NAME_ID', 'name')
 config[:contact_subject_id] = ENV.fetch('GOOGLE_FORM_SUBJECT_ID', 'subject')
@@ -72,25 +92,5 @@ configure :build do
     ga.anonymize_ip = true
     ga.domain_name = 'ministryofvelocity.com'
     ga.allow_linker = true
-  end
-
-  activate :s3_sync do |s3_sync|
-    s3_sync.bucket = ENV.fetch('BUCKET_NAME')
-    s3_sync.region = ENV.fetch('BUCKET_REGION')
-    s3_sync.aws_access_key_id = ENV.fetch('AWS_ACCESS_KEY_ID')
-    s3_sync.aws_secret_access_key = ENV.fetch('AWS_SECRET_ACCESS_KEY')
-    s3_sync.prefer_gzip = true
-    s3_sync.path_style = true
-    s3_sync.after_build = false
-    s3_sync.reduced_redundancy_storage = false
-    s3_sync.version_bucket = true
-    s3_sync.index_document = 'index.html'
-    s3_sync.error_document = '404.html'
-  end
-
-  activate :cloudfront do |cf|
-    cf.access_key_id = ENV.fetch('AWS_ACCESS_KEY_ID')
-    cf.secret_access_key = ENV.fetch('AWS_SECRET_ACCESS_KEY')
-    cf.distribution_id = ENV.fetch('CLOUDFRONT_DISTRIBUTION_ID')
   end
 end
