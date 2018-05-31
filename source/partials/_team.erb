@@ -7,7 +7,7 @@
     <% data.team.members.each do |team_member| %>
       <article class='minifast-team__container'>
         <div class='minifast-team__image-wrapper'>
-          <img class='minifast-team__image minifast-team__image--<%= team_member.image_side %>' src='<%= team_member.image %>' alt='<%= team_member.name %>' />
+          <img class='minifast-team__image minifast-team__image--<%= team_member.image_side %>' src='<%= asset_url(team_member.image) %>' alt='<%= team_member.name %>' />
         </div>
         <div class='minifast-team__caption'>
           <h3 class='minifast-team__heading'><%= team_member.name %></h3>
