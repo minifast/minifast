@@ -1,0 +1,1 @@
+<%= Nokogiri::HTML::DocumentFragment.parse(File.read(File.expand_path("../../source/#{locals[:path]}", __FILE__))).tap { |doc| doc.at_css('svg')['class'] = locals[:image_class] } %>

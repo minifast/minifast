@@ -1,11 +1,11 @@
 <section class='minifast-hero'>
   <article class='minifast-hero__slide'>
     <section class='minifast-hero__section minifast-hero__section--left minifast-hero__section--cream'>
-      <%= Nokogiri::HTML::DocumentFragment.parse(File.read(File.expand_path('../../source/images/hero/mobile.svg', __FILE__))).tap { |doc| doc.at_css('svg')['class'] = 'minifast-hero__diagram minifast-hero__diagram--horizontal minifast-hero__diagram--cream' } %>
+      <%= partial 'partials/inline_svg', locals: {path: 'images/hero/mobile.svg', image_class: 'minifast-hero__diagram minifast-hero__diagram--horizontal minifast-hero__diagram--cream'} %>
       <div class='minifast-hero__container minifast-hero__container--left'><h2 class='minifast-hero__title minifast-hero__title--static minifast-hero__title--left'><%= t(:title, scope: [:partials, :hero]) %></h2></div>
     </section>
     <section class='minifast-hero__section minifast-hero__section--right minifast-hero__section--red'>
-      <%= Nokogiri::HTML::DocumentFragment.parse(File.read(File.expand_path('../../source/images/hero/mobile.svg', __FILE__))).tap { |doc| doc.at_css('svg')['class'] = 'minifast-hero__diagram minifast-hero__diagram--horizontal minifast-hero__diagram--red' } %>
+      <%= partial 'partials/inline_svg', locals: {path: 'images/hero/mobile.svg', image_class: 'minifast-hero__diagram minifast-hero__diagram--red'} %>
       <div class='minifast-hero__container minifast-hero__container--right'><h2 class='minifast-hero__title minifast-hero__title--static minifast-hero__title--right'><%= t(:subtitles, scope: [:partials, :hero])[0] %></h2></div>
     </section>
   </article>
