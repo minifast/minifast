@@ -25,7 +25,7 @@
     @include at-size(small) {
       display: flex;
       &--upper {
-        padding: minifast-space(-2) minifast-space(-1);
+        padding: minifast-space(-2) minifast-space(0);
         margin: minifast-space(-1) auto;
       }
       &--lower {
