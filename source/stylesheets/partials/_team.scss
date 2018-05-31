@@ -142,8 +142,8 @@
 
 body.team {
   background:
-    linear-gradient(0deg, minifast-color("red", "500") 0.5px, rgba(0, 0, 0, 0) 0.5px),
-    linear-gradient(90deg, minifast-color("red", "500") 0.5px, rgba(0, 0, 0, 0) 0.5px);
+    linear-gradient(0deg, rgba(minifast-color("red", "500"), 0.25) 1px, rgba(0, 0, 0, 0) 1px),
+    linear-gradient(90deg, rgba(minifast-color("red", "500"), 0.25) 1px, rgba(0, 0, 0, 0) 1px);
   background-size: 50vw 50vw, 50vw 50vw;
   background-position: 50vw 50vw;
 
