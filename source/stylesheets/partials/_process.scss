@@ -1,12 +1,292 @@
+@keyframes process-wheel {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .minifast-process {
   &__content {
     @extend %oceana-container;
     text-align: center;
+
+    &--learn-more {
+      margin-top: minifast-space(2);
+      margin-bottom: minifast-space(2);
+    }
+
+    &--diagram {
+      background-color: minifast-color("red", "500");
+      position: relative;
+      margin-top: minifast-space(0);
+      overflow: hidden;
+    }
   }
+
   &__title {
     @extend %oceana-title;
     @extend %oceana-title--dotted;
     &:before { @extend %oceana-title-dot; }
   }
+
   &__subtitle { @extend %oceana-subtitle; }
+
+  &__diagram {
+    &--vertical {
+      transform: rotate(180deg);
+      margin: 0 minifast-space(1) minifast-space(3) minifast-space(1);
+      width: calc(100vw - #{minifast-space(1) * 2});
+      @include at-size(small) { display: none; }
+    }
+
+    &--horizontal {
+      display: none;
+      position: relative;
+
+      @include at-size(small) {
+        display: unset;
+        margin: minifast-space(0) minifast-space(-1) minifast-space(-1) 0;
+        width: screen-width(small) - minifast-space(-1);
+      }
+      @include at-size(medium) {
+        display: unset;
+        margin: minifast-space(0) minifast-space(-1) minifast-space(-1) 0;
+        width: screen-width(medium) - minifast-space(-1);
+      }
+      @include at-size(large) {
+        display: unset;
+        margin: minifast-space(1) minifast-space(0) minifast-space(0) 0;
+        width: screen-width(large) - minifast-space(0);
+      }
+    }
+  }
+
+  &__container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      background: rgba(minifast-color("black", "1000"), 0.8);
+      top: calc(((100vw - #{minifast-space(1) * 2}) * (1067/471)) - ((100vw - #{minifast-space(1) * 2}) * (1067/471) * #{space(-3)}) + #{minifast-space(-2)});
+      left: calc(50vw + #{minifast-space(-1) / 2} - (100vw - #{minifast-space(1) * 2}) / 8);
+      width: calc((100vw - #{minifast-space(1) * 2}) / 4);
+      height: calc((100vw - #{minifast-space(1) * 2}) / 8);
+      border-radius: 0 0 calc((100vw - #{minifast-space(1) * 2}) / 8) calc((100vw - #{minifast-space(1) * 2}) / 8);
+      animation: process-wheel (60s/15) infinite linear;
+      transform-origin: 50% 0%;
+
+      @include at-size(small) {
+        top: screen-width(small) * (471/1067) / 2 + minifast-space(-1);
+        left: unset;
+        right: screen-width(small) * (471/1067) / 2 - minifast-space(-1);
+        width: screen-width(small) * (471/1067) / 4;
+        height: screen-width(small) * (471/1067) / 8;
+        border-radius: 0 0 screen-width(small) * (471/1067) / 8 screen-width(small) * (471/1067) / 8;
+        background: rgba(minifast-color("black", "1000"), 0.1);
+      }
+      @include at-size(medium) {
+        top: screen-width(medium) * (471/1067) / 2 + minifast-space(-1);
+        right: screen-width(medium) * (471/1067) / 2 - screen-width(medium) * (471/1067) / 8 + minifast-space(-1) + minifast-space(-4);
+        width: screen-width(medium) * (471/1067) / 4;
+        height: screen-width(medium) * (471/1067) / 8;
+        border-radius: 0 0 screen-width(medium) * (471/1067) / 8 screen-width(medium) * (471/1067) / 8;
+        background: rgba(minifast-color("black", "1000"), 0.2);
+      }
+      @include at-size(large) {
+        top: screen-width(large) * (471/1067) / 2 + minifast-space(0);
+        right: screen-width(large) * (471/1067) / 2 - screen-width(large) * (471/1067) / 10 + minifast-space(0) + minifast-space(-4);
+        width: screen-width(large) * (471/1067) / 5;
+        height: screen-width(large) * (471/1067) / 10;
+        border-radius: 0 0 screen-width(large) * (471/1067) / 10 screen-width(large) * (471/1067) / 10;
+        background: minifast-color("black", "1000");
+      }
+    }
+  }
+
+  &__step {
+    position: absolute;
+    text-align: right;
+
+    &--goals {
+      top: calc((100vw - #{minifast-space(1) * 2}) * (1067/471) * #{space(-5)} - #{minifast-space(1) / 2});
+      left: 0;
+      width: calc(50vw - #{minifast-space(0)});
+      @include at-size(small) {
+        top: screen-width(small) * (471/1067) / 2 + minifast-space(1);
+        width: screen-width(small) * space(-4);
+        left: screen-width(small) * space(-5) - minifast-space(-3);
+        text-align: left;
+      }
+      @include at-size(medium) {
+        top: screen-width(medium) * (471/1067) / 2 + minifast-space(1);
+        width: screen-width(medium) * space(-4);
+        left: screen-width(medium) * space(-5) - minifast-space(-3);
+        text-align: left;
+      }
+      @include at-size(large) {
+        top: screen-width(large) * (471/1067) / 2 + minifast-space(2);
+        width: screen-width(large) * space(-4);
+        left: screen-width(large) * space(-5) - screen-width(large) * space(-12);
+        text-align: left;
+      }
+    }
+
+    &--scoping {
+      top: calc((100vw - #{minifast-space(1) * 2}) * (1067/471) * #{space(-5)} + (100vw - #{minifast-space(1) * 2}) * (1067/471) * #{space(-3) / 2} - #{minifast-space(1) / 2});
+      left: calc(50vw + #{minifast-space(0)} + #{minifast-space(-2)});
+      width: calc(50vw - #{minifast-space(0)} - #{minifast-space(-2)});
+      text-align: left;
+      @include at-size(small) {
+        bottom: screen-width(small) * (471/1067) / 2 + minifast-space(1) + minifast-space(-3);
+        top: unset;
+        width: screen-width(small) * space(-4);
+        left: screen-width(small) * space(-5) + screen-width(small) * space(-4) - minifast-space(-1) - minifast-space(-3);
+        text-align: left;
+      }
+      @include at-size(medium) {
+        bottom: screen-width(medium) * (471/1067) / 2 + minifast-space(1) + minifast-space(0);
+        top: unset;
+        width: screen-width(medium) * space(-4);
+        left: screen-width(medium) * space(-5) + screen-width(medium) * space(-4) - minifast-space(0);
+        text-align: left;
+      }
+      @include at-size(large) {
+        bottom: screen-width(large) * (471/1067) / 2 + minifast-space(2) + minifast-space(-1);
+        top: unset;
+        width: screen-width(large) * space(-4);
+        left: screen-width(large) * space(-3) - screen-width(large) * space(-8) - screen-width(large) * space(-10);
+        text-align: left;
+      }
+    }
+
+    &--inception {
+      top: calc((100vw - #{minifast-space(1) * 2}) * (1067/471) * #{space(-5)} + (100vw - #{minifast-space(1) * 2}) * (1067/471) * #{space(-3) * 13/12} - #{minifast-space(1) / 2});
+      left: 0;
+      width: calc(50vw - #{minifast-space(0)});
+      @include at-size(small) {
+        top: screen-width(small) * (471/1067) / 2 + minifast-space(1);
+        width: screen-width(small) * space(-4);
+        left: screen-width(small) * space(-5) + screen-width(small) * space(-3) + minifast-space(-4);
+        text-align: left;
+      }
+      @include at-size(medium) {
+        top: screen-width(medium) * (471/1067) / 2 + minifast-space(1);
+        width: screen-width(medium) * space(-4);
+        left: screen-width(medium) * space(-5) + screen-width(medium) * space(-3) + minifast-space(-2);
+        text-align: left;
+      }
+      @include at-size(large) {
+        top: screen-width(large) * (471/1067) / 2 + minifast-space(2);
+        width: screen-width(large) * space(-4);
+        left: screen-width(large) * space(-2) - screen-width(large) * space(-7) - screen-width(large) * space(-10);
+        text-align: left;
+      }
+    }
+
+    &--research {
+      width: 50vw;
+      right: minifast-space(0);
+      top: calc(((100vw - #{minifast-space(1) * 2}) * (1067/471)) - ((100vw - #{minifast-space(1) * 2}) * (1067/471) * #{space(-2)}) + #{minifast-space(-1)});
+      @include at-size(small) {
+        top: unset;
+        bottom: screen-width(small) * (471/1067) / 2 + minifast-space(2) + minifast-space(-1);
+        width: screen-width(small) * space(-1);
+        left: screen-width(small) * space(-5) + screen-width(small) * space(-3) + screen-width(small) * space(-4);
+        text-align: left;
+      }
+      @include at-size(medium) {
+        top: unset;
+        bottom: screen-width(medium) * (471/1067) / 2 + minifast-space(3);
+        width: screen-width(medium) * space(-1);
+        left: screen-width(medium) * space(-1) + minifast-space(-1);
+        text-align: left;
+      }
+      @include at-size(large) {
+        top: unset;
+        bottom: screen-width(large) * (471/1067) - screen-width(large) * (471/1067) * space(-3);
+        width: screen-width(large) * space(-1);
+        left: screen-width(large) * space(-1) + minifast-space(-1);
+        text-align: left;
+      }
+    }
+
+    &--delivery {
+      width: 50vw;
+      right: 25vw;
+      top: calc((100vw - #{minifast-space(1) * 2}) * (1067/471) + #{minifast-space(-3)});
+      text-align: center;
+      @include at-size(small) {
+        top: unset;
+        bottom: screen-width(small) * (471/1067) / 2;
+        width: screen-width(small) * space(-2);
+        left: screen-width(small) * space(-5) + screen-width(small) * space(-3) + screen-width(small) * space(-3);
+        text-align: right;
+      }
+      @include at-size(medium) {
+        top: unset;
+        bottom: screen-width(medium) * (471/1067) / 2;
+        width: screen-width(medium) * space(-2);
+        left: screen-width(medium) * space(-1) - minifast-space(2);
+        text-align: right;
+      }
+      @include at-size(large) {
+        top: unset;
+        bottom: screen-width(large) * (471/1067) / 2;
+        width: screen-width(large) * space(-4) - screen-width(large) * space(-10);
+        left: screen-width(large) - screen-width(large) * space(-4) - screen-width(large) * space(-6) - screen-width(large) * space(-10);
+        text-align: right;
+      }
+    }
+
+    &--retrospective {
+      width: 50vw;
+      left: minifast-space(0);
+      top: calc(((100vw - #{minifast-space(1) * 2}) * (1067/471)) - ((100vw - #{minifast-space(1) * 2}) * (1067/471) * #{space(-3)}) + #{minifast-space(-2)});
+      text-align: left;
+      @include at-size(small) {
+        top: unset;
+        bottom: screen-width(small) * (471/1067) / 2 - minifast-space(2) - minifast-space(-1);
+        width: screen-width(small) * space(-2);
+        left: screen-width(small) * space(-5) + screen-width(small) * space(-3) + screen-width(small) * space(-3);
+        text-align: center;
+      }
+      @include at-size(medium) {
+        top: unset;
+        bottom: screen-width(medium) * (471/1067) / 2 - minifast-space(3) - minifast-space(0);
+        width: screen-width(medium) * space(-2);
+        left: screen-width(medium) * space(-1) - minifast-space(2) + minifast-space(0);
+        text-align: center;
+      }
+      @include at-size(large) {
+        top: unset;
+        bottom: screen-width(large) * (471/1067) * space(-4) + screen-width(large) * (471/1067) * space(-7);
+        width: screen-width(large) * space(-4);
+        left: screen-width(large) * space(-1) + screen-width(large) * space(-4) / 2;
+        text-align: center;
+      }
+    }
+  }
+
+  &__header {
+    @include minifast-text("title");
+    margin: 0;
+
+    &--step { color: minifast-color("cream", "500"); }
+  }
+
+  &__description { margin: 0; }
+
+  &__link {
+    color: minifast-color("red", "500");
+    text-decoration: none;
+
+    &::after {
+      content: '→';
+      margin-left: minifast-space(-2);
+    }
+  }
 }

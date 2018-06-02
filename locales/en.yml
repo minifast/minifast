@@ -111,19 +111,20 @@ en:
         download: Download Scoping Agenda
       title: A project cycle designed for collaboration
     process:
-      build:
+      delivery:
         title: Product Delivery
         description: Iterative development
       description: We have a structured approach designed to negotiate priorities at every step of development. Our clients come to us to create a product. They leave with a process for collaboration that can be implemented throughout their organization.
-      design:
-        title: Design Research
-        description: Human-centered user validation
       goals:
         title: Goals
         description: Come prepared
       inception:
         title: Inception
         description: Kickoff meeting
+      learn_more: Learn More
+      research:
+        title: Design Research
+        description: Human-centered user validation
       retrospective:
         title: Retrospective
         description: Refine the process
