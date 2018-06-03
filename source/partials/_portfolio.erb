@@ -6,7 +6,7 @@
   <section class='minifast-portfolio__content minifast-portfolio__content--clients'>
     <% data.portfolio.clients.each do |client| %>
       <article class='minifast-portfolio__client'>
-        <img class='minifast-portfolio__image' src='<%= client.thumbnail %>' alt='<%= client.name %>'>
+        <img class='minifast-portfolio__image' src='<%= asset_url(client.thumbnail) %>' alt='<%= client.name %>'>
         <div class='minifast-portfolio__description'>
           <h3 class='minifast-portfolio__text minifast-portfolio__text--name'><%= client.name %></h3>
           <p class='minifast-portfolio__text minifast-portfolio__text--description'><%= client.subtitle %></p>
