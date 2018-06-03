@@ -1,0 +1,20 @@
+<section class='minifast-diagram'>
+  <section class='minifast-diagram__wrapper'>
+    <section class='minifast-diagram__content'>
+      <%= partial 'partials/inline_svg', locals: {path: 'images/diagram/process.svg', image_class: 'minifast-diagram__image'} %>
+      <h2 class='minifast-diagram__title'><%= t(:title, scope: [:partials, :diagram]) %></h2>
+      <article class='minifast-diagram__container minifast-diagram__container--research'>
+        <h3 class='minifast-diagram__heading minifast-diagram__heading--research'><%= t(:title, scope: [:partials, :diagram, :research]) %></h3>
+        <p class='minifast-diagram__text'><%= t(:description, scope: [:partials, :diagram, :research]) %></p>
+      </article>
+      <article class='minifast-diagram__container minifast-diagram__container--delivery'>
+        <h3 class='minifast-diagram__heading minifast-diagram__heading--delivery'><%= t(:title, scope: [:partials, :diagram, :delivery]) %></h3>
+        <p class='minifast-diagram__text'><%= t(:description, scope: [:partials, :diagram, :delivery]) %></p>
+      </article>
+      <article class='minifast-diagram__container minifast-diagram__container--retrospective'>
+        <h3 class='minifast-diagram__heading minifast-diagram__heading--retrospective'><%= t(:title, scope: [:partials, :diagram, :retrospective]) %></h3>
+        <p class='minifast-diagram__text'><%= t(:description, scope: [:partials, :diagram, :retrospective]) %></p>
+      </article>
+    </section>
+  </section>
+</section>

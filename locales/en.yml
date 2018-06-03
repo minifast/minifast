@@ -40,6 +40,17 @@ en:
         - I'd like to work on your team!
         - Let's talk about something else!
       submit: Submit
+    diagram:
+      delivery:
+        title: Product Delivery
+        description: Pair programming is the manifestation of our philosophy that coding is not an isolated endeavor. Working in pairs strengthens the skills of everyone on our team and boosts the overall quality of our work. All day every day, two people are working together to solve exactly one problem at a time. Through partnership and careful prioritization, our products are useful on day one and continue to get better over time.
+      research:
+        title: Design Research
+        description: Unknowns are a given. Answers are not. Our research improves the overall design and function of the products we build–by validating our ideas with the people who matter.
+      retrospective:
+        title: Retrospective
+        description: Every person on our team has a unique point of view and each voice is valuable to the group as a whole. We set aside dedicated time for reflection every week – a chance for everyone to come together to discuss challenges and successes both. Communication isn't reserved for completing project tasks alone – active listening, inclusivity, and understanding are vital tools day in and day out.
+      title: Iterative Workflow
     dialogue:
       description: "Questions are an intrinsic part of our process – because curiosity is crucial to problem solving. We know we're not the only ones with questions – here are some you might have for us:"
       email: Enter your email

@@ -1,0 +1,121 @@
+@keyframes planetary-outer {
+  0% { transform: rotate(0turn); }
+  100% { transform: rotate(1turn); }
+}
+
+@keyframes planetary-inner {
+  0% { transform: rotate(0turn); }
+  100% { transform: rotate(1turn); }
+}
+
+.minifast-diagram {
+  &__content {
+    @extend %oceana-container;
+
+    @include at-size(small) {
+      position: relative;
+    }
+    @include at-size(medium) {
+      height: screen-width(medium);
+    }
+    @include at-size(large) {
+      width: screen-width(medium);
+    }
+  }
+
+  &__wrapper {
+    padding: minifast-space(0) 0;
+    overflow: hidden;
+    position: relative;
+    background-color: minifast-color("red", "500");
+    z-index: -1;
+
+    @include at-size(medium) {
+      z-index: unset;
+      position: unset;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: minifast-space(3);
+    left: calc(50vw - #{screen-width(xsmall) + minifast-space(1)});
+    width: screen-width(xsmall) * 2;
+    z-index: -2;
+
+    @include at-size(small) {
+      top: minifast-space(3);
+      left: 0;
+      width: screen-width(small);
+    }
+
+    @include at-size(medium) {
+      z-index: unset;
+      top: minifast-space(0);
+      width: screen-width(medium);
+    }
+  }
+
+  &__planetary {
+    &--outer { animation: planetary-outer 30s infinite linear; }
+    &--inner { animation: planetary-inner (30s/2) infinite linear; }
+    &--core { transform: rotate(0.25turn); }
+  }
+
+  &__title {
+    margin: minifast-space(1) 0;
+    @extend %oceana-title;
+    text-align: center;
+  }
+
+  &__heading {
+    margin: minifast-space(-1) 0;
+    @include minifast-text("display3");
+
+    @include at-size(medium) {
+      @include minifast-text("title");
+      &--research { color: minifast-color("cream", "500"); }
+      &--retrospective { color: minifast-color("cream", "500"); }
+    }
+  }
+
+  &__text {
+    margin: 0;
+    text-align: left;
+
+    @include at-size(medium) {
+      text-align: unset;
+    }
+  }
+
+  &__container {
+    margin: minifast-space(1) minifast-space(-1);
+    z-index: 1000;
+    text-align: center;
+
+    @include at-size(medium) {
+      position: absolute;
+      width: minifast-space(6);
+      margin: 0;
+
+      &--research {
+        top: minifast-space(4);
+        right: 0;
+        width: minifast-space(5);
+        text-align: right;
+      }
+
+      &--delivery {
+        bottom: minifast-space(4);
+        left: screen-width(medium) / 2 - minifast-space(6) / 2;
+        text-align: center;
+      }
+
+      &--retrospective {
+        top: minifast-space(3);
+        left: 0;
+        text-align: left;
+      }
+    }
+  }
+}
