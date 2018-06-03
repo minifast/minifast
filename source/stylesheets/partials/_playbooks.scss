@@ -44,6 +44,40 @@
     margin-left: minifast-space(-1) + minifast-space(-1) + minifast-space(-4);
     margin-right: minifast-space(-1);
 
+    &--goals {
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: -1 * (minifast-space(-1) + minifast-space(-1) + minifast-space(-4));
+        right: -1 * minifast-space(-1);
+        background: minifast-color("gold", "700");
+        height: minifast-space(3);
+        z-index: -1;
+      }
+
+      @include at-size(small) {
+        &:after { display: none; }
+      }
+    }
+
+    &--inception {
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: minifast-space(2);
+        left: -1 * (minifast-space(-1) + minifast-space(-1) + minifast-space(-4));
+        right: -1 * minifast-space(-1);
+        background: minifast-color("cream", "500");
+        height: minifast-space(4);
+        z-index: -1;
+      }
+
+      @include at-size(small) {
+        &:after { display: none; }
+      }
+    }
+
     @include at-size(small) {
       margin: 0;
       flex: 1;
@@ -78,8 +112,8 @@
   }
 
   &__content--goals &__container--text {
-    padding-top: minifast-space(2);
-    margin-top: -1 * minifast-space(2);
+    margin-top: -1 * minifast-space(3);
+    padding-top: minifast-space(3);
 
     @include at-size(small) {
       padding-top: 0;
@@ -87,9 +121,24 @@
     }
   }
 
-  &__content--inception &__container {
+  &__content--scoping &__heading,
+  &__content--scoping &__text {
+    @include at-size(medium) {
+      margin-left: auto;
+    }
+  }
+
+  &__content--inception &__container--text {
+    margin-top: -1 * (minifast-space(2) + minifast-space(4));
+    padding-top: minifast-space(2) + minifast-space(4);
+
     &:before {
       border-left-style: solid;
+    }
+
+    @include at-size(small) {
+      padding-top: 0;
+      margin-top: 0;
     }
   }
 
@@ -100,9 +149,36 @@
     z-index: -1;
 
     @include at-size(small) {
-      width: 100%;
-      margin: 0 auto;
+      width: screen-width(small) / 2 - minifast-space(0);
       z-index: unset;
+      margin: 0 auto;
+    }
+
+    @include at-size(medium) {
+      width: screen-width(medium) / 3 - minifast-space(0);
+    }
+
+    @include at-size(large) {
+      width: screen-width(large) / 3 - minifast-space(0);
+    }
+
+    &--goals, &--inception {
+      rect { display: none; }
+
+      @include at-size(small) {
+        margin-right: 0;
+        margin-left: auto;
+        display: block;
+        rect { display: unset; }
+      }
+    }
+
+    &--scoping {
+      @include at-size(small) {
+        margin-left: 0;
+        margin-right: auto;
+        display: block;
+      }
     }
   }
 
@@ -113,6 +189,12 @@
     @include at-size(small) {
       padding: 0 0 minifast-space(-1) 0;
     }
+    @include at-size(medium) {
+      width: screen-width(medium) / 3;
+    }
+    @include at-size(large) {
+      width: screen-width(large) / 3;
+    }
   }
 
   &__text {
@@ -120,6 +202,12 @@
     padding-bottom: minifast-space(2);
     @include at-size(small) {
       padding: 0;
+    }
+    @include at-size(medium) {
+      width: screen-width(medium) / 3;
+    }
+    @include at-size(large) {
+      width: screen-width(large) / 3;
     }
   }
 }

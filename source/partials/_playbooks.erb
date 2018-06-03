@@ -4,8 +4,8 @@
     <p class='minifast-playbooks__subtitle'><%= t(:description, scope: [:partials, :playbooks]) %></p>
   </section>
   <section class='minifast-playbooks__content minifast-playbooks__content--goals'>
-    <article class='minifast-playbooks__container minifast-playbooks__container--image'>
-      <%= image_tag 'playbooks/goals.png', class: 'minifast-playbooks__image', alt: t(:title, scope: [:partials, :playbooks, :goals]) %>
+    <article class='minifast-playbooks__container minifast-playbooks__container--image minifast-playbooks__container--goals'>
+      <%= partial 'partials/inline_svg', locals: {path: 'images/playbooks/goals.svg', image_class: 'minifast-playbooks__image minifast-playbooks__image--goals'} %>
     </article>
     <article class='minifast-playbooks__container minifast-playbooks__container--text'>
       <h3 class='minifast-playbooks__heading'><%= t(:title, scope: [:partials, :playbooks, :goals]) %></h3>
@@ -13,8 +13,8 @@
     </article>
   </section>
   <section class='minifast-playbooks__content minifast-playbooks__content--scoping'>
-    <article class='minifast-playbooks__container minifast-playbooks__container--image'>
-      <%= image_tag 'playbooks/scoping.png', class: 'minifast-playbooks__image', alt: t(:title, scope: [:partials, :playbooks, :scoping]) %>
+    <article class='minifast-playbooks__container minifast-playbooks__container--image minifast-playbooks__container--scoping'>
+      <%= partial 'partials/inline_svg', locals: {path: 'images/playbooks/scoping.svg', image_class: 'minifast-playbooks__image minifast-playbooks__image--scoping'} %>
     </article>
     <article class='minifast-playbooks__container minifast-playbooks__container--text'>
       <h3 class='minifast-playbooks__heading'><%= t(:title, scope: [:partials, :playbooks, :scoping]) %></h3>
@@ -22,8 +22,8 @@
     </article>
   </section>
   <section class='minifast-playbooks__content minifast-playbooks__content--inception'>
-    <article class='minifast-playbooks__container minifast-playbooks__container--image'>
-      <%= image_tag 'playbooks/inception.png', class: 'minifast-playbooks__image', alt: t(:title, scope: [:partials, :playbooks, :inception]) %>
+    <article class='minifast-playbooks__container minifast-playbooks__container--image minifast-playbooks__container--inception'>
+      <%= partial 'partials/inline_svg', locals: {path: 'images/playbooks/inception.svg', image_class: 'minifast-playbooks__image minifast-playbooks__image--inception'} %>
     </article>
     <article class='minifast-playbooks__container minifast-playbooks__container--text'>
       <h3 class='minifast-playbooks__heading'><%= t(:title, scope: [:partials, :playbooks, :inception]) %></h3>
