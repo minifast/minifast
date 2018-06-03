@@ -1,12 +1,13 @@
+<%- set_meta_tags description: t(:description, scope: :minifast), keywords: t(:keywords, scope: :minifast), twitter_author: t(:account, scope: [:minifast, :twitter]), publisher_twitter: t(:account, scope: [:minifast, :twitter]), pull_image: asset_url('images/photoshoot/office.png') -%>
 <!doctype html>
 <html lang='en'>
   <head>
     <meta charset='utf-8' />
     <meta http-equiv='x-ua-compatible' content='ie=edge' />
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
-    <title><%= current_page.data.title || t(:name, scope: :minifast) %></title>
     <link rel='stylesheet' href='//use.typekit.net/zhh0qyl.css'>
     <%= stylesheet_link_tag 'site' %>
+    <%= auto_display_meta_tags %>
   </head>
   <body class="<%= page_classes %>">
     <header><%= partial 'partials/header' %></header>

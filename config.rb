@@ -5,16 +5,18 @@
 
 Dir.glob(File.expand_path('lib/**/*.rb', __dir__)).map(&:to_s).sort_by(&:length).each { |f| require(f) }
 
-configure :development do
-  activate :google_analytics do |ga|
-    ga.tracking_id = 'UA-NOPE'
-  end
-end
+config[:contact_form_url] = ENV.fetch('GOOGLE_FORM_URL', 'http://example.com')
+config[:contact_name_id] = ENV.fetch('GOOGLE_FORM_NAME_ID', 'name')
+config[:contact_subject_id] = ENV.fetch('GOOGLE_FORM_SUBJECT_ID', 'subject')
+config[:google_maps_key] = ENV['GOOGLE_MAPS_KEY']
+config[:google_maps_private_key] = ENV['GOOGLE_MAPS_PRIVATE_KEY']
+config[:http_prefix] = ENV.fetch('RACK_BASE_URI', 'http://localhost:4567')
 
-activate :i18n, mount_at_root: :en
-activate :directory_indexes
-config[:http_prefix] = ENV.fetch('RACK_BASE_URI', '//localhost:4567')
 activate :asset_host, host: config[:http_prefix]
+activate :directory_indexes
+activate :i18n, mount_at_root: :en
+activate :meta_tags
+
 activate :autoprefixer do |prefix|
   prefix.browsers = 'last 2 versions'
 end
@@ -38,12 +40,6 @@ activate :s3_sync do |s3_sync|
   s3_sync.index_document = 'index.html'
   s3_sync.error_document = '404.html'
 end
-
-config[:contact_form_url] = ENV.fetch('GOOGLE_FORM_URL', 'http://example.com')
-config[:contact_name_id] = ENV.fetch('GOOGLE_FORM_NAME_ID', 'name')
-config[:contact_subject_id] = ENV.fetch('GOOGLE_FORM_SUBJECT_ID', 'subject')
-config[:google_maps_key] = ENV.fetch('GOOGLE_MAPS_KEY', nil)
-config[:google_maps_private_key] = ENV.fetch('GOOGLE_MAPS_PRIVATE_KEY', nil)
 
 # Layouts
 # https://middlemanapp.com/basics/layouts/

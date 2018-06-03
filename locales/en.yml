@@ -1,5 +1,12 @@
 en:
   minifast:
+    description: A boutique software engineering consultancy in San Francisco
+    keywords:
+      - elixir
+      - phoenix
+      - ruby
+      - rails
+      - software
     name: Ministry of Velocity
     office:
       address: 65 Annie Street
