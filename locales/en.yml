@@ -81,6 +81,7 @@ en:
     dialogue:
       description: "Questions are an intrinsic part of our process – because curiosity is crucial to problem solving. We know we're not the only ones with questions – here are some you might have for us:"
       email: Enter your email
+      legend: Here are some of our most-frequently asked questions.
       question: Ask us a question
       submit: Submit
       tabs:

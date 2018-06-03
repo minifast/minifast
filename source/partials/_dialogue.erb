@@ -3,7 +3,8 @@
     <h2 class='minifast-dialogue__text minifast-dialogue__text--title'><%= t(:title, scope: [:partials, :dialogue]) %></h2>
     <p class='minifast-dialogue__text minifast-dialogue__text--description'><%= t(:description, scope: [:partials, :dialogue]) %></p>
   </section>
-  <section class='minifast-dialogue__content'>
+  <fieldset class='minifast-dialogue__content'>
+    <legend class='minifast-dialogue__legend'><%= t(:legend, scope: [:partials, :dialogue]) %></legend>
     <% t(:tabs, scope: [:partials, :dialogue]).each do |(key, tab)| %>
       <input type='radio' name='minifast-dialogue__tab' id='minifast-dialogue__tab--<%= key %>' class='minifast-dialogue__input' <%= key == t(:tabs, scope: [:partials, :dialogue]).keys.first ? 'checked' :'' -%>>
       <section class='minifast-dialogue__container'>
@@ -22,7 +23,7 @@
         </section>
       </section>
     <% end %>
-  </section>
+  </fieldset>
   <section class='minifast-dialogue__content'>
     <form class='minifast-dialogue__form' action='<%= config[:contact_form_url] %>' method='POST'>
       <article class='minifast-dialogue__field'>

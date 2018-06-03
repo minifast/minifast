@@ -3,12 +3,16 @@
     @extend %oceana-container;
     position: relative;
     margin: minifast-space(2) auto;
+    border: 0 none;
+    padding: 0;
 
     @include at-size(medium) {
       margin: minifast-space(3) auto;
       width: screen-width(medium);
     }
   }
+
+  &__legend { display: none; }
 
   &__text {
     text-align: center;
