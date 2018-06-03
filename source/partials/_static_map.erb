@@ -1,0 +1,1 @@
+<%= image_tag GoogleStaticMap.new(locals.slice(:zoom, :center, :height, :width, :markers).merge(scale: 2, format: :jpg, sensor: false, api_key: config[:google_maps_key], private_key: config[:google_maps_private_key], plain_string: locals[:style])).url('https'), alt: t(:name, scope: :minifast), class: locals[:map_class] %>

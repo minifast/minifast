@@ -153,6 +153,7 @@ jobs:
           command: |
             export BUCKET_NAME=`aws cloudformation describe-stacks --stack-name=staging --region=${BUCKET_REGION} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "BucketName") | .OutputValue'`
             export CLOUDFRONT_DISTRIBUTION_ID=`aws cloudformation describe-stacks --stack-name=staging --region=${BUCKET_REGION} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "DistributionId") | .OutputValue'`
+            export RACK_BASE_URI='//staging.ministryofvelocity.com'
             bundle exec middleman build
 
       - run:
@@ -160,6 +161,7 @@ jobs:
           command: |
             export BUCKET_NAME=`aws cloudformation describe-stacks --stack-name=staging --region=${BUCKET_REGION} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "BucketName") | .OutputValue'`
             export CLOUDFRONT_DISTRIBUTION_ID=`aws cloudformation describe-stacks --stack-name=staging --region=${BUCKET_REGION} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "DistributionId") | .OutputValue'`
+            export RACK_BASE_URI='//staging.ministryofvelocity.com'
             bundle exec middleman sync
 
       - run:
@@ -167,6 +169,7 @@ jobs:
           command: |
             export BUCKET_NAME=`aws cloudformation describe-stacks --stack-name=staging --region=${BUCKET_REGION} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "BucketName") | .OutputValue'`
             export CLOUDFRONT_DISTRIBUTION_ID=`aws cloudformation describe-stacks --stack-name=staging --region=${BUCKET_REGION} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "DistributionId") | .OutputValue'`
+            export RACK_BASE_URI='//staging.ministryofvelocity.com'
             bundle exec middleman invalidate
 
   deploy:
@@ -198,6 +201,7 @@ jobs:
           command: |
             export BUCKET_NAME=`aws cloudformation describe-stacks --stack-name=www --region=${BUCKET_REGION} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "BucketName") | .OutputValue'`
             export CLOUDFRONT_DISTRIBUTION_ID=`aws cloudformation describe-stacks --stack-name=www --region=${BUCKET_REGION} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "DistributionId") | .OutputValue'`
+            export RACK_BASE_URI='//www.ministryofvelocity.com'
             bundle exec middleman build
 
       - run:
@@ -205,6 +209,7 @@ jobs:
           command: |
             export BUCKET_NAME=`aws cloudformation describe-stacks --stack-name=www --region=${BUCKET_REGION} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "BucketName") | .OutputValue'`
             export CLOUDFRONT_DISTRIBUTION_ID=`aws cloudformation describe-stacks --stack-name=www --region=${BUCKET_REGION} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "DistributionId") | .OutputValue'`
+            export RACK_BASE_URI='//www.ministryofvelocity.com'
             bundle exec middleman sync
 
       - run:
@@ -212,6 +217,7 @@ jobs:
           command: |
             export BUCKET_NAME=`aws cloudformation describe-stacks --stack-name=www --region=${BUCKET_REGION} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "BucketName") | .OutputValue'`
             export CLOUDFRONT_DISTRIBUTION_ID=`aws cloudformation describe-stacks --stack-name=www --region=${BUCKET_REGION} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "DistributionId") | .OutputValue'`
+            export RACK_BASE_URI='//www.ministryofvelocity.com'
             bundle exec middleman invalidate
 
 workflows:

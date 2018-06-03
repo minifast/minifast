@@ -13,6 +13,8 @@ end
 
 activate :i18n, mount_at_root: :en
 activate :directory_indexes
+config[:http_prefix] = ENV.fetch('RACK_BASE_URI', '//localhost:4567')
+activate :asset_host, host: config[:http_prefix]
 activate :autoprefixer do |prefix|
   prefix.browsers = 'last 2 versions'
 end
@@ -40,6 +42,8 @@ end
 config[:contact_form_url] = ENV.fetch('GOOGLE_FORM_URL', 'http://example.com')
 config[:contact_name_id] = ENV.fetch('GOOGLE_FORM_NAME_ID', 'name')
 config[:contact_subject_id] = ENV.fetch('GOOGLE_FORM_SUBJECT_ID', 'subject')
+config[:google_maps_key] = ENV.fetch('GOOGLE_MAPS_KEY', nil)
+config[:google_maps_private_key] = ENV.fetch('GOOGLE_MAPS_PRIVATE_KEY', nil)
 
 # Layouts
 # https://middlemanapp.com/basics/layouts/

@@ -4,9 +4,10 @@ source 'https://rubygems.org'
 
 ruby '2.5.1'
 
-# Rails
+# middleman
 gem 'middleman', '~> 4.2'
 
+gem 'googlestaticmap'
 gem 'middleman-autoprefixer', '~> 2.7'
 gem 'middleman-cloudfront'
 gem 'middleman-dotenv'

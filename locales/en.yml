@@ -1,6 +1,21 @@
 en:
   minifast:
     name: Ministry of Velocity
+    office:
+      address: 65 Annie Street
+      city: San Francisco
+      state: CA
+      postal_code: 94104
+    phone:
+      name: Phone Number
+      number: 415-689-9914
+      e164: 14156899914
+    email:
+      name: Email
+      address: contact@ministryofvelocity.com
+    twitter:
+      name: Twitter
+      account: minifast
   partials:
     adlib:
       name:

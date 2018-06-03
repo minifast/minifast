@@ -94,6 +94,14 @@ $styles: (
     font-size: 16px,
     line-height: floor(16px * $golden-ratio),
     font-weight: 600,
+  ),
+  contact-method: (
+    font-family: ff-basic-gothic-pro,
+    font-size: 14px,
+    line-height: floor(14px * $golden-ratio),
+    font-weight: 400,
+    text-decoration: none,
+    letter-spacing: initial,
   )
 );
 
