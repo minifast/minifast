@@ -29,7 +29,8 @@ guard 'livereload' do
     png: :png,
     gif: :gif,
     jpg: :jpg,
-    jpeg: :jpeg
+    jpeg: :jpeg,
+    svg: :svg
   }
 
   # file types LiveReload may optimize refresh for
