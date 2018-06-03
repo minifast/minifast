@@ -6,7 +6,7 @@
         <%= partial 'partials/inline_svg', locals: {path: 'images/logos/horizontal.svg', image_class: 'minifast-header__logo minifast-header__logo--small'} %>
       <% end %>
     </h1>
-    <input type='checkbox' id='minifast-header__navigation-toggle-input' class='minifast-header__navigation-toggle-input' />
+    <input type='checkbox' id='minifast-header__navigation-toggle-input' class='minifast-header__navigation-toggle-input' aria-label='<%= t(:toggle_menu, scope: [:partials, :header]) %>' />
     <label class='minifast-header__navigation-toggle' for='minifast-header__navigation-toggle-input'>
       <span class='minifast-header__navigation-toggle-bar minifast-header__navigation-toggle-bar--top'></span>
       <span class='minifast-header__navigation-toggle-bar minifast-header__navigation-toggle-bar--bottom'></span>
