@@ -1,0 +1,106 @@
+.minifast-adlib {
+  &__content {
+    @extend %oceana-container;
+
+    &--form {
+      margin-top: minifast-space(3);
+      margin-bottom: minifast-space(1);
+
+      @include at-size(small) {
+        margin-top: minifast-space(4);
+        width: screen-width(xsmall);
+      }
+
+      @include at-size(medium) {
+        width: screen-width(small);
+      }
+
+      @include at-size(large) {
+        width: screen-width(small);
+      }
+    }
+  }
+
+  &__title {
+    @extend %oceana-title;
+    text-align: center;
+    margin-bottom: minifast-space(1);
+  }
+
+  &__form {
+    @extend %oceana-form;
+    margin: minifast-space(-2) minifast-space(0) minifast-space(2) minifast-space(-1);
+  }
+
+  &__labeled-field {
+    @include at-size(medium) {
+      display: flex;
+    }
+  }
+
+  &__label {
+    display: none;
+    @include at-size(medium) {
+      @include minifast-text("contact-label");
+      display: unset;
+      flex: 1;
+      text-align: right;
+      margin-right: minifast-space(-1);
+    }
+  }
+
+  &__field {
+    @extend %oceana-text-field;
+    ::placeholder { color: minifast-color("red", "500"); }
+
+    @include at-size(medium) {
+      flex: 0 0 minifast-space(5);
+    }
+  }
+
+  &__select-input {
+    @extend %oceana-select;
+  }
+
+  &__field-input {
+    @extend %oceana-text-field__input;
+  }
+
+  &__field-input:focus {
+    @extend %oceana-text-field__input--focus;
+  }
+
+  &__field-line {
+    @extend %oceana-text-field__line;
+    @extend %oceana-text-field__line--dashed;
+  }
+
+  &__select-input:focus + &__field-line,
+  &__field-input:focus + &__field-line {
+    @extend %oceana-text-field__line--focus;
+  }
+
+  &__actions {
+    @include at-size(medium) {
+      text-align: center;
+    }
+  }
+
+  &__submit {
+    @extend %oceana-submit;
+  }
+
+  &__submit-text {
+    @extend %oceana-submit__text;
+  }
+
+  &__submit-bar {
+    @extend %oceana-submit__bar;
+  }
+
+  &__submit:focus &__submit-bar,
+  &__submit:hover &__submit-bar,
+  &__submit:active &__submit-bar {
+    @extend %oceana-submit__bar--focus;
+  }
+}

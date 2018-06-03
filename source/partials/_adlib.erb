@@ -1,0 +1,34 @@
+<section class='minifast-adlib'>
+  <section class='minifast-adlib__content minifast-adlib__content--form'>
+    <h2 class='minifast-adlib__title'><%= t(:title, scope: [:partials, :adlib]) %></h2>
+    <form class='minifast-adlib__form' action='<%= config[:contact_form_url] %>' method='POST'>
+      <article class='minifast-adlib__labeled-field'>
+        <label class='minifast-adlib__label'><%= t(:adlib, scope: [:partials, :adlib, :name]) %></label>
+        <div class='minifast-adlib__field'>
+          <input class='minifast-adlib__field-input' type='text' autocomplete='name' name='<%= config[:contact_name_id] %>' required placeholder='<%= t(:placeholder, scope: [:partials, :adlib, :name]) %>' aria-label='<%= t(:placeholder, scope: [:partials, :adlib, :name]) %>' />
+          <div class='minifast-adlib__field-line'></div>
+        </div>
+      </article>
+      <article class='minifast-adlib__labeled-field'>
+        <label class='minifast-adlib__label'><%= t(:adlib, scope: [:partials, :adlib, :email]) %></label>
+        <div class='minifast-adlib__field'>
+          <input class='minifast-adlib__field-input' type='email' autocomplete='email' name='emailAddress' required placeholder='<%= t(:placeholder, scope: [:partials, :adlib, :email]) %>' aria-label='<%= t(:placeholder, scope: [:partials, :adlib, :email]) %>' />
+          <div class='minifast-adlib__field-line'></div>
+        </div>
+      </article>
+      <article class='minifast-adlib__labeled-field'>
+        <label class='minifast-adlib__label'><%= t(:adlib, scope: [:partials, :adlib, :subject]) %></label>
+        <div class='minifast-adlib__field'>
+          <input class='minifast-adlib__field-input' type='text' name='<%= config[:contact_subject_id] %>' required placeholder='<%= t(:placeholder, scope: [:partials, :adlib, :subject]) %>' aria-label='<%= t(:placeholder, scope: [:partials, :adlib, :subject]) %>' />
+          <div class='minifast-adlib__field-line'></div>
+        </div>
+      </article>
+      <article class='minifast-adlib__actions'>
+        <button class='minifast-adlib__submit'>
+          <span class='minifast-adlib__submit-text'><%= t(:submit, scope: [:partials, :adlib]) %></span>
+          <div class='minifast-adlib__submit-bar'></div>
+        </button>
+      </article>
+    </form>
+  </section>
+</section>

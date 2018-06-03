@@ -2,6 +2,18 @@ en:
   minifast:
     name: Ministry of Velocity
   partials:
+    adlib:
+      name:
+        adlib: My name is
+        placeholder: full name
+      email:
+        adlib: Contact me at
+        placeholder: email
+      subject:
+        adlib: p.s.
+        placeholder: message (optional)
+      submit: Submit
+      title: Contact Us
     brands:
       title: Additional Clients
     careers:

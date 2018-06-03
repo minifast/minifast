@@ -88,6 +88,12 @@ $styles: (
     font-size: 25px,
     font-weight: 400,
     line-height: 25px + floor(25px * (1 / $golden-ratio) * (1 - (1 / $golden-ratio)))
+  ),
+  contact-label: (
+    font-family: ff-basic-gothic-pro,
+    font-size: 16px,
+    line-height: floor(16px * $golden-ratio),
+    font-weight: 600,
   )
 );
 
