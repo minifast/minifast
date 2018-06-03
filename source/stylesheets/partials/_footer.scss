@@ -1,5 +1,5 @@
 .minifast-footer {
-  background: minifast-color("gold", "700");
+  background: minifast-color("gold", "500");
   text-align: center;
 
   @include at-size(small) {
@@ -100,6 +100,7 @@
   &__logo {
     display: inline-block;
     height: header-size(portrait) / 3;
+    path, polygon { fill: minifast-color("white", "0"); }
 
     @include in-landscape() {
       height: header-size(landscape) / 3;

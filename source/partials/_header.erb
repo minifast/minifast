@@ -1,10 +1,10 @@
 <div class='minifast-header'>
   <div class='minifast-header__container'>
     <h1 class='minifast-header__title'>
-      <a href='/' class='minifast-header__link minifast-header__link--title' title='<%= t(:name, scope: :minifast) %>'>
-        <%= image_tag 'logos/logo-large.png', class: 'minifast-header__logo minifast-header__logo--large', alt: t(:name, scope: :minifast) %>
-        <%= image_tag 'logos/logo-small.png', class: 'minifast-header__logo minifast-header__logo--small', alt: t(:name, scope: :minifast) %>
-      </a>
+      <% link_to '/', class: 'minifast-header__link minifast-header__link--title', title: t(:name, scope: :minifast) do %>
+        <%= partial 'partials/inline_svg', locals: {path: 'images/logos/full.svg', image_class: 'minifast-header__logo minifast-header__logo--large'} %>
+        <%= partial 'partials/inline_svg', locals: {path: 'images/logos/horizontal.svg', image_class: 'minifast-header__logo minifast-header__logo--small'} %>
+      <% end %>
     </h1>
     <input type='checkbox' id='minifast-header__navigation-toggle-input' class='minifast-header__navigation-toggle-input' />
     <label class='minifast-header__navigation-toggle' for='minifast-header__navigation-toggle-input'>

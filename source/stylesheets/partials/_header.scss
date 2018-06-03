@@ -14,6 +14,13 @@
   &__title {
     display: block;
     margin: 0;
+
+    @include at-size(small) {
+      position: absolute;
+      left: minifast-space(-2);
+      top: 0;
+      z-index: 100;
+    }
   }
 
   &__link {
@@ -32,11 +39,6 @@
     @include at-size(medium) {
       & + & { margin-left: minifast-space(1); }
     }
-
-    &--title {
-      margin: 0;
-      display: block;
-    }
   }
 
   &__logo {
@@ -48,6 +50,7 @@
       top: 50%;
       height: floor(header-size(portrait) / 3);
       margin-top: floor(header-size(portrait) / 3) / -2;
+      path, polygon { fill: minifast-color("white", "0"); }
 
       @include in-landscape() {
         height: floor(header-size(landscape) / 3);
@@ -62,10 +65,8 @@
 
     &--large {
       display: none;
-      position: absolute;
-      left: minifast-space(-2);
-      top: 0;
       height: minifast-space(3);
+      path, polygon { fill: minifast-color("red", "500"); }
     }
 
     @include at-size(small) {
