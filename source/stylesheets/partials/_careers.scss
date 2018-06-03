@@ -98,6 +98,10 @@
     @include at-size(medium) {
       margin: minifast-space(-2) minifast-space(2) minifast-space(2) minifast-space(-1);
     }
+
+    @include at-size(large) {
+      margin-right: minifast-space(4);
+    }
   }
 
   &__field {
