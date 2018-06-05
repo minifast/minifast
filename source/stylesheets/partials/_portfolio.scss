@@ -14,7 +14,11 @@
     @extend %oceana-title;
     @extend %oceana-title--dotted;
     text-align: center;
+    margin-top: minifast-space(3);
     &:before { @extend %oceana-title-dot; }
+    @include at-size(small) {
+      margin-top: minifast-space(4);
+    }
   }
 
   &__subtitle {
