@@ -1,4 +1,11 @@
 .minifast-map {
+  background-color: minifast-color("gold", "500");
+
+  @include at-size(small) {
+    padding-top: minifast-space(1);
+    padding-bottom: minifast-space(-1);
+  }
+
   &__content {
     margin: 0 auto;
     position: relative;
@@ -10,7 +17,6 @@
     @include at-size(small) {
       overflow: hidden;
       width: screen-width(small);
-      margin-bottom: minifast-space(2);
     }
   }
 

@@ -58,12 +58,11 @@
     }
   }
 
-  &__select-input {
-    @extend %oceana-select;
-  }
-
   &__field-input {
     @extend %oceana-text-field__input;
+    @include at-size(medium) {
+      @include minifast-text("contact-input");
+    }
   }
 
   &__field-input:focus {

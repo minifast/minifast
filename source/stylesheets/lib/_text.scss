@@ -91,9 +91,15 @@ $styles: (
   ),
   contact-label: (
     font-family: ff-basic-gothic-pro,
-    font-size: 16px,
-    line-height: floor(16px * $golden-ratio),
-    font-weight: 600,
+    font-size: 24px,
+    line-height: floor(24px * $golden-ratio),
+    font-weight: 400,
+  ),
+  contact-input: (
+    font-family: ff-basic-gothic-pro,
+    font-size: 24px,
+    line-height: floor(23px * $golden-ratio),
+    font-weight: 400,
   ),
   contact-method: (
     font-family: ff-basic-gothic-pro,
