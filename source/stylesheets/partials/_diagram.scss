@@ -57,8 +57,8 @@
   }
 
   &__planetary {
-    &--outer { animation: planetary-outer 30s infinite linear; }
-    &--inner { animation: planetary-inner (30s/2) infinite linear; }
+    &--outer { animation: planetary-outer 60s infinite linear; }
+    &--inner { animation: planetary-inner (60s/2) infinite linear; }
     &--core { transform: rotate(0.25turn); }
   }
 
