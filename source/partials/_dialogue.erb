@@ -3,28 +3,30 @@
     <h2 class='minifast-dialogue__text minifast-dialogue__text--title'><%= t(:title, scope: [:partials, :dialogue]) %></h2>
     <p class='minifast-dialogue__text minifast-dialogue__text--description'><%= t(:description, scope: [:partials, :dialogue]) %></p>
   </section>
-  <fieldset class='minifast-dialogue__content'>
-    <legend class='minifast-dialogue__legend'><%= t(:legend, scope: [:partials, :dialogue]) %></legend>
-    <% t(:tabs, scope: [:partials, :dialogue]).each do |(key, tab)| %>
-      <input type='radio' name='minifast-dialogue__tab' id='minifast-dialogue__tab--<%= key %>' class='minifast-dialogue__input' <%= key == t(:tabs, scope: [:partials, :dialogue]).keys.first ? 'checked' :'' -%>>
-      <section class='minifast-dialogue__container'>
-        <label for='minifast-dialogue__tab--<%= key %>' class='minifast-dialogue__tab-label'>
-          <%= tab[:title] %>
-        </label>
-        <section class='minifast-dialogue__tab'>
-          <article class='minifast-dialogue__tab-content'>
-            <h3 class='minifast-dialogue__heading'><%= tab[:subtitle] %></h3>
-            <ul class='minifast-dialogue__paragraphs'>
-            <% tab[:paragraphs].each do |paragraph| %>
-              <li class='minifast-dialogue__paragraph'><%= paragraph %></li>
-            <% end %>
-            </ul>
-          </article>
+  <section class='minifast-dialogue__content minifast-dialogue__content--questions'>
+    <fieldset class='minifast-dialogue__fieldset'>
+      <legend class='minifast-dialogue__legend'><%= t(:legend, scope: [:partials, :dialogue]) %></legend>
+      <% t(:tabs, scope: [:partials, :dialogue]).each do |(key, tab)| %>
+        <input type='radio' name='minifast-dialogue__tab' id='minifast-dialogue__tab--<%= key %>' class='minifast-dialogue__input' <%= key == t(:tabs, scope: [:partials, :dialogue]).keys.first ? 'checked' :'' -%>>
+        <section class='minifast-dialogue__container'>
+          <label for='minifast-dialogue__tab--<%= key %>' class='minifast-dialogue__tab-label'>
+            <%= tab[:title] %>
+          </label>
+          <section class='minifast-dialogue__tab'>
+            <article class='minifast-dialogue__tab-content'>
+              <h3 class='minifast-dialogue__heading'><%= tab[:subtitle] %></h3>
+              <ul class='minifast-dialogue__paragraphs'>
+              <% tab[:paragraphs].each do |paragraph| %>
+                <li class='minifast-dialogue__paragraph'><%= paragraph %></li>
+              <% end %>
+              </ul>
+            </article>
+          </section>
         </section>
-      </section>
-    <% end %>
-  </fieldset>
-  <section class='minifast-dialogue__content'>
+      <% end %>
+    </fieldset>
+  </section>
+  <section class='minifast-dialogue__content minifast-dialogue__content--form'>
     <form class='minifast-dialogue__form' action='<%= config[:contact_form_url] %>' method='POST'>
       <article class='minifast-dialogue__field'>
         <input class='minifast-dialogue__field-input' type='text' name='<%= config[:contact_subject_id] %>' required placeholder='<%= t(:question, scope: [:partials, :dialogue]) %>' aria-label='<%= t(:question, scope: [:partials, :dialogue]) %>' />
