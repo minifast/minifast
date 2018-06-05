@@ -1,21 +1,23 @@
 <section class='minifast-footer'>
-  <div class='minifast-footer__content minifast-footer__content--upper'>
-    <% link_to '/', class: 'minifast-footer__link minifast-footer__link--logo', title: t(:name, scope: :minifast) do %>
-      <%= partial 'partials/inline_svg', locals: {path: 'images/logos/horizontal.svg', image_class: 'minifast-footer__logo'} %>
-    <% end %>
-    <nav class='minifast-footer__navigation'>
-      <ul class='minifast-footer__links'>
-        <li class='minifast-footer__link-container'><%= link_to t(:process, scope: [:partials, :footer]), '/process', class: 'minifast-footer__link minifast-footer__link--navigation' %></li>
-        <li class='minifast-footer__link-container'><%= link_to t(:team, scope: [:partials, :footer]), '/team', class: 'minifast-footer__link minifast-footer__link--navigation' %></li>
-        <li class='minifast-footer__link-container'><%= link_to t(:work, scope: [:partials, :footer]), '/work', class: 'minifast-footer__link minifast-footer__link--navigation' %></li>
-        <li class='minifast-footer__link-container'><%= link_to t(:careers, scope: [:partials, :footer]), '/careers', class: 'minifast-footer__link minifast-footer__link--navigation' %></li>
-        <li class='minifast-footer__link-container'><%= link_to t(:contact, scope: [:partials, :footer]), '/contact', class: 'minifast-footer__link minifast-footer__link--navigation' %></li>
-      </ul>
-    </nav>
-  </div>
-  <div class='minifast-footer__content minifast-footer__content--lower'>
-    <% link_to('/', class: 'minifast-footer__link minifast-footer__link--small') do %>
-       <%= Time.now.year %> &copy; <%= t(:name, scope: [:minifast]) %>
-    <% end %>
+  <div class='minifast-footer__container'>
+    <div class='minifast-footer__content minifast-footer__content--upper'>
+      <% link_to '/', class: 'minifast-footer__link minifast-footer__link--logo', title: t(:name, scope: :minifast) do %>
+        <%= partial 'partials/inline_svg', locals: {path: 'images/logos/horizontal.svg', image_class: 'minifast-footer__logo'} %>
+      <% end %>
+      <nav class='minifast-footer__navigation'>
+        <ul class='minifast-footer__links'>
+          <li class='minifast-footer__link-container'><%= link_to t(:process, scope: [:partials, :footer]), '/process', class: 'minifast-footer__link minifast-footer__link--navigation' %></li>
+          <li class='minifast-footer__link-container'><%= link_to t(:team, scope: [:partials, :footer]), '/team', class: 'minifast-footer__link minifast-footer__link--navigation' %></li>
+          <li class='minifast-footer__link-container'><%= link_to t(:work, scope: [:partials, :footer]), '/work', class: 'minifast-footer__link minifast-footer__link--navigation' %></li>
+          <li class='minifast-footer__link-container'><%= link_to t(:careers, scope: [:partials, :footer]), '/careers', class: 'minifast-footer__link minifast-footer__link--navigation' %></li>
+          <li class='minifast-footer__link-container'><%= link_to t(:contact, scope: [:partials, :footer]), '/contact', class: 'minifast-footer__link minifast-footer__link--navigation' %></li>
+        </ul>
+      </nav>
+    </div>
+    <div class='minifast-footer__content minifast-footer__content--lower'>
+      <% link_to('/', class: 'minifast-footer__link minifast-footer__link--small') do %>
+         <%= Time.now.year %> &copy; <%= t(:name, scope: [:minifast]) %>
+      <% end %>
+    </div>
   </div>
 </section>

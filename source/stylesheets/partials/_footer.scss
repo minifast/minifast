@@ -7,6 +7,10 @@
     text-align: left;
   }
 
+  &__container {
+    @extend %oceana-container;
+  }
+
   &__content {
     position: relative;
     vertical-align: middle;
@@ -18,24 +22,24 @@
 
     &--lower {
       border-top: 1px solid rgba(minifast-color("white", "0"), 1 / $golden-ratio);
-      margin: 0 minifast-space(0);
+      margin: 0;
       padding: minifast-space(0) 0;
     }
 
     @include at-size(small) {
       display: flex;
       &--upper {
-        padding: minifast-space(-2) minifast-space(0);
+        padding: minifast-space(-2) 0;
         margin: minifast-space(-1) auto;
       }
       &--lower {
         margin: 0 auto;
-        padding: minifast-space(-1) minifast-space(0) 0 minifast-space(0);
+        padding: minifast-space(-1) 0 0 0;
       }
     }
 
     @include at-size(medium) {
-      &--upper { padding: minifast-space(2) minifast-space(0); }
+      &--upper { padding: minifast-space(2) 0; }
       &--lower { padding-top: minifast-space(-1); }
     }
   }
