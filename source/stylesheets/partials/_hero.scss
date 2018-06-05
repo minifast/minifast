@@ -23,6 +23,10 @@
     @include at-size(medium) {
       height: minifast-space(1) + screen-width(small);
     }
+
+    @include at-size(large) {
+      height: minifast-space(4) + screen-width(small);
+    }
   }
 
   &__diagram {
@@ -176,6 +180,7 @@
 
       @include at-size(large) {
         padding-right: screen-width(large) / 6;
+        margin-top: minifast-space(1);
       }
     }
 
@@ -194,8 +199,16 @@
       }
 
       @include at-size(large) {
-        padding-left: screen-width(large) / 6;
+        padding-left: screen-width(large) / 5;
+        margin-bottom: minifast-space(2);
       }
     }
+  }
+
+  &__caret {
+    display: block;
+    width: minifast-space(0);
+    margin: minifast-space(2) auto 0 auto;
+    polygon { fill: minifast-color("red", "500"); }
   }
 }

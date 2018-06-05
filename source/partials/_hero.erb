@@ -9,4 +9,5 @@
       <div class='minifast-hero__container minifast-hero__container--right'><h2 class='minifast-hero__title minifast-hero__title--static minifast-hero__title--right'><%= t(:subtitles, scope: [:partials, :hero])[0] %></h2></div>
     </section>
   </article>
+  <%= partial 'partials/inline_svg', locals: {path: 'images/hero/caret.svg', image_class: 'minifast-hero__caret'} %>
 </section>
