@@ -1,20 +1,22 @@
 .minifast-playbooks {
+  &__description {
+    @extend %oceana-container;
+    @extend %oceana-container--description;
+
+    margin-top: header-size(portrait);
+    padding-top:  minifast-space(2);
+
+    @include in-landscape() {
+      margin-top: header-size(landscape);
+    }
+
+    @include at-size(small) {
+      margin-top: minifast-space(4);
+    }
+  }
+
   &__content {
     @extend %oceana-container;
-
-    &--title {
-      text-align: center;
-      margin-top: header-size(portrait);
-      padding-top:  minifast-space(0);
-
-      @include in-landscape() {
-        margin-top: header-size(landscape);
-      }
-
-      @include at-size(small) {
-        margin-top: minifast-space(4);
-      }
-    }
 
     @include at-size(small) {
       &--goals, &--inception, &--scoping {
@@ -34,10 +36,7 @@
   }
 
   &__title { @extend %oceana-title; }
-  &__subtitle {
-    @extend %oceana-subtitle;
-    margin-bottom: minifast-space(2);
-  }
+  &__subtitle { @extend %oceana-subtitle; }
 
   &__container {
     position: relative;
@@ -208,6 +207,22 @@
     }
     @include at-size(large) {
       width: screen-width(large) / 3;
+    }
+  }
+
+  &__arrow {
+    @extend %oceana-container;
+    @extend %oceana-container--adjacent;
+  }
+
+  &__icon {
+    display: block;
+    margin: 0 auto;
+    width: minifast-space(0);
+    polyline { fill: none; }
+    path, polyline {
+      stroke: minifast-color("red", "500");
+      stroke-width: 3;
     }
   }
 }

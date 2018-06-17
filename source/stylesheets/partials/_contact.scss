@@ -1,25 +1,30 @@
 .minifast-contact {
   background: minifast-color("cream", "500");
   padding: minifast-space(0) 0 minifast-space(2) 0;
-
-  &__content {
-    @extend %oceana-container;
-    position: relative;
-    margin: 0 auto;
-    & + & { margin-top: minifast-space(1); }
+  @include at-size(medium) {
+    padding: minifast-space(0) 0 minifast-space(3) 0;
   }
 
-  &__text {
-    text-align: center;
-    & + & { margin-top: minifast-space(0); }
-    &--title { @extend %oceana-title; }
-    &--description { @extend %oceana-subtitle; }
+  &__description {
+    @extend %oceana-container;
+    @extend %oceana-container--description;
+  }
+
+  &__title { @extend %oceana-title; }
+  &__subtitle { @extend %oceana-subtitle; }
+
+  &__container {
+    @extend %oceana-container;
+    @extend %oceana-container--final;
   }
 
   &__form {
     @extend %oceana-form;
     @extend %oceana-form--inline;
     margin: 0 minifast-space(-1);
+    @include at-size(medium) {
+      margin: 0 minifast-space(0);
+    }
   }
 
   &__field {
@@ -27,39 +32,19 @@
     @extend %oceana-text-field--inline;
   }
 
-  &__select-input {
-    @extend %oceana-select;
-  }
-
-  &__field-input {
-    @extend %oceana-text-field__input;
-  }
-
-  &__field-input:focus {
-    @extend %oceana-text-field__input--focus;
-  }
-
-  &__field-line {
-    @extend %oceana-text-field__line;
-  }
+  &__select-input { @extend %oceana-select; }
+  &__field-input { @extend %oceana-text-field__input; }
+  &__field-input:focus { @extend %oceana-text-field__input--focus; }
+  &__field-line { @extend %oceana-text-field__line; }
 
   &__select-input:focus + &__field-line,
   &__field-input:focus + &__field-line {
     @extend %oceana-text-field__line--focus;
   }
 
-  &__submit {
-    @extend %oceana-submit;
-  }
-
-  &__submit-text {
-    @extend %oceana-submit__text;
-  }
-
-  &__submit-bar {
-    @extend %oceana-submit__bar;
-  }
-
+  &__submit { @extend %oceana-submit; }
+  &__submit-text { @extend %oceana-submit__text; }
+  &__submit-bar { @extend %oceana-submit__bar; }
   &__submit:focus &__submit-bar,
   &__submit:hover &__submit-bar,
   &__submit:active &__submit-bar {

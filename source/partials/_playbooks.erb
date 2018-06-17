@@ -1,7 +1,10 @@
 <section class='minifast-playbooks'>
-  <section class='minifast-playbooks__content minifast-playbooks__content--title'>
+  <section class='minifast-playbooks__description'>
     <h2 class='minifast-playbooks__title'><%= t(:title, scope: [:partials, :playbooks]) %></h2>
     <p class='minifast-playbooks__subtitle'><%= t(:description, scope: [:partials, :playbooks]) %></p>
+  </section>
+  <section class='minifast-playbooks__arrow'>
+    <%= partial 'partials/inline_svg', locals: {path: 'images/playbooks/arrow.svg', image_class: 'minifast-playbooks__icon'} %>
   </section>
   <section class='minifast-playbooks__content minifast-playbooks__content--goals'>
     <article class='minifast-playbooks__container minifast-playbooks__container--image minifast-playbooks__container--goals'>

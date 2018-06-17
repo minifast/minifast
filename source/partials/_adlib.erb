@@ -1,6 +1,8 @@
 <section class='minifast-adlib'>
-  <section class='minifast-adlib__content minifast-adlib__content--form'>
+  <section class='minifast-adlib__description'>
     <h2 class='minifast-adlib__title'><%= t(:title, scope: [:partials, :adlib]) %></h2>
+  </section>
+  <section class='minifast-adlib__content'>
     <form class='minifast-adlib__form' action='<%= config[:contact_form_url] %>' method='POST'>
       <article class='minifast-adlib__labeled-field'>
         <label class='minifast-adlib__label'><%= t(:adlib, scope: [:partials, :adlib, :name]) %></label>

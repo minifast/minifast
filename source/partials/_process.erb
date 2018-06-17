@@ -1,39 +1,39 @@
 <section class='minifast-process'>
-  <section class='minifast-process__content'>
+  <section class='minifast-process__description'>
     <h3 class='minifast-process__title'><%= t(:title, scope: [:partials, :process]) %></h3>
     <p class='minifast-process__subtitle'><%= t(:description, scope: [:partials, :process]) %></p>
   </section>
-  <section class='minifast-process__content minifast-process__content--diagram'>
+  <section class='minifast-process__diagram'>
     <%= partial 'partials/inline_svg', locals: {path: 'images/process/infographic-vertical.svg', image_class: 'minifast-process__diagram minifast-process__diagram--vertical'} %>
     <%= partial 'partials/inline_svg', locals: {path: 'images/process/infographic-horizontal.svg', image_class: 'minifast-process__diagram minifast-process__diagram--horizontal'} %>
     <section class='minifast-process__container'>
       <article class='minifast-process__step minifast-process__step--goals'>
         <h4 class='minifast-process__header minifast-process__header--step'><%= t(:title, scope: [:partials, :process, :goals]) %></h4>
-        <p class='minifast-process__description'><%= t(:description, scope: [:partials, :process, :goals]) %></p>
+        <p class='minifast-process__explanation'><%= t(:description, scope: [:partials, :process, :goals]) %></p>
       </article>
       <article class='minifast-process__step minifast-process__step--scoping'>
         <h4 class='minifast-process__header minifast-process__header--step'><%= t(:title, scope: [:partials, :process, :scoping]) %></h4>
-        <p class='minifast-process__description'><%= t(:description, scope: [:partials, :process, :scoping]) %></p>
+        <p class='minifast-process__explanation'><%= t(:description, scope: [:partials, :process, :scoping]) %></p>
       </article>
       <article class='minifast-process__step minifast-process__step--inception'>
         <h4 class='minifast-process__header minifast-process__header--step'><%= t(:title, scope: [:partials, :process, :inception]) %></h4>
-        <p class='minifast-process__description'><%= t(:description, scope: [:partials, :process, :inception]) %></p>
+        <p class='minifast-process__explanation'><%= t(:description, scope: [:partials, :process, :inception]) %></p>
       </article>
       <article class='minifast-process__step minifast-process__step--research'>
         <h4 class='minifast-process__header'><%= t(:title, scope: [:partials, :process, :research]) %></h4>
-        <p class='minifast-process__description'><%= t(:description, scope: [:partials, :process, :research]) %></p>
+        <p class='minifast-process__explanation'><%= t(:description, scope: [:partials, :process, :research]) %></p>
       </article>
       <article class='minifast-process__step minifast-process__step--delivery'>
         <h4 class='minifast-process__header'><%= t(:title, scope: [:partials, :process, :delivery]) %></h4>
-        <p class='minifast-process__description'><%= t(:description, scope: [:partials, :process, :delivery]) %></p>
+        <p class='minifast-process__explanation'><%= t(:description, scope: [:partials, :process, :delivery]) %></p>
       </article>
       <article class='minifast-process__step minifast-process__step--retrospective'>
         <h4 class='minifast-process__header'><%= t(:title, scope: [:partials, :process, :retrospective]) %></h4>
-        <p class='minifast-process__description'><%= t(:description, scope: [:partials, :process, :retrospective]) %></p>
+        <p class='minifast-process__explanation'><%= t(:description, scope: [:partials, :process, :retrospective]) %></p>
       </article>
     </section>
   </section>
-  <section class='minifast-process__content minifast-process__content--learn-more'>
+  <section class='minifast-process__learn-more'>
     <p class='minifast-process__subtitle'><%= link_to t(:learn_more, scope: [:partials, :process]), '/process', class: 'minifast-process__link' %></p>
   </section>
 </section>

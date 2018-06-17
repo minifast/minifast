@@ -1,7 +1,7 @@
 .minifast-office {
   &__slide {
     position: relative;
-    height: 100vh;
+    height: minifast-space(5);
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
@@ -9,6 +9,7 @@
     background-position: 50% 50%;
 
     @include at-size(small) {
+      height: 100vh;
       min-height: screen-width(xsmall);
       max-height: screen-width(small);
     }

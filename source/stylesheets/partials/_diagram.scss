@@ -27,7 +27,7 @@
     padding: minifast-space(0) 0;
     overflow: hidden;
     position: relative;
-    background-color: minifast-color("red", "500");
+    background-color: minifast-color("red", "400");
     z-index: -1;
 
     @include at-size(medium) {
@@ -38,9 +38,9 @@
 
   &__image {
     position: absolute;
-    top: minifast-space(3);
-    left: calc(50vw - #{screen-width(xsmall) + minifast-space(1)});
-    width: screen-width(xsmall) * 2;
+    top: screen-width(xsmall) / 2 + minifast-space(1);
+    left: calc(50vw - #{screen-width(xsmall) * 3 / 2});
+    width: screen-width(xsmall) * 3;
     z-index: -2;
 
     @include at-size(small) {
@@ -63,23 +63,27 @@
   }
 
   &__title {
-    margin: minifast-space(1) 0;
     @extend %oceana-title;
-    text-align: center;
+    margin-top: minifast-space(2);
+    @include at-size(medium) {
+      margin-top: minifast-space(1);
+    }
   }
 
   &__heading {
     margin: minifast-space(-1) 0;
     @include minifast-text("display3");
 
+    &--research { color: minifast-color("cream", "500"); }
+
     @include at-size(medium) {
       @include minifast-text("title");
-      &--research { color: minifast-color("cream", "500"); }
       &--retrospective { color: minifast-color("cream", "500"); }
     }
   }
 
   &__text {
+    @include minifast-text("subtitle");
     margin: 0;
     text-align: left;
 
@@ -92,6 +96,14 @@
     margin: minifast-space(1) minifast-space(-1);
     z-index: 1000;
     text-align: center;
+
+    &--research { margin-bottom: minifast-space(4); }
+    &--delivery { margin-bottom: minifast-space(2); }
+
+    @include at-size(small) {
+      &--research { margin-bottom: minifast-space(1); }
+      &--delivery { margin-bottom: minifast-space(1); }
+    }
 
     @include at-size(medium) {
       position: absolute;
@@ -106,7 +118,7 @@
       }
 
       &--delivery {
-        bottom: minifast-space(4);
+        bottom: minifast-space(3);
         left: screen-width(medium) / 2 - minifast-space(6) / 2;
         text-align: center;
       }

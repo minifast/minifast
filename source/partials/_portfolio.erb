@@ -1,17 +1,20 @@
 <section class='minifast-portfolio'>
-  <section class='minifast-portfolio__content minifast-portfolio__content--title'>
+  <section class='minifast-portfolio__description'>
     <h3 class='minifast-portfolio__title'><%= t(:title, scope: [:partials, :portfolio]) %></h3>
     <p class='minifast-portfolio__subtitle'><%= t(:description, scope: [:partials, :portfolio]) %></p>
   </section>
-  <section class='minifast-portfolio__content minifast-portfolio__content--clients'>
+  <section class='minifast-portfolio__clients'>
     <% data.portfolio.clients.each do |client| %>
       <article class='minifast-portfolio__client'>
         <img class='minifast-portfolio__image' src='<%= asset_url(client.thumbnail) %>' alt='<%= client.name %>'>
-        <div class='minifast-portfolio__description'>
-          <h3 class='minifast-portfolio__text minifast-portfolio__text--name'><%= client.name %></h3>
-          <p class='minifast-portfolio__text minifast-portfolio__text--description'><%= client.subtitle %></p>
+        <div class='minifast-portfolio__overview'>
+          <h3 class='minifast-portfolio__name'><%= client.name %></h3>
+          <p class='minifast-portfolio__summary'><%= client.subtitle %></p>
         </div>
       </article>
     <% end %>
+  </section>
+  <section class='minifast-portfolio__navigation'>
+    <%= link_to t(:view_more, scope: [:partials, :portfolio]), '/portfolio', class: 'minifast-portfolio__link' %>
   </section>
 </section>

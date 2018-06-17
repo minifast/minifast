@@ -143,6 +143,7 @@ en:
     portfolio:
       description: We partner with people who want to rethink the inner workings of their business.
       title: Our Work
+      view_more: View our portfolio of work
     playbooks:
       description: Pairing is not just our mode for programming – it's how we structure our partner relationships throughout every project. Our approach is designed around dialogue – to uncover needs, prioritize strategically, and impart our methodology to your team.
       goals:
@@ -168,7 +169,7 @@ en:
       inception:
         title: Inception
         description: Kickoff meeting
-      learn_more: Learn More
+      learn_more: Learn more
       research:
         title: Design Research
         description: Human-centered user validation

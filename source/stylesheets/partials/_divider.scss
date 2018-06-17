@@ -1,0 +1,15 @@
+.minifast-divider {
+  padding: 0;
+  border: 0;
+  margin: minifast-space(3) 0;
+  @include at-size(small) {
+    margin: minifast-space(4) 0;
+  }
+
+  &--small {
+    margin: minifast-space(2) 0;
+    @include at-size(small) {
+      margin: minifast-space(2) 0;
+    }
+  }
+}

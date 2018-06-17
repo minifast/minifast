@@ -1,4 +1,6 @@
 %oceana-container {
+  position: relative;
+
   @include at-size(small) {
     width: screen-width(small);
     margin: 0 auto;
@@ -6,11 +8,22 @@
 
   @include at-size(medium) {
     width: screen-width(medium);
-    margin: 0 auto;
   }
 
   @include at-size(large) {
     width: screen-width(large);
-    margin: 0 auto;
   }
+}
+
+%oceana-container--description {
+  margin-top: minifast-space(1);
+  margin-bottom: minifast-space(2);
+}
+
+%oceana-container--adjacent {
+  margin-bottom: minifast-space(2);
+}
+
+%oceana-container--final {
+  margin-bottom: 0;
 }

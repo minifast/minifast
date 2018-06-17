@@ -3,13 +3,11 @@
   text-align: center;
 
   @include at-size(small) {
-    padding: minifast-space(-1) 0;
+    padding: 0 0 minifast-space(-1) 0;
     text-align: left;
   }
 
-  &__container {
-    @extend %oceana-container;
-  }
+  &__container { @extend %oceana-container; }
 
   &__content {
     position: relative;
@@ -28,17 +26,13 @@
 
     @include at-size(small) {
       display: flex;
-      &--upper {
-        padding: minifast-space(-2) 0;
-        margin: minifast-space(-1) auto;
-      }
-      &--lower {
-        margin: 0 auto;
-        padding: minifast-space(-1) 0 0 0;
-      }
+      margin: 0 minifast-space(-1);
+      &--upper { padding: minifast-space(-2) 0; }
+      &--lower { padding: minifast-space(-1) 0 0 0; }
     }
 
     @include at-size(medium) {
+      margin: 0 minifast-space(0);
       &--upper { padding: minifast-space(2) 0; }
       &--lower { padding-top: minifast-space(-1); }
     }

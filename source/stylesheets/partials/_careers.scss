@@ -1,7 +1,15 @@
 .minifast-careers {
-  &__content {
+  &__description {
     @extend %oceana-container;
+    @extend %oceana-container--description;
   }
+
+  &__title {
+    @extend %oceana-title;
+    margin-top: minifast-space(2);
+  }
+  &__subtitle { @extend %oceana-subtitle; }
+  &__content { @extend %oceana-container; }
 
   &__hidden {
     &--small-down { display: none; }
@@ -49,23 +57,11 @@
     }
   }
 
-  &__title {
-    @extend %oceana-title;
-    text-align: center;
-    margin-top: minifast-space(2);
-  }
-
-  &__subtitle {
-    @extend %oceana-subtitle;
-    text-align: center;
-    margin-bottom: minifast-space(2);
-  }
-
   &__slug {
     @include minifast-text("button");
     color: minifast-color("grey", "500");
     text-align: center;
-    margin: 0;
+    margin: 0 0 minifast-space(-1) 0;
     @include at-size(small) {
       margin: minifast-space(-1);
       text-align: left;
@@ -73,9 +69,7 @@
   }
 
   &__job-title {
-    @extend %oceana-title;
-    text-align: center;
-    margin: minifast-space(-1) 0;
+    @include minifast-text("title");
     @include at-size(small) {
       margin: minifast-space(-1);
       text-align: left;
@@ -109,18 +103,9 @@
     ::placeholder { color: minifast-color("red", "500"); }
   }
 
-  &__select-input {
-    @extend %oceana-select;
-  }
-
-  &__field-input {
-    @extend %oceana-text-field__input;
-  }
-
-  &__field-input:focus {
-    @extend %oceana-text-field__input--focus;
-  }
-
+  &__select-input { @extend %oceana-select; }
+  &__field-input { @extend %oceana-text-field__input; }
+  &__field-input:focus { @extend %oceana-text-field__input--focus; }
   &__field-line {
     @extend %oceana-text-field__line;
     @extend %oceana-text-field__line--dashed;
@@ -131,18 +116,9 @@
     @extend %oceana-text-field__line--focus;
   }
 
-  &__submit {
-    @extend %oceana-submit;
-  }
-
-  &__submit-text {
-    @extend %oceana-submit__text;
-  }
-
-  &__submit-bar {
-    @extend %oceana-submit__bar;
-  }
-
+  &__submit { @extend %oceana-submit; }
+  &__submit-text { @extend %oceana-submit__text; }
+  &__submit-bar { @extend %oceana-submit__bar; }
   &__submit:focus &__submit-bar,
   &__submit:hover &__submit-bar,
   &__submit:active &__submit-bar {

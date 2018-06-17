@@ -1,9 +1,9 @@
 <section class='minifast-contact'>
-  <section class='minifast-contact__content'>
-    <h2 class='minifast-contact__text minifast-contact__text--title'><%= t(:title, scope: [:partials, :contact]) %></h2>
-    <p class='minifast-contact__text minifast-contact__text--description'><%= t(:description, scope: [:partials, :contact]) %></p>
+  <section class='minifast-contact__description'>
+    <h2 class='minifast-contact__title'><%= t(:title, scope: [:partials, :contact]) %></h2>
+    <p class='minifast-contact__subtitle'><%= t(:description, scope: [:partials, :contact]) %></p>
   </section>
-  <section class='minifast-contact__content'>
+  <section class='minifast-contact__container'>
     <form class='minifast-contact__form' action='<%= config[:contact_form_url] %>' method='POST'>
       <article class='minifast-contact__field'>
         <input class='minifast-contact__field-input' type='text' autocomplete='name' name='<%= config[:contact_name_id] %>' required placeholder='<%= t(:name, scope: [:partials, :contact]) %>' aria-label='<%= t(:name, scope: [:partials, :contact]) %>' />

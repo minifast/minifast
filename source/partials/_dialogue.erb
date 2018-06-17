@@ -1,9 +1,10 @@
 <section class='minifast-dialogue'>
-  <section class='minifast-dialogue__content minifast-dialogue__content--description'>
-    <h2 class='minifast-dialogue__text minifast-dialogue__text--title'><%= t(:title, scope: [:partials, :dialogue]) %></h2>
-    <p class='minifast-dialogue__text minifast-dialogue__text--description'><%= t(:description, scope: [:partials, :dialogue]) %></p>
+  <section class='minifast-dialogue__description'>
+    <%= partial 'partials/inline_svg', locals: {path: 'images/dialogue/caret.svg', image_class: 'minifast-dialogue__caret'} %>
+    <h2 class='minifast-dialogue__title'><%= t(:title, scope: [:partials, :dialogue]) %></h2>
+    <p class='minifast-dialogue__subtitle'><%= t(:description, scope: [:partials, :dialogue]) %></p>
   </section>
-  <section class='minifast-dialogue__content minifast-dialogue__content--questions'>
+  <section class='minifast-dialogue__questions'>
     <fieldset class='minifast-dialogue__fieldset'>
       <legend class='minifast-dialogue__legend'><%= t(:legend, scope: [:partials, :dialogue]) %></legend>
       <% t(:tabs, scope: [:partials, :dialogue]).each do |(key, tab)| %>
@@ -26,7 +27,7 @@
       <% end %>
     </fieldset>
   </section>
-  <section class='minifast-dialogue__content minifast-dialogue__content--form'>
+  <section class='minifast-dialogue__contact'>
     <form class='minifast-dialogue__form' action='<%= config[:contact_form_url] %>' method='POST'>
       <article class='minifast-dialogue__field'>
         <input class='minifast-dialogue__field-input' type='text' name='<%= config[:contact_subject_id] %>' required placeholder='<%= t(:question, scope: [:partials, :dialogue]) %>' aria-label='<%= t(:question, scope: [:partials, :dialogue]) %>' />

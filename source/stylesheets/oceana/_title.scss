@@ -1,11 +1,29 @@
 %oceana-title {
   @include minifast-text("title");
-  margin: minifast-space(0) 0 minifast-space(-2) 0;
+  text-align: center;
+  margin: 0 auto;
+
+  @include at-size(xsmall) {
+    width: screen-width(xsmall);
+  }
+
+  @include at-size(small) {
+    width: screen-width(small);
+  }
+
+  @include at-size(medium) {
+    width: screen-width(medium);
+  }
 }
 
-%oceana-title--dotted {
+%oceana-title--decorated {
   position: relative;
   padding-top: minifast-space(1);
+}
+
+%oceana-title--chevron {
+  position: relative;
+  padding-top: minifast-space(2);
 }
 
 %oceana-title-dot {
@@ -19,17 +37,12 @@
   background: minifast-color("red", "500");
 }
 
-%oceana-subtitle {
-  @include minifast-text("subtitle");
-  margin: 0 minifast-space(1);
-
-  @include at-size(xsmall) {
-    width: screen-width(xsmall);
-    margin: 0 auto;
-  }
-
-  @include at-size(small) {
-    width: screen-width(small);
-    margin: 0 auto;
-  }
+%oceana-title-caret {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: minifast-space(-1);
+  margin-left: minifast-space(-1) / -2;
+  polygon { fill: minifast-color("red", "500"); }
 }

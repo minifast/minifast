@@ -4,31 +4,24 @@
 }
 
 .minifast-process {
-  &__content {
+  &__description {
     @extend %oceana-container;
-    text-align: center;
+    @extend %oceana-container--description;
+  }
 
-    &--learn-more {
-      margin-top: minifast-space(2);
-      margin-bottom: minifast-space(2);
-    }
+  &__diagram {
+    @extend %oceana-container;
+    @extend %oceana-container--adjacent;
+    background-color: minifast-color("red", "500");
 
-    &--diagram {
-      background-color: minifast-color("red", "500");
-      position: relative;
-      margin-top: minifast-space(0);
-      overflow: hidden;
-
-      @include at-size(large) {
-        width: screen-width(large) - minifast-space(0) * 2;
-      }
+    @include at-size(large) {
+      width: screen-width(large) - minifast-space(1) * 2;
     }
   }
 
   &__title {
     @extend %oceana-title;
-    @extend %oceana-title--dotted;
-    margin-top: minifast-space(3);
+    @extend %oceana-title--decorated;
     &:before { @extend %oceana-title-dot; }
   }
 
@@ -60,8 +53,8 @@
 
       @include at-size(large) {
         display: unset;
-        margin: minifast-space(1) minifast-space(0) minifast-space(0) 0;
-        width: screen-width(large) - minifast-space(0) * 3;
+        margin: minifast-space(1) minifast-space(1) minifast-space(0) 0;
+        width: screen-width(large) - minifast-space(1) * 3;
       }
     }
   }
@@ -72,6 +65,7 @@
     bottom: 0;
     left: 0;
     right: 0;
+    overflow-x: hidden;
 
     &::before {
       content: '';
@@ -165,7 +159,7 @@
         bottom: screen-width(large) * (471/1067) / 2 + minifast-space(2) + minifast-space(-1);
         top: unset;
         width: screen-width(large) * space(-4);
-        left: screen-width(large) * space(-3) - screen-width(large) * space(-7) - screen-width(large) * space(-11);
+        left: screen-width(large) * space(-3) - screen-width(large) * space(-7) - screen-width(large) * space(-9);
         text-align: left;
       }
     }
@@ -189,7 +183,7 @@
       @include at-size(large) {
         top: screen-width(large) * (471/1067) / 2 + minifast-space(2);
         width: screen-width(large) * space(-4);
-        left: screen-width(large) * space(-2) - screen-width(large) * space(-6) - screen-width(large) * space(-12);
+        left: screen-width(large) * space(-2) - screen-width(large) * space(-6) - screen-width(large) * space(-9);
         text-align: left;
       }
     }
@@ -214,9 +208,9 @@
       }
       @include at-size(large) {
         top: unset;
-        bottom: screen-width(large) * (471/1067) - screen-width(large) * (471/1067) * space(-3);
+        bottom: screen-width(large) * (471/1067) - screen-width(large) * (471/1067) * space(-3) - screen-width(large) * (471/1067) * space(-7);
         width: screen-width(large) * space(-1);
-        left: screen-width(large) * space(-1);
+        left: screen-width(large) * space(-1) - screen-width(large) * space(-7);
         text-align: left;
       }
     }
@@ -244,7 +238,7 @@
         top: unset;
         bottom: screen-width(large) * (471/1067) / 2;
         width: screen-width(large) * space(-4) - screen-width(large) * space(-10);
-        left: screen-width(large) - screen-width(large) * space(-3) - minifast-space(-1);
+        left: screen-width(large) - screen-width(large) * space(-3) - screen-width(large) * space(-6);
         text-align: right;
       }
     }
@@ -272,7 +266,7 @@
         top: unset;
         bottom: screen-width(large) * (471/1067) * space(-4) + screen-width(large) * (471/1067) * space(-7);
         width: screen-width(large) * space(-4);
-        left: screen-width(large) * space(-1) + screen-width(large) * space(-4) / 2 - minifast-space(0) * 2;
+        left: screen-width(large) - screen-width(large) * space(-3) - screen-width(large) * space(-4);
         text-align: center;
       }
     }
@@ -285,7 +279,7 @@
     &--step { color: minifast-color("cream", "500"); }
   }
 
-  &__description { margin: 0; }
+  &__explanation { margin: 0; }
 
   &__link {
     color: minifast-color("red", "500");

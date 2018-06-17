@@ -147,7 +147,11 @@
       transition: transform 0s, opacity 0s;
       opacity: unset;
       transform: unset;
-      margin: 0 minifast-space(-2);
+      margin: 0 minifast-space(-1);
+    }
+
+    @include at-size(medium) {
+      margin: 0 minifast-space(0);
     }
   }
 

@@ -1,76 +1,84 @@
 .minifast-portfolio {
-  &__content {
+  &__description {
     @extend %oceana-container;
-    margin-top: minifast-space(2);
-
-    @include at-size(small) {
-      &--clients {
-        display: flex;
-      }
-    }
+    @extend %oceana-container--description;
   }
 
   &__title {
     @extend %oceana-title;
-    @extend %oceana-title--dotted;
-    text-align: center;
-    margin-top: minifast-space(3);
+    @extend %oceana-title--decorated;
     &:before { @extend %oceana-title-dot; }
+  }
+
+  &__subtitle { @extend %oceana-subtitle; }
+
+  &__clients {
+    @extend %oceana-container;
     @include at-size(small) {
-      margin-top: minifast-space(4);
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-between;
     }
   }
 
-  &__subtitle {
-    @extend %oceana-subtitle;
-    text-align: center;
-  }
-
   &__client {
-    width: 100%;
-
     @include at-size(xsmall) {
       width: screen-width(xsmall);
       margin: 0 auto;
     }
 
     @include at-size(small) {
-      flex: 0 0 (screen-width(small) / 2) - (minifast-space(0) / 2 * 3);
-      width: auto;
-      margin: 0 minifast-space(0);
-
-      &:last-of-type { display: none; }
-      & + & { margin-left: 0; }
+      flex: 0 0 (screen-width(small) / 2) - minifast-space(-1) * 2;
+      margin: 0 minifast-space(-1);
+      & + & + & { display: none; }
     }
 
     @include at-size(medium) {
-      flex: 0 0 (screen-width(medium) / 3) - (minifast-space(0) / 3 * 4);
-      &:last-of-type { display: block; }
+      flex: 0 0 (screen-width(medium) / 3) - minifast-space(0) * 2;
+      margin: 0 minifast-space(0);
+      & + & + & { display: unset; }
     }
 
     @include at-size(large) {
-      flex: 0 0 (screen-width(large) / 3) - (minifast-space(0) / 3 * 4);
+      flex: 0 0 (screen-width(large) / 3) - minifast-space(0) * 2;
     }
   }
 
   &__image {
     display: block;
     width: 100%;
-    margin: 0 auto;
   }
 
-  &__description {
-    margin: minifast-space(0) minifast-space(-2) minifast-space(1) minifast-space(-2);
-
+  &__overview {
+    margin: minifast-space(-1) minifast-space(-1) minifast-space(1) minifast-space(-1);
     @include at-size(small) {
-      margin: minifast-space(0) 0;
+      margin: minifast-space(-1) 0 minifast-space(1) 0;
     }
   }
 
-  &__text {
-    &--name {
-      @include minifast-text("display3");
-      margin: 0 0 minifast-space(-1) 0;
+  &__name {
+    @include minifast-text("display3");
+    margin: 0;
+  }
+
+  &__summary {
+    margin: minifast-space(-2) 0 0 0;
+  }
+
+  &__navigation {
+    @extend %oceana-container;
+    @extend %oceana-container--final;
+    text-align: center;
+  }
+
+  &__link {
+    @include minifast-text("subtitle");
+    color: minifast-color("red", "500");
+    text-decoration: none;
+
+    &::after {
+      content: '→';
+      margin-left: minifast-space(-2);
     }
   }
 }
