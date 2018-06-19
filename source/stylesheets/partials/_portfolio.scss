@@ -36,7 +36,7 @@
     @include at-size(medium) {
       flex: 0 0 (screen-width(medium) / 3) - minifast-space(0) * 2;
       margin: 0 minifast-space(0);
-      & + & + & { display: unset; }
+      & + & + & { display: block; }
     }
 
     @include at-size(large) {
