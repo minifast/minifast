@@ -114,6 +114,19 @@ $styles: (
     font-size: 30px,
     font-weight: 400,
     line-height: floor(30px * $golden-ratio),
+  ),
+  gallery-title: (
+    font-family: cronos-pro,
+    font-size: 40px,
+    font-weight: 400,
+    line-height: floor(40px * $golden-ratio),
+  ),
+  gallery-client: (
+    font-family: ff-basic-gothic-pro,
+    font-size: 20px,
+    font-weight: 500,
+    text-transform: uppercase,
+    line-height: floor(20px * $golden-ratio),
   )
 );
 
