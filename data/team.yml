@@ -14,7 +14,7 @@ members:
       In his free time, Doc loves spinning a globe and flying to wherever his finger lands.
   - name: Erika Pacheco
     image: images/photoshoot/erika.jpg
-    image_side: right
+    image_side: center
     title: Lead Consultant
   - name: CJ Bryan
     image: images/photoshoot/cj.jpg
@@ -74,6 +74,7 @@ members:
     title: Consultant
     image_side: left
   - name: Will Rogers
+    image_side: center
     image: images/photoshoot/will.jpg
     title: Principal Design Consultant
     image_side: right
