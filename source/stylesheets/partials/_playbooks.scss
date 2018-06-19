@@ -15,6 +15,14 @@
     }
   }
 
+  &__title { @extend %oceana-title; }
+  &__subtitle { @extend %oceana-subtitle; }
+
+  &__arrow {
+    @extend %oceana-container;
+    @extend %oceana-container--adjacent;
+  }
+
   &__content {
     @extend %oceana-container;
 
@@ -35,28 +43,21 @@
     }
   }
 
-  &__title { @extend %oceana-title; }
-  &__subtitle { @extend %oceana-subtitle; }
-
   &__container {
     position: relative;
-    margin-left: minifast-space(-1) + minifast-space(-1) + minifast-space(-4);
-    margin-right: minifast-space(-1);
+
+    &--text { padding: 0 minifast-space(-1) 0 minifast-space(-1) * 2 + minifast-space(-4); }
 
     &--goals {
       &:after {
         content: '';
         position: absolute;
         bottom: 0;
-        left: -1 * (minifast-space(-1) + minifast-space(-1) + minifast-space(-4));
-        right: -1 * minifast-space(-1);
+        left: 0;
+        width: 100%;
         background: minifast-color("gold", "700");
         height: minifast-space(3);
         z-index: -1;
-      }
-
-      @include at-size(small) {
-        &:after { display: none; }
       }
     }
 
@@ -65,22 +66,12 @@
         content: '';
         position: absolute;
         bottom: minifast-space(2);
-        left: -1 * (minifast-space(-1) + minifast-space(-1) + minifast-space(-4));
-        right: -1 * minifast-space(-1);
+        left: 0;
+        width: 100%;
         background: minifast-color("cream", "500");
         height: minifast-space(4);
         z-index: -1;
       }
-
-      @include at-size(small) {
-        &:after { display: none; }
-      }
-    }
-
-    @include at-size(small) {
-      margin: 0;
-      flex: 1;
-      padding-bottom: minifast-space(2);
     }
 
     &:before {
@@ -88,8 +79,21 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      left: -1 * minifast-space(-1);
+      left: minifast-space(-1);
       border-left: minifast-space(-4) dotted minifast-color("red", "500");
+    }
+
+    @include at-size(small) {
+      margin: 0;
+      flex: 1;
+      padding-bottom: minifast-space(2);
+
+      &:before { left: -1 * minifast-space(-1) + minifast-space(-4) / 2; }
+      &--text { padding: 0 0 minifast-space(2) 0; }
+
+      &--inception, &--goals {
+        &:after { display: none; }
+      }
     }
   }
 
@@ -143,8 +147,7 @@
 
   &__image {
     display: block;
-    width: 100vw;
-    margin-left: -1 * (minifast-space(-1) + minifast-space(-1) + minifast-space(-4));
+    width: 100%;
     z-index: -1;
 
     @include at-size(small) {
@@ -208,11 +211,6 @@
     @include at-size(large) {
       width: screen-width(large) / 3;
     }
-  }
-
-  &__arrow {
-    @extend %oceana-container;
-    @extend %oceana-container--adjacent;
   }
 
   &__icon {
