@@ -28,6 +28,8 @@
   &__subtitle { @extend %oceana-subtitle; }
 
   &__diagram {
+    overflow: hidden;
+
     &--vertical {
       transform: rotate(180deg);
       margin: 0 minifast-space(1) minifast-space(3) minifast-space(1);
@@ -138,7 +140,7 @@
 
     &--scoping {
       top: calc((100vw - #{minifast-space(1) * 2}) * (1067/471) * #{space(-5)} + (100vw - #{minifast-space(1) * 2}) * (1067/471) * #{space(-3) / 2} - #{minifast-space(1) / 2});
-      left: calc(50vw + #{minifast-space(0)} + #{minifast-space(-2)});
+      left: calc(50vw + #{minifast-space(0)} + #{minifast-space(-1)});
       width: calc(50vw - #{minifast-space(0)} - #{minifast-space(-2)});
       text-align: left;
       @include at-size(small) {
@@ -216,8 +218,8 @@
     }
 
     &--delivery {
-      width: 50vw;
-      right: 25vw;
+      width: 100vw;
+      left: minifast-space(-1);
       top: calc((100vw - #{minifast-space(1) * 2}) * (1067/471) + #{minifast-space(-3)});
       text-align: center;
       @include at-size(small) {
