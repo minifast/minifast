@@ -37,6 +37,17 @@
   background: minifast-color("red", "500");
 }
 
+%oceana-title-dash {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: minifast-space(-6);
+  width: minifast-space(1);
+  margin-left: minifast-space(1) / -2;
+  background: minifast-color("red", "500");
+}
+
 %oceana-title-caret {
   position: absolute;
   top: 0;

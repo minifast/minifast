@@ -65,6 +65,9 @@ members:
       driven to identify and fulfill unmet needs. An enthusiastic spirit with a
       playful mind, he spends his offscreen time dancing and riding horses and
       exploring the world with his daughter.
+members_emeritus:
+  - name: Sarah Mei
+    title: Co-Founder
   - name: Hadiyah Mujhid
     image: images/photoshoot/hadiyah.jpg
     title: Consultant
@@ -76,7 +79,7 @@ members:
   - name: Will Rogers
     image_side: center
     image: images/photoshoot/will.jpg
-    title: Principal Design Consultant
+    title: Design Consultant
     image_side: right
   - name: Nicole Landry
     image: images/photoshoot/nicole.jpg
@@ -96,6 +99,3 @@ members:
       She has held a variety of roles from Founder/CTO to Agile Development
       Consultant.  Before working in the startup world, she did engineering work
       on the LHC.
-members_emeritus:
-  - name: Sarah Mei
-    title: Co-Founder + CTO
