@@ -1,26 +1,23 @@
 .minifast-clients {
-  &__content {
+  &__description {
     @extend %oceana-container;
-    margin-top: minifast-space(1);
+    @extend %oceana-container--description;
+    margin-top: minifast-space(2);
+    margin-bottom: minifast-space(2);
+  }
+
+  &__clients {
+    @extend %oceana-container;
+    @extend %oceana-container--adjacent;
 
     @include at-size(small) {
-      &--clients {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
   }
 
-  &__title {
-    @extend %oceana-title;
-    text-align: center;
-  }
-
-  &__subtitle {
-    @extend %oceana-subtitle;
-    text-align: center;
-  }
+  &__title { @extend %oceana-title; }
 
   &__client {
     width: 100%;
@@ -52,7 +49,7 @@
     margin: 0 auto;
   }
 
-  &__description {
+  &__explanation {
     margin: minifast-space(1) minifast-space(-2);
 
     @include at-size(xsmall) {
@@ -64,10 +61,8 @@
     }
   }
 
-  &__text {
-    &--name {
-      @include minifast-text("display3");
-      margin: 0 0 minifast-space(-1) 0;
-    }
+  &__name {
+    @include minifast-text("display3");
+    margin: 0 0 minifast-space(-1) 0;
   }
 }
