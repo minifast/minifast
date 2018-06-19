@@ -56,10 +56,14 @@
     }
   }
 
-  &__planetary {
-    &--outer { animation: planetary-outer 60s infinite linear; }
-    &--inner { animation: planetary-inner (60s/2) infinite linear; }
-    &--core { transform: rotate(0.25turn); }
+  &__outer {
+    animation: planetary-outer 60s infinite linear;
+    transform-origin: 50% 50%;
+  }
+
+  &__inner {
+    animation: planetary-inner 45s infinite linear;
+    transform-origin: 50% 50%;
   }
 
   &__title {

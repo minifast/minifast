@@ -1,16 +1,11 @@
 <svg viewBox="0 0 1000 1000">
-  <circle cx="500" cy="500" r="400" stroke="#FCF0C0" stroke-width="5" fill="none" />
-  <g class="minifast-diagram__planetary minifast-diagram__planetary--inner" transform-origin="500 500" transform="rotate(350)">
-    <g transform-origin="500 500" transform="translate(150, 0)">
-      <g class="minifast-diagram__planetary minifast-diagram__planetary--core" transform-origin="500 500" transform="rotate(300)">
-        <circle cx="500" cy="500" r="250" fill="#FCF0C0" />
-        <rect fill="#000000" x="497.5" y="500" width="5" height="350"/>
-      </g>
-    </g>
+  <g class="minifast-diagram__outer">
+    <circle cx="500" cy="500" r="400" stroke="#FCF0C0" stroke-width="5" fill="none" />
+    <circle cx="500" cy="350" r="250" fill="#FCF0C0" />
+    <rect fill="#000000" x="497.5" y="350" width="5" height="350"/>
   </g>
-  <g class="minifast-diagram__planetary minifast-diagram__planetary--outer" transform-origin="500 500" transform="rotate(250)">
-    <g transform-origin="500 500" transform="translate(400, 0)">
-      <circle cx="500" cy="500" r="75" fill="#BCA35C"/>
-    </g>
+  <g class="minifast-diagram__inner">
+    <circle cx="500" cy="500" r="500" stroke="none" fill="none" />
+    <circle cx="100" cy="500" r="75" fill="#BCA35C"/>
   </g>
 </svg>
