@@ -1,20 +1,17 @@
 .minifast-brands {
-  background-color: minifast-color("cream", "500");
+  background: minifast-color("cream", "500");
+  padding: minifast-space(0) 0 minifast-space(2) 0;
 
-  &__content {
+  &__description {
     @extend %oceana-container;
-    padding-top: minifast-space(2);
-
-    & + & {
-      padding-top: 0;
-      padding-bottom: minifast-space(2);
-    }
+    @extend %oceana-container--description;
   }
 
-  &__title {
-    @extend %oceana-title;
-    text-align: center;
-    margin: 0 0 minifast-space(1) 0;
+  &__title { @extend %oceana-title; }
+
+  &__container {
+    @extend %oceana-container;
+    @extend %oceana-container--final;
   }
 
   &__list {
