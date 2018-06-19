@@ -91,7 +91,12 @@
       &:before { left: -1 * minifast-space(-1) + minifast-space(-4) / 2; }
       &--text { padding: 0 0 minifast-space(2) 0; }
 
-      &--inception, &--goals {
+      &--inception {
+        margin-bottom: minifast-space(2);
+        &:after { display: none; }
+      }
+
+      &--goals {
         &:after { display: none; }
       }
     }
