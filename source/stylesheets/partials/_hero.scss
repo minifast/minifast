@@ -11,6 +11,8 @@
 }
 
 .minifast-hero {
+  overflow: hidden;
+
   &__slide {
     position: relative;
     min-height: screen-width(xsmall);
