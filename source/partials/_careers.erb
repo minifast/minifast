@@ -40,15 +40,15 @@
       <h3 class='minifast-careers__title minifast-careers__hidden--small-up'><%= t(:apply, scope: [:partials, :careers]) %></h3>
       <form class='minifast-careers__form' action='<%= config[:contact_form_url] %>' method='POST'>
         <article class='minifast-careers__field'>
-          <input class='minifast-careers__field-input' type='text' autocomplete='name' name='<%= config[:contact_name_id] %>' required placeholder='<%= t(:name, scope: [:partials, :careers]) %>' aria-label='<%= t(:name, scope: [:partials, :careers]) %>' />
+          <input class='minifast-careers__field-input' type='text' autocomplete='name' name='<%= config[:contact_name_id] %>' required placeholder='<%= t(:name, scope: [:partials, :careers]) %>' aria-label='<%= t(:name, scope: [:partials, :careers]) %>' maxlength='280' />
           <div class='minifast-careers__field-line'></div>
         </article>
         <article class='minifast-careers__field'>
-          <input class='minifast-careers__field-input' type='email' autocomplete='email' name='emailAddress' required placeholder='<%= t(:email, scope: [:partials, :careers]) %>' aria-label='<%= t(:email, scope: [:partials, :careers]) %>' />
+          <input class='minifast-careers__field-input' type='email' autocomplete='email' name='emailAddress' required placeholder='<%= t(:email, scope: [:partials, :careers]) %>' aria-label='<%= t(:email, scope: [:partials, :careers]) %>' maxlength='280' />
           <div class='minifast-careers__field-line'></div>
         </article>
         <article class='minifast-careers__field'>
-          <input class='minifast-careers__field-input' type='text' name='<%= config[:contact_subject_id] %>' required placeholder='<%= t(:subject, scope: [:partials, :careers]) %>' aria-label='<%= t(:subject, scope: [:partials, :careers]) %>' />
+          <input class='minifast-careers__field-input' type='text' name='<%= config[:contact_subject_id] %>' required placeholder='<%= t(:subject, scope: [:partials, :careers]) %>' aria-label='<%= t(:subject, scope: [:partials, :careers]) %>' maxlength='280' />
           <div class='minifast-careers__field-line'></div>
         </article>
         <button class='minifast-careers__submit'>

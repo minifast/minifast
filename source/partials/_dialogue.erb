@@ -30,11 +30,11 @@
   <section class='minifast-dialogue__contact'>
     <form class='minifast-dialogue__form' action='<%= config[:contact_form_url] %>' method='POST'>
       <article class='minifast-dialogue__field'>
-        <input class='minifast-dialogue__field-input' type='text' name='<%= config[:contact_subject_id] %>' required placeholder='<%= t(:question, scope: [:partials, :dialogue]) %>' aria-label='<%= t(:question, scope: [:partials, :dialogue]) %>' />
+        <input class='minifast-dialogue__field-input' type='text' name='<%= config[:contact_subject_id] %>' required placeholder='<%= t(:question, scope: [:partials, :dialogue]) %>' aria-label='<%= t(:question, scope: [:partials, :dialogue]) %>' maxlength='280' />
         <div class='minifast-dialogue__field-line'></div>
       </article>
       <article class='minifast-dialogue__field'>
-        <input class='minifast-dialogue__field-input' type='email' autocomplete='email' name='emailAddress' required placeholder='<%= t(:email, scope: [:partials, :dialogue]) %>' aria-label='<%= t(:email, scope: [:partials, :dialogue]) %>' />
+        <input class='minifast-dialogue__field-input' type='email' autocomplete='email' name='emailAddress' required placeholder='<%= t(:email, scope: [:partials, :dialogue]) %>' aria-label='<%= t(:email, scope: [:partials, :dialogue]) %>' maxlength='280' />
         <div class='minifast-dialogue__field-line'></div>
       </article>
       <button class='minifast-dialogue__submit'>

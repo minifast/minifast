@@ -7,21 +7,21 @@
       <article class='minifast-adlib__labeled-field'>
         <label class='minifast-adlib__label'><%= t(:adlib, scope: [:partials, :adlib, :name]) %></label>
         <div class='minifast-adlib__field'>
-          <input class='minifast-adlib__field-input' type='text' autocomplete='name' name='<%= config[:contact_name_id] %>' required placeholder='<%= t(:placeholder, scope: [:partials, :adlib, :name]) %>' aria-label='<%= t(:placeholder, scope: [:partials, :adlib, :name]) %>' />
+          <input class='minifast-adlib__field-input' type='text' autocomplete='name' name='<%= config[:contact_name_id] %>' required placeholder='<%= t(:placeholder, scope: [:partials, :adlib, :name]) %>' aria-label='<%= t(:placeholder, scope: [:partials, :adlib, :name]) %>' maxlength='280' />
           <div class='minifast-adlib__field-line'></div>
         </div>
       </article>
       <article class='minifast-adlib__labeled-field'>
         <label class='minifast-adlib__label'><%= t(:adlib, scope: [:partials, :adlib, :email]) %></label>
         <div class='minifast-adlib__field'>
-          <input class='minifast-adlib__field-input' type='email' autocomplete='email' name='emailAddress' required placeholder='<%= t(:placeholder, scope: [:partials, :adlib, :email]) %>' aria-label='<%= t(:placeholder, scope: [:partials, :adlib, :email]) %>' />
+          <input class='minifast-adlib__field-input' type='email' autocomplete='email' name='emailAddress' required placeholder='<%= t(:placeholder, scope: [:partials, :adlib, :email]) %>' aria-label='<%= t(:placeholder, scope: [:partials, :adlib, :email]) %>' maxlength='280' />
           <div class='minifast-adlib__field-line'></div>
         </div>
       </article>
       <article class='minifast-adlib__labeled-field'>
         <label class='minifast-adlib__label'><%= t(:adlib, scope: [:partials, :adlib, :subject]) %></label>
         <div class='minifast-adlib__field'>
-          <input class='minifast-adlib__field-input' type='text' name='<%= config[:contact_subject_id] %>' required placeholder='<%= t(:placeholder, scope: [:partials, :adlib, :subject]) %>' aria-label='<%= t(:placeholder, scope: [:partials, :adlib, :subject]) %>' />
+          <input class='minifast-adlib__field-input' type='text' name='<%= config[:contact_subject_id] %>' required placeholder='<%= t(:placeholder, scope: [:partials, :adlib, :subject]) %>' aria-label='<%= t(:placeholder, scope: [:partials, :adlib, :subject]) %>' maxlength='280' />
           <div class='minifast-adlib__field-line'></div>
         </div>
       </article>
