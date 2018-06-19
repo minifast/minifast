@@ -24,15 +24,20 @@
   }
 
   &__wrapper {
-    padding: minifast-space(0) 0;
+    padding: minifast-space(0) 0 minifast-space(2) 0;
     overflow: hidden;
     position: relative;
     background-color: minifast-color("red", "400");
     z-index: -1;
 
+    @include at-size(small) {
+      padding: minifast-space(0) 0;
+    }
+
     @include at-size(medium) {
       z-index: unset;
       position: unset;
+      padding: minifast-space(0) 0 minifast-space(2) 0;
     }
   }
 
@@ -81,7 +86,7 @@
     &--research { color: minifast-color("cream", "500"); }
 
     @include at-size(medium) {
-      @include minifast-text("title");
+      @include minifast-text("diagram-title");
       &--retrospective { color: minifast-color("cream", "500"); }
     }
   }
@@ -111,19 +116,18 @@
 
     @include at-size(medium) {
       position: absolute;
-      width: minifast-space(6);
+      width: minifast-space(5) + minifast-space(3);
       margin: 0;
 
       &--research {
         top: minifast-space(4);
         right: 0;
-        width: minifast-space(5);
         text-align: right;
       }
 
       &--delivery {
-        bottom: minifast-space(3);
-        left: screen-width(medium) / 2 - minifast-space(6) / 2;
+        bottom: minifast-space(1);
+        left: screen-width(medium) / 2 - (minifast-space(5) + minifast-space(3)) / 2;
         text-align: center;
       }
 

@@ -108,6 +108,12 @@ $styles: (
     font-weight: 400,
     text-decoration: none,
     letter-spacing: initial,
+  ),
+  diagram-title: (
+    font-family: cronos-pro,
+    font-size: 30px,
+    font-weight: 400,
+    line-height: floor(30px * $golden-ratio),
   )
 );
 
