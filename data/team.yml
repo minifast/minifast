@@ -2,8 +2,8 @@ members:
   - name: Doc Ritezel
     image: images/photoshoot/doc.jpg
     image_side: right
-    title: CEO + Co-Founder
-    email: doc@ministryofvelocity.com
+    title: Founder
+    email: doc@minifast.co
     twitter: ohrite
     story: |
       As CEO, Doc sets the strategic direction for Ministry of Velocity's operations.
@@ -16,6 +16,22 @@ members:
     image: images/photoshoot/erika.jpg
     image_side: center
     title: Lead Consultant
+    email: erika@minifast.co
+  - name: Jeff Parr
+    image: images/photoshoot/jeff.jpg
+    image_side: right
+    title: Principal Consultant
+    email: jeff@minifast.co
+    twitter: _JeffParr
+    story: |
+      With over 15 years as a consultant, Jeff enjoys the intersection of people
+      and technology. He is a strong advocate for a user-centric approach and is
+      driven to identify and fulfill unmet needs. An enthusiastic spirit with a
+      playful mind, he spends his offscreen time dancing and riding horses and
+      exploring the world with his daughter.
+members_emeritus:
+  - name: Sarah Mei
+    title: Co-Founder
   - name: CJ Bryan
     image: images/photoshoot/cj.jpg
     image_side: right
@@ -53,21 +69,6 @@ members:
       He's based in the little mountain town of Ashland, Oregon,
       midway between Seattle and San Francisco. When he's not coding,
       he creates ephemeral aesthetic artifacts such as music and choreography.
-  - name: Jeff Parr
-    image: images/photoshoot/jeff.jpg
-    image_side: right
-    title: Consultant
-    email: jeff@ministryofvelocity.com
-    twitter: _JeffParr
-    story: |
-      With over 15 years as a consultant, Jeff enjoys the intersection of people
-      and technology. He is a strong advocate for a user-centric approach and is
-      driven to identify and fulfill unmet needs. An enthusiastic spirit with a
-      playful mind, he spends his offscreen time dancing and riding horses and
-      exploring the world with his daughter.
-members_emeritus:
-  - name: Sarah Mei
-    title: Co-Founder
   - name: Hadiyah Mujhid
     image: images/photoshoot/hadiyah.jpg
     title: Consultant
