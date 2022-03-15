@@ -140,7 +140,7 @@ jobs:
           name: Install AWS Command Line Interface
           command: |
             sudo apt-get update
-            sudo apt-get install -y python-pip python-dev
+            sudo apt-get install -y python3-pip
             sudo pip install awscli
             aws --version
 
@@ -188,7 +188,7 @@ jobs:
           name: Install AWS Command Line Interface
           command: |
             sudo apt-get update
-            sudo apt-get install -y python-pip python-dev
+            sudo apt-get install -y python3-pip
             sudo pip install awscli
             aws --version
 
