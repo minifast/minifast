@@ -3,7 +3,7 @@ jobs:
   build:
     parallelism: 1
     docker:
-      - image: circleci/ruby:2.5-node-browsers
+      - image: circleci/ruby:2.6-node-browsers
         environment:
           BUNDLE_JOBS: 3
           BUNDLE_RETRY: 3
@@ -60,7 +60,7 @@ jobs:
   rspec:
     parallelism: 1
     docker:
-      - image: circleci/ruby:2.5-node-browsers
+      - image: circleci/ruby:2.6-node-browsers
         environment:
           BUNDLE_PATH: vendor/bundle
     steps:
@@ -84,7 +84,7 @@ jobs:
   linter:
     parallelism: 1
     docker:
-      - image: circleci/ruby:2.5-node-browsers
+      - image: circleci/ruby:2.6-node-browsers
         environment:
           BUNDLE_JOBS: 3
           BUNDLE_RETRY: 3
@@ -127,7 +127,7 @@ jobs:
   staging:
     parallelism: 1
     docker:
-      - image: circleci/ruby:2.5-node-browsers
+      - image: circleci/ruby:2.6-node-browsers
         environment:
           BUNDLE_JOBS: 3
           BUNDLE_RETRY: 3
@@ -140,7 +140,7 @@ jobs:
           name: Install AWS Command Line Interface
           command: |
             sudo apt-get update
-            sudo apt-get install -y python-pip python-dev
+            sudo apt-get install -y python3-pip
             sudo pip install awscli
             aws --version
 
@@ -175,7 +175,7 @@ jobs:
   deploy:
     parallelism: 1
     docker:
-      - image: circleci/ruby:2.5-node-browsers
+      - image: circleci/ruby:2.6-node-browsers
         environment:
           BUNDLE_JOBS: 3
           BUNDLE_RETRY: 3
@@ -188,7 +188,7 @@ jobs:
           name: Install AWS Command Line Interface
           command: |
             sudo apt-get update
-            sudo apt-get install -y python-pip python-dev
+            sudo apt-get install -y python3-pip
             sudo pip install awscli
             aws --version
 
