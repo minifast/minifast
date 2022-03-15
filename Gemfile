@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-ruby '2.5.1'
+ruby '~> 2.6'
 
 # middleman
 gem 'middleman', '~> 4.2'
@@ -37,11 +37,9 @@ end
 # Test
 group :test do
   gem 'axe-matchers'
-  gem 'capybara'
   gem 'capybara-screenshot'
-  gem 'chromedriver-helper'
   gem 'launchy'
   gem 'rspec_junit_formatter', require: false
   gem 'rubocop-junit-formatter', require: false
-  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
