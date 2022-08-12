@@ -107,23 +107,13 @@
   }
 
   &__image {
-    height: 50vw;
+    height: 100%;
     position: absolute;
     top: 0;
-    &--left { left: 0; }
-    &--right { right: 0; }
-    &--center { right: -50%; }
 
-    @include at-size(small) {
-      height: screen-width(small) / 3;
-    }
-
-    @include at-size(medium) {
-      height: screen-width(medium) / 3;
-    }
-
-    @include at-size(large) {
-      height: screen-width(large) / 3;
+    &--flip {
+      right: 0;
+      transform: scaleX(-1)
     }
   }
 
@@ -136,6 +126,10 @@
     background: rgba(minifast-color("white", "0"), 0.8);
     opacity: 0;
     transition: opacity 0.125s ease-in-out;
+
+    &--no-photo {
+      opacity: 1;
+    }
   }
 
   &__member:hover &__caption {
