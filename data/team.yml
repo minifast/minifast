@@ -1,8 +1,9 @@
 members:
   - name: Doc Ritezel
-    image: images/photoshoot/doc.jpg
-    image_side: right
-    title: Founder
+    image: images/team/doc.jpg
+    image_side: left
+    image_flip: true
+    title: Founder, Senior Principal Consultant
     email: doc@minifast.co
     twitter: ohrite
     story: |
@@ -13,13 +14,20 @@ members:
       from W3C specifications to large-scale CSS organization.
       In his free time, Doc loves spinning a globe and flying to wherever his finger lands.
   - name: Erika Pacheco
-    image: images/photoshoot/erika.jpg
+    image: images/team/erika.jpg
     image_side: center
-    title: Lead Consultant
+    image_flip: true
+    title: Advanced Consultant
     email: erika@minifast.co
+  - name: Matt Olenick
+    image: images/team/matt.jpg
+    image_side: center
+    title: Advanced Consultant
+    email: matt@minifast.co
   - name: Jeff Parr
-    image: images/photoshoot/jeff.jpg
+    image: images/team/jeff.jpg
     image_side: right
+    image_flip: true
     title: Principal Consultant
     email: jeff@minifast.co
     twitter: _JeffParr
@@ -29,6 +37,18 @@ members:
       driven to identify and fulfill unmet needs. An enthusiastic spirit with a
       playful mind, he spends his offscreen time dancing and riding horses and
       exploring the world with his daughter.
+  - name: Vanderson Nieri
+    image_side: left
+    title: Practicioner Consultant
+    email: van@minifast.co
+  - name: Rae Bonfanti
+    image_side: center
+    title: Principal Consultant
+    email: rae@minifast.co
+  - name: Erica Riehl-Love
+    image_side: center
+    title: Consultant
+    email: erica.love@minifast.co
 members_emeritus:
   - name: Sarah Mei
     title: Co-Founder
