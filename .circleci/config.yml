@@ -24,8 +24,8 @@ jobs:
       # Restore bundle cache
       - restore_cache:
           keys:
-            - minifast-bundle--{{ checksum ".circleci/config.yml" }}-{{ checksum "Gemfile.lock" }}
-            - minifast-bundle--{{ checksum ".circleci/config.yml" }}-
+            - minifast-bundle-{{ .Environment.CACHE_VERSION }}-{{ checksum ".circleci/config.yml" }}-{{ checksum "Gemfile.lock" }}
+            - minifast-bundle-{{ .Environment.CACHE_VERSION }}-{{ checksum ".circleci/config.yml" }}-
             - minifast-bundle-
 
       - run:
@@ -34,15 +34,15 @@ jobs:
 
       # Store bundle cache
       - save_cache:
-          key: minifast-bundle--{{ checksum ".circleci/config.yml" }}-{{ checksum "Gemfile.lock" }}
+          key: minifast-bundle-{{ .Environment.CACHE_VERSION }}-{{ checksum ".circleci/config.yml" }}-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
 
       # Only necessary if app uses webpacker or yarn in some other way
       - restore_cache:
           keys:
-            - minifast-yarn--{{ checksum ".circleci/config.yml" }}-{{ checksum "yarn.lock" }}
-            - minifast-yarn--{{ checksum ".circleci/config.yml" }}-
+            - minifast-yarn-{{ .Environment.CACHE_VERSION }}-{{ checksum ".circleci/config.yml" }}-{{ checksum "yarn.lock" }}
+            - minifast-yarn-{{ .Environment.CACHE_VERSION }}-{{ checksum ".circleci/config.yml" }}-
             - minifast-yarn-
 
       - run:
@@ -51,7 +51,7 @@ jobs:
 
       # Store yarn / webpacker cache
       - save_cache:
-          key: minifast-yarn--{{ checksum ".circleci/config.yml" }}-{{ checksum "yarn.lock" }}
+          key: minifast-yarn-{{ .Environment.CACHE_VERSION }}-{{ checksum ".circleci/config.yml" }}-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
 
@@ -103,8 +103,8 @@ jobs:
 
       - restore_cache:
           keys:
-            - minifast-rubocop--{{ checksum ".circleci/config.yml" }}-{{ checksum ".rubocop.yml" }}
-            - minifast-rubocop--{{ checksum ".circleci/config.yml" }}-
+            - minifast-rubocop-{{ .Environment.CACHE_VERSION }}-{{ checksum ".circleci/config.yml" }}-{{ checksum ".rubocop.yml" }}
+            - minifast-rubocop-{{ .Environment.CACHE_VERSION }}-{{ checksum ".circleci/config.yml" }}-
             - minifast-rubocop-
 
       - run:
@@ -117,7 +117,7 @@ jobs:
                                 --out /tmp/test_results/rubocop.xml
 
       - type: cache-save
-        key: minifast-rubocop--{{ checksum ".circleci/config.yml" }}-{{ checksum ".rubocop.yml" }}
+        key: minifast-rubocop-{{ .Environment.CACHE_VERSION }}-{{ checksum ".circleci/config.yml" }}-{{ checksum ".rubocop.yml" }}
         paths:
           - ~/.cache/rubocop_cache/
 
