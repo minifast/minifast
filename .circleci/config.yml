@@ -9,6 +9,9 @@ jobs:
           BUNDLE_RETRY: 3
           BUNDLE_PATH: vendor/bundle
     steps:
+      - setup_remote_docker:
+          version: 20.10.14
+
       - checkout
 
       - run: mkdir -p /tmp/test_results
@@ -64,6 +67,8 @@ jobs:
         environment:
           BUNDLE_PATH: vendor/bundle
     steps:
+      - setup_remote_docker:
+          version: 20.10.14
       - attach_workspace:
           at: ~/
 
@@ -90,6 +95,9 @@ jobs:
           BUNDLE_RETRY: 3
           BUNDLE_PATH: vendor/bundle
     steps:
+      - setup_remote_docker:
+          version: 20.10.14
+
       - attach_workspace:
           at: ~/
 
@@ -133,6 +141,8 @@ jobs:
           BUNDLE_RETRY: 3
           BUNDLE_PATH: vendor/bundle
     steps:
+      - setup_remote_docker:
+          version: 20.10.14
       - attach_workspace:
           at: ~/
 
@@ -181,6 +191,9 @@ jobs:
           BUNDLE_RETRY: 3
           BUNDLE_PATH: vendor/bundle
     steps:
+      - setup_remote_docker:
+          version: 20.10.14
+
       - attach_workspace:
           at: ~/
 
