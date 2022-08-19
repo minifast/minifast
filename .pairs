@@ -1,14 +1,15 @@
 pairs:
   dr: Doc Ritezel; doc
-  cj: CJ Bryan; cj
-  rh: Rob Head; rob
+  el: Erica Love; erica.love
+  ep: Erika Pacheco; erika
   jp: Jeff Parr; jeff
-  db: Damien Burke; damien
+  mo: Matt Olenick; matt.olenick
+  rb: Rae Bonfanti; rae
+  vn: Van Nieri; van
 
 email:
   prefix: pair
   domain: ministryofvelocity.com
+  no_solo_prefix: true
 
-email_addresses:
-
-global: true
+global: false
