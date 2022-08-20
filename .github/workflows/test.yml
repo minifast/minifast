@@ -1,0 +1,32 @@
+name: Testing and linting
+
+on: [push]
+
+# Subsequently queued workflow interrupts previous runs
+concurrency:
+  group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - run: bundle install
+
+      - name: Lint
+        run: bundle exec rubocop
+
+      - name: License Finder
+        run: bundle exec license_finder
+
+      - name: RSpec
+        run: bundle exec rspec
