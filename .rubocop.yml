@@ -58,7 +58,7 @@ Style/StructInheritance:
 
 # Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
 # URISchemes: http, https
-Metrics/LineLength:
+Layout/LineLength:
   Max: 126
 
 RSpec/AnyInstance:
