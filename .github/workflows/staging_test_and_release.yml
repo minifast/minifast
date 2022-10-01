@@ -1,0 +1,63 @@
+name: Staging test and release
+
+on:
+  push:
+    branches: [master]
+
+# Subsequently queued workflow interrupts previous runs
+concurrency:
+  group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - run: bundle install
+
+      - name: Lint
+        run: bundle exec rubocop
+
+      - name: License Finder
+        run: bundle exec license_finder
+
+      - name: RSpec
+        run: bundle exec rspec
+
+  release:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Install AWS Command Line Interface
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip
+          sudo pip install awscli
+          aws --version
+
+      - run: |
+          export BUCKET_NAME=`aws cloudformation describe-stacks --stack-name=staging --region=${BUCKET_REGION} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "BucketName") | .OutputValue'`
+          export CLOUDFRONT_DISTRIBUTION_ID=`aws cloudformation describe-stacks --stack-name=staging --region=${BUCKET_REGION} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "DistributionId") | .OutputValue'`
+          export RACK_BASE_URI='https://staging.ministryofvelocity.com'
+
+      - name: Configure Site
+        run: aws cloudformation update-stack --stack-name=staging --capabilities CAPABILITY_IAM --region ${BUCKET_REGION} --template-body "`cat ./doc/cloudformation.json`" --parameters '[{"ParameterKey":"HostedZone","UsePreviousValue":true},{"ParameterKey":"AlternateHostedZone","UsePreviousValue":true},{"ParameterKey":"CertificateArn","UsePreviousValue":true}]' || echo 'No updates'
+
+      - name: Build Site
+        run: bundle exec middleman build
+
+      - name: Deploy Site
+        run: bundle exec middleman sync
+
+      - name: Invalidate CDN
+        run: bundle exec middleman invalidate
