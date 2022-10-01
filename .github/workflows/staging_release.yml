@@ -1,0 +1,94 @@
+name: Staging test, lint, and release
+
+on:
+  push:
+    branches: [master]
+
+# Subsequently queued workflow interrupts previous runs
+concurrency:
+  group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - run: bundle install
+
+      - name: Lint
+        run: bundle exec rubocop
+
+      - name: License Finder
+        run: bundle exec license_finder
+
+      - name: RSpec
+        run: bundle exec rspec
+
+  release:
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      BUCKET_REGION: ${{ secrets.BUCKET_REGION }}
+      CACHE_VERSION: ${{ secrets.CACHE_VERSION }}
+      GOOGLE_ANALYTICS_TRACKING_ID: ${{ secrets.GOOGLE_ANALYTICS_TRACKING_ID }}
+      GOOGLE_FORM_NAME_ID: ${{ secrets.GOOGLE_FORM_NAME_ID }}
+      GOOGLE_FORM_SUBJECT_ID: ${{ secrets.GOOGLE_FORM_SUBJECT_ID }}
+      GOOGLE_FORM_URL: ${{ secrets.GOOGLE_FORM_URL }}
+      GOOGLE_MAPS_KEY: ${{ secrets.GOOGLE_MAPS_KEY }}
+      GOOGLE_MAPS_PRIVATE_KEY: ${{ secrets.GOOGLE_MAPS_PRIVATE_KEY }}
+
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - run: bundle install
+
+      - name: Install AWS Command Line Interface
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip
+          sudo pip install awscli
+          aws --version
+
+      - name: Configure Site
+        run: aws cloudformation update-stack --stack-name=staging --capabilities CAPABILITY_IAM --region ${{ secrets.BUCKET_REGION }} --template-body "`cat ./doc/cloudformation.json`" --parameters '[{"ParameterKey":"HostedZone","UsePreviousValue":true},{"ParameterKey":"AlternateHostedZone","UsePreviousValue":true},{"ParameterKey":"CertificateArn","UsePreviousValue":true}]' || echo 'No updates'
+
+      - name: Build Site
+        run: |
+          export BUCKET_NAME=`aws cloudformation describe-stacks --stack-name=staging --region=${{ secrets.BUCKET_REGION }} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "BucketName") | .OutputValue'`
+          export CLOUDFRONT_DISTRIBUTION_ID=`aws cloudformation describe-stacks --stack-name=staging --region=${{ secrets.BUCKET_REGION }} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "DistributionId") | .OutputValue'`
+          export RACK_BASE_URI='https://staging.ministryofvelocity.com'
+          bundle exec middleman build
+
+      - name: Deploy Site
+        run: |
+          export BUCKET_NAME=`aws cloudformation describe-stacks --stack-name=staging --region=${{ secrets.BUCKET_REGION }} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "BucketName") | .OutputValue'`
+          export CLOUDFRONT_DISTRIBUTION_ID=`aws cloudformation describe-stacks --stack-name=staging --region=${{ secrets.BUCKET_REGION }} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "DistributionId") | .OutputValue'`
+          export RACK_BASE_URI='https://staging.ministryofvelocity.com'
+          bundle exec middleman sync
+
+      - name: Invalidate CDN
+        run: |
+          export BUCKET_NAME=`aws cloudformation describe-stacks --stack-name=staging --region=${{ secrets.BUCKET_REGION }} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "BucketName") | .OutputValue'`
+          export CLOUDFRONT_DISTRIBUTION_ID=`aws cloudformation describe-stacks --stack-name=staging --region=${{ secrets.BUCKET_REGION }} | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "DistributionId") | .OutputValue'`
+          export RACK_BASE_URI='https://staging.ministryofvelocity.com'
+          bundle exec middleman invalidate
