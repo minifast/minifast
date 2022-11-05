@@ -8,6 +8,9 @@ require: rubocop-rspec
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
+AllCops:
+  NewCops: enable
+
 # Cop supports --auto-correct.
 Layout/ElseAlignment:
   Enabled: true
@@ -22,6 +25,11 @@ Layout/EndAlignment:
 # Configuration parameters: Width, IgnoredPatterns.
 Layout/IndentationWidth:
   Enabled: true
+
+# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
+# URISchemes: http, https
+Layout/LineLength:
+  Max: 126
 
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyleForEmptyBraces.
@@ -55,11 +63,6 @@ Style/StringLiterals:
 
 Style/StructInheritance:
   Enabled: true
-
-# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
-# URISchemes: http, https
-Metrics/LineLength:
-  Max: 126
 
 RSpec/AnyInstance:
   Exclude:
