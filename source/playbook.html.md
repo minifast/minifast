@@ -122,9 +122,9 @@ This playbook owes an historic debt to [thoughtbot's playbook](https://playbook.
 * The top Story in the backlog is worked on by the approriate members of the team
 * Stories usually don't take longer than a day to complete
 * Stories that take longer than a day can live on a temporary feature branch
-* When the team is finished implementing the story, the work is pushed to the master branch of the git repository
-* There is no bottleneck for pushing code to the master branch: everyone can do it
-* Code on the master branch is automatically deployed to a staging environment, and the Story is marked as Delivered
+* When the team is finished implementing the story, the work is pushed to the main branch of the git repository
+* There is no bottleneck for pushing code to the main branch: everyone can do it
+* Code on the main branch is automatically deployed to a staging environment, and the Story is marked as Delivered
 * There is no bottleneck for deploying to staging: everyone can do it.
 * Each Delivered Story is examined by the person who wrote the Story and potentially a designer; if a Story's acceptance criteria is met, the Story is marked is Accepted
 * If all code in the staging environment corresponds to Accepted cards, the code may be released to production
