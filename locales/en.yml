@@ -9,7 +9,8 @@ en:
       - software
     name: Ministry of Velocity
     office:
-      address: 65 Annie Street
+      address_1: 548 Market Street
+      address_2: Suite 19521
       city: San Francisco
       state: CA
       postal_code: 94104
