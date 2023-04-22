@@ -1,15 +1,41 @@
 <section class='minifast-map'>
   <article class='minifast-map__content'>
-    <%= partial 'partials/static_map', locals: {map_class: 'minifast-map__map', center: '37.7995,-122.401628', zoom: 14, width: 640, height: 640, markers: [MapMarker.new(location: MapLocation.new(latitude: 37.787182, longitude: -122.401628), icon: asset_path(:images, 'map/pin.png'))], style: 'style=element:labels|visibility:off&style=feature:administrative|hue:0x000000|lightness:-100|visibility:off&style=feature:administrative.country|element:geometry.fill|color:0xe24301&style=feature:administrative.neighborhood|element:geometry.fill|color:0xe24301|visibility:simplified&style=feature:landscape|element:geometry|color:0xfcbd9b|visibility:on&style=feature:landscape|element:labels|saturation:-100|lightness:-100|visibility:off&style=feature:poi|hue:0x000000|saturation:-100|lightness:-100|visibility:off&style=feature:poi|element:geometry|color:0xf58151&style=feature:road|element:geometry|hue:0xbbbbbb|saturation:-100|lightness:26|visibility:on&style=feature:road|element:labels|hue:0xffffff|saturation:-100|lightness:100|visibility:off&style=feature:road.arterial|element:geometry|color:0xf7b18c&style=feature:road.arterial|element:geometry.fill|color:0xffd8c2&style=feature:road.arterial|element:geometry.stroke|color:0xf7a16e|visibility:on&style=feature:road.arterial|element:labels|visibility:off&style=feature:road.arterial|element:labels.icon|visibility:off&style=feature:road.arterial|element:labels.text|visibility:off&style=feature:road.highway|element:geometry.fill|color:0xfbaf87&style=feature:road.highway|element:geometry.stroke|color:0xfa8c53&style=feature:road.highway|element:labels.text|visibility:off&style=feature:road.highway.controlled_access|element:labels.icon|visibility:off&style=feature:road.local|hue:0xffffff|saturation:-100|lightness:100|visibility:on&style=feature:road.local|element:geometry|color:0xf1b595&style=feature:road.local|element:geometry.fill|color:0xfcdccb&style=feature:road.local|element:labels|visibility:off&style=feature:road.local|element:labels.icon|visibility:off&style=feature:road.local|element:labels.text|visibility:off&style=feature:transit|element:geometry.fill|color:0xfba97e&style=feature:transit|element:geometry.stroke|color:0xfbaf87&style=feature:transit|element:labels|hue:0x000000|lightness:-100|visibility:off&style=feature:water|element:geometry|color:0xffe7d9|visibility:on&style=feature:water|element:geometry.fill|color:0xffe7d9&style=feature:water|element:labels|visibility:off'} %>
+    <%= partial(
+      'partials/static_map',
+      locals: {
+        map_class: 'minifast-map__map',
+        center: '37.7995,-122.401628',
+        zoom: 14,
+        width: 640,
+        height: 640,
+        markers: [
+          MapMarker.new(
+            location: MapLocation.new(latitude: 37.79006773891194, longitude: -122.400742929523),
+            icon: asset_path(:images, 'map/pin.png')
+          )
+        ],
+        style: 'style=element:labels|visibility:off&style=feature:administrative|hue:0x000000|lightness:-100|visibility:off&style=feature:administrative.country|element:geometry.fill|color:0xe24301&style=feature:administrative.neighborhood|element:geometry.fill|color:0xe24301|visibility:simplified&style=feature:landscape|element:geometry|color:0xfcbd9b|visibility:on&style=feature:landscape|element:labels|saturation:-100|lightness:-100|visibility:off&style=feature:poi|hue:0x000000|saturation:-100|lightness:-100|visibility:off&style=feature:poi|element:geometry|color:0xf58151&style=feature:road|element:geometry|hue:0xbbbbbb|saturation:-100|lightness:26|visibility:on&style=feature:road|element:labels|hue:0xffffff|saturation:-100|lightness:100|visibility:off&style=feature:road.arterial|element:geometry|color:0xf7b18c&style=feature:road.arterial|element:geometry.fill|color:0xffd8c2&style=feature:road.arterial|element:geometry.stroke|color:0xf7a16e|visibility:on&style=feature:road.arterial|element:labels|visibility:off&style=feature:road.arterial|element:labels.icon|visibility:off&style=feature:road.arterial|element:labels.text|visibility:off&style=feature:road.highway|element:geometry.fill|color:0xfbaf87&style=feature:road.highway|element:geometry.stroke|color:0xfa8c53&style=feature:road.highway|element:labels.text|visibility:off&style=feature:road.highway.controlled_access|element:labels.icon|visibility:off&style=feature:road.local|hue:0xffffff|saturation:-100|lightness:100|visibility:on&style=feature:road.local|element:geometry|color:0xf1b595&style=feature:road.local|element:geometry.fill|color:0xfcdccb&style=feature:road.local|element:labels|visibility:off&style=feature:road.local|element:labels.icon|visibility:off&style=feature:road.local|element:labels.text|visibility:off&style=feature:transit|element:geometry.fill|color:0xfba97e&style=feature:transit|element:geometry.stroke|color:0xfbaf87&style=feature:transit|element:labels|hue:0x000000|lightness:-100|visibility:off&style=feature:water|element:geometry|color:0xffe7d9|visibility:on&style=feature:water|element:geometry.fill|color:0xffe7d9&style=feature:water|element:labels|visibility:off'
+      }
+    ) %>
     <article class='minifast-map__container'>
       <h3 class='minifast-map__title'><%= t(:name, scope: [:minifast]) %></h3>
-      <p class='minifast-map__text'><%= t(:address, scope: [:minifast, :office]) %></p>
+      <p class='minifast-map__text'><%= t(:address_1, scope: [:minifast, :office]) %></p>
+      <p class='minifast-map__text'><%= t(:address_2, scope: [:minifast, :office]) %></p>
       <p class='minifast-map__text'><%= t(:city, scope: [:minifast, :office]) %>, <%= t(:state, scope: [:minifast, :office]) %></p>
       <p class='minifast-map__text'><%= t(:postal_code, scope: [:minifast, :office]) %></p>
       <ul class='minifast-map__contacts'>
-        <li class='minifast-map__method'><span  class='minifast-map__abbreviation' title='<%= t(:name, scope: [:minifast, :phone]) %>'>P</span><%= link_to t(:number, scope: [:minifast, :phone]), "tel:#{t(:e164, scope: [:minifast, :phone])}", class: 'minifast-map__link' %></li>
-        <li class='minifast-map__method'><span  class='minifast-map__abbreviation' title='<%= t(:name, scope: [:minifast, :email]) %>'>E</span><%= link_to t(:address, scope: [:minifast, :email]), "mailto:#{t(:address, scope: [:minifast, :email])}", class: 'minifast-map__link' %></li>
-        <li class='minifast-map__method'><span  class='minifast-map__abbreviation' title='<%= t(:name, scope: [:minifast, :twitter]) %>'>T</span><%= link_to "@#{t(:account, scope: [:minifast, :twitter])}", "https://twitter.com/#{t(:account, scope: [:minifast, :twitter])}", class: 'minifast-map__link' %></li>
+        <li class='minifast-map__method'>
+          <span  class='minifast-map__abbreviation' title='<%= t(:name, scope: [:minifast, :phone]) %>'>P</span>
+          <%= link_to t(:number, scope: [:minifast, :phone]), "tel:#{t(:e164, scope: [:minifast, :phone])}", class: 'minifast-map__link' %>
+        </li>
+        <li class='minifast-map__method'>
+          <span  class='minifast-map__abbreviation' title='<%= t(:name, scope: [:minifast, :email]) %>'>E</span>
+          <%= link_to t(:address, scope: [:minifast, :email]), "mailto:#{t(:address, scope: [:minifast, :email])}", class: 'minifast-map__link' %>
+        </li>
+        <li class='minifast-map__method'>
+          <span  class='minifast-map__abbreviation' title='<%= t(:name, scope: [:minifast, :twitter]) %>'>T</span>
+          <%= link_to "@#{t(:account, scope: [:minifast, :twitter])}", "https://twitter.com/#{t(:account, scope: [:minifast, :twitter])}", class: 'minifast-map__link' %>
+        </li>
       </ul>
     </article>
   </article>

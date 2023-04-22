@@ -2,7 +2,7 @@ name: Staging test, lint, and release
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 # Subsequently queued workflow interrupts previous runs
 concurrency:

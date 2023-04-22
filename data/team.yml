@@ -17,13 +17,8 @@ members:
     image: images/team/erika.jpg
     image_side: center
     image_flip: true
-    title: Advanced Consultant
+    title: Staff Consultant
     email: erika@minifast.co
-  - name: Matt Olenick
-    image: images/team/matt.jpg
-    image_side: center
-    title: Advanced Consultant
-    email: matt@minifast.co
   - name: Jeff Parr
     image: images/team/jeff.jpg
     image_side: right
@@ -37,13 +32,9 @@ members:
       driven to identify and fulfill unmet needs. An enthusiastic spirit with a
       playful mind, he spends his offscreen time dancing and riding horses and
       exploring the world with his daughter.
-  - name: Erica Riehl-Love
-    image_side: left
-    title: Consultant
-    email: erica.love@minifast.co
   - name: Vanderson Nieri
     image_side: center
-    title: Practitioner Consultant
+    title: Consultant
     email: van@minifast.co
   - name: Rae Bonfanti
     image_side: center
@@ -52,6 +43,11 @@ members:
 members_emeritus:
   - name: Sarah Mei
     title: Co-Founder
+  - name: Matt Olenick
+    image: images/team/matt.jpg
+    image_side: center
+    title: Staff Consultant
+    email: matt@minifast.co
   - name: CJ Bryan
     image: images/photoshoot/cj.jpg
     image_side: right
