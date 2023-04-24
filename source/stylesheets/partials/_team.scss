@@ -124,16 +124,8 @@
     right: 0;
     padding: minifast-space(-1) minifast-space(0);
     background: rgba(minifast-color("white", "0"), 0.8);
-    opacity: 0;
-    transition: opacity 0.125s ease-in-out;
-
-    &--no-photo {
-      opacity: 1;
-    }
-  }
-
-  &__member:hover &__caption {
     opacity: 1;
+    transition: opacity 0.125s ease-in-out;
   }
 
   &__handle {

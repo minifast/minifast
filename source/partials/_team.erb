@@ -5,7 +5,7 @@
   </section>
   <section class='minifast-team__members'>
     <% data.team.members.each do |team_member| %>
-      <% team_member_image = team_member.image.present? ? asset_url(team_member.image) : asset_url("images/team/coming-soon.png") %>
+      <% team_member_image = team_member.image.present? ? asset_url(team_member.image) : asset_url("images/team/no-photo.png") %>
       <article class='minifast-team__member'>
         <figure class='minifast-team__tile'>
           <img class='minifast-team__image minifast-team__image--<%= team_member.image_side %> <%= "minifast-team__image--flip" if team_member.image_flip %>' src='<%= team_member_image %>' alt='<%= team_member.name %>' />
