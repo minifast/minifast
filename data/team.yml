@@ -3,12 +3,12 @@ members:
     image: images/team/doc.jpg
     image_side: left
     image_flip: true
-    title: Founder, Senior Principal Consultant
+    title: Finance Chair, Senior Principal Consultant
     email: doc@minifast.co
     twitter: ohrite
     story: |
-      As CEO, Doc sets the strategic direction for Ministry of Velocity's operations.
-      He has been involved with nearly every aspect of modern software development for over 15 years;
+      As Finance Chair, Doc heads up Ministry of Velocity's operations.
+      He has been involved with nearly every aspect of modern software development for over 20 years;
       from operating system kernels to database storage backends,
       from HTTP parsers to distributed systems design,
       from W3C specifications to large-scale CSS organization.
@@ -17,13 +17,13 @@ members:
     image: images/team/erika.jpg
     image_side: center
     image_flip: true
-    title: Staff Consultant
+    title: People Chair, Staff Consultant
     email: erika@minifast.co
   - name: Jeff Parr
     image: images/team/jeff.jpg
     image_side: right
     image_flip: true
-    title: Principal Consultant
+    title: Finance Treasurer, Principal Consultant
     email: jeff@minifast.co
     twitter: _JeffParr
     story: |
@@ -38,7 +38,7 @@ members:
     email: van@minifast.co
   - name: Rae Bonfanti
     image_side: center
-    title: Principal Consultant
+    title: People Secretary, Principal Consultant
     email: rae@minifast.co
 members_emeritus:
   - name: Sarah Mei

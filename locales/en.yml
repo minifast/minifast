@@ -60,7 +60,7 @@ en:
       name: Your name
       pairing:
         description: We are a small team using open dialogue to help the companies we partner with to understand their challenges, reach their goals, and ultimately grow their business.
-        title: We program in pairs.
+        title: We program, design, and train in pairs.
       subject: A quick note
       submit: Submit
       title: Join Our Team
@@ -95,7 +95,7 @@ en:
       tabs:
         who:
           title: Who are you?
-          subtitle: We're a diverse team of engineers and designers committed to democratic principles.
+          subtitle: We're a worker cooperative of engineers and designers committed to democratic principles.
           paragraphs:
             - When everyone has a voice, we are better equipped to build software that faces business challenges head on.
             - We see every interaction as a chance to advocate for and uphold the egalitarian principles that make just and accessible societies.
@@ -107,13 +107,13 @@ en:
             - By working in dialogue, we create a better, more equitable process for writing sustainable software.
         you:
           title: Who do you work with?
-          subtitle: We work in tandem with teams who are looking for more than just engineering.
+          subtitle: We partner with teams who are looking for more than just code.
           paragraphs:
-            - They want to get to the heart of the matter through the process of building software.
-            - Our collaboration is rooted in the exchange of information to uncover the true story of their business.
+            - Together, we'll get to the heart of the matter through the process of building software.
+            - Our collaboration is rooted in the exchange of information to uncover the true story of business problems.
         what:
           title: What problems do you solve?
-          subtitle: On the surface we make businesses run more efficiently.
+          subtitle: On the surface we make businesses run more effectively.
           paragraphs:
             - But we're really solving a much larger problem. By bringing more voices to every problem we solve, we incorporate a diversity of perspectives into every product we build.
             - Transparency goes beyond honesty. It's a way for us to see and understand the goals of your business. And for you to see and understand what we're building and how we're building it.
@@ -139,14 +139,14 @@ en:
       work: Work
     hero:
       subtitles:
-        - We use <span>pair programming</span> to craft sustainable code.
-      title: We are an <span>engineering</span> consultancy.
+        - We use <span>democracy at work</span> to build sustainable products.
+      title: We are a <span>software</span> cooperative.
     portfolio:
       description: We partner with people who want to rethink the inner workings of their business.
       title: Our Work
       view_more: View our portfolio of work
     playbooks:
-      description: Pairing is not just our mode for programming – it's how we structure our partner relationships throughout every project. Our approach is designed around dialogue – to uncover needs, prioritize strategically, and impart our methodology to your team.
+      description: Pair programming is not just our mode for working – it's how we structure our partner relationships throughout every project. Our approach is designed around dialogue – to uncover needs, prioritize strategically, and impart our methodology to your team.
       goals:
         title: Goals
         description: Starting at the end helps us know how to begin. Before we write a single line of code, we have to articulate what we're trying to accomplish. We use targeted and measurable goals to inform how we approach the work ahead of us. Together we look at what you want to build and, more importantly, how it will impact your business.
