@@ -1,2 +1,4 @@
 ---
 BUNDLE_BUILD__NOKOGIRI: "--use-system-libraries"
+BUNDLE_PATH: "/home/runner/work/minifast/minifast/vendor/bundle"
+BUNDLE_DEPLOYMENT: "true"
