@@ -1,8 +1,6 @@
-name: Test and lint
+name: Test and Lint
 
-on:
-  push:
-    branches-ignore: [main, production]
+on: push
 
 # Subsequently queued workflow interrupts previous runs
 concurrency:
@@ -11,24 +9,45 @@ concurrency:
 
 jobs:
   test:
+    env:
+      GOOGLE_MAPS_KEY: ${{ secrets.GOOGLE_MAPS_KEY }}
+      GOOGLE_MAPS_PRIVATE_KEY: ${{ secrets.GOOGLE_MAPS_PRIVATE_KEY }}
+
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Ruby
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
 
-      - run: bundle install
+      - name: RSpec
+        run: bundle exec rspec
 
-      - name: Lint
-        run: bundle exec rubocop
+  lint:
+    env:
+      GOOGLE_MAPS_KEY: ${{ secrets.GOOGLE_MAPS_KEY }}
+      GOOGLE_MAPS_PRIVATE_KEY: ${{ secrets.GOOGLE_MAPS_PRIVATE_KEY }}
+
+    runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Standard Ruby
+        run: bundle exec standardrb  --format github --format "Standard::Formatter"
 
       - name: License Finder
         run: bundle exec license_finder
-
-      - name: RSpec
-        run: bundle exec rspec
