@@ -1,8 +1,11 @@
-name: Production test, lint, and release
+name: Production Release
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Test and Lint"]
     branches: [production]
+    types:
+      - completed
 
 # Subsequently queued workflow interrupts previous runs
 concurrency:
@@ -10,29 +13,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-
-      - name: Standard Ruby
-        uses: standardrb/standard-ruby-action@v1
-        with:
-          autofix: false
-
-      - name: License Finder
-        run: bundle exec license_finder
-
-      - name: RSpec
-        run: bundle exec rspec
-
   release:
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -48,23 +28,15 @@ jobs:
       GOOGLE_MAPS_PRIVATE_KEY: ${{ secrets.GOOGLE_MAPS_PRIVATE_KEY }}
 
     runs-on: ubuntu-latest
-    needs: test
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Ruby
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-
-      - name: Install AWS Command Line Interface
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y python3-pip
-          sudo pip install awscli
-          aws --version
 
       - name: Configure Site
         run: aws cloudformation update-stack --stack-name=www --capabilities CAPABILITY_IAM --region ${{ secrets.BUCKET_REGION }} --template-body "`cat ./doc/cloudformation.json`" --parameters '[{"ParameterKey":"HostedZone","UsePreviousValue":true},{"ParameterKey":"AlternateHostedZone","UsePreviousValue":true},{"ParameterKey":"CertificateArn","UsePreviousValue":true}]' || echo 'No updates'
