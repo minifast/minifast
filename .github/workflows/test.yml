@@ -11,6 +11,10 @@ concurrency:
 
 jobs:
   test:
+    env:
+      GOOGLE_MAPS_KEY: ${{ secrets.GOOGLE_MAPS_KEY }}
+      GOOGLE_MAPS_PRIVATE_KEY: ${{ secrets.GOOGLE_MAPS_PRIVATE_KEY }}
+
     runs-on: ubuntu-latest
 
     steps:
@@ -22,10 +26,10 @@ jobs:
         with:
           bundler-cache: true
 
-      - run: bundle install
-
-      - name: Lint
-        run: bundle exec rubocop
+      - name: Standard Ruby
+        uses: standardrb/standard-ruby-action@v1
+          with:
+            autofix: false
 
       - name: License Finder
         run: bundle exec license_finder

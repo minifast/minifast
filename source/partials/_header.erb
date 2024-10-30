@@ -1,7 +1,7 @@
 <div class='minifast-header'>
   <div class='minifast-header__container'>
     <h1 class='minifast-header__title'>
-      <% link_to '/', class: 'minifast-header__link minifast-header__link--title', title: t(:name, scope: :minifast) do %>
+      <% link_to '/', class: 'minifast-header__link minifast-header__link--title' do %>
         <%= partial 'partials/inline_svg', locals: {path: 'images/logos/full.svg', image_class: 'minifast-header__logo minifast-header__logo--large'} %>
         <%= partial 'partials/inline_svg', locals: {path: 'images/logos/horizontal.svg', image_class: 'minifast-header__logo minifast-header__logo--small'} %>
       <% end %>

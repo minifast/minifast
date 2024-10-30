@@ -1,10 +1,7 @@
-<%- set_meta_tags description: t(:description, scope: :minifast), keywords: t(:keywords, scope: :minifast), twitter_author: t(:account, scope: [:minifast, :twitter]), publisher_twitter: t(:account, scope: [:minifast, :twitter]), pull_image: asset_url('images/photoshoot/office.jpg') -%>
+<%- set_meta_tags description: t(:description, scope: :minifast), keywords: t(:keywords, scope: :minifast), twitter_author: t(:account, scope: [:minifast, :twitter]), publisher_twitter: t(:account, scope: [:minifast, :twitter]), pull_image: asset_url('images/photoshoot/office.jpg'), viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no' -%>
 <!doctype html>
 <html lang='en'>
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv='x-ua-compatible' content='ie=edge' />
-    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
     <link rel='apple-touch-icon' href='/apple-touch-icon-180x180-precomposed.png' sizes='180x180' />
     <link rel='apple-touch-icon' href='/apple-touch-icon-152x152-precomposed.png' sizes='152x152' />
     <link rel='apple-touch-icon' href='/apple-touch-icon-144x144-precomposed.png' sizes='144x144' />
@@ -37,6 +34,5 @@
     <main role='main'><%= yield %></main>
     <footer><%= partial 'partials/footer' %></footer>
     <%= javascript_include_tag 'site' %>
-    <%= google_analytics_tag if build? %>
   </body>
 </html>

@@ -11,6 +11,10 @@ concurrency:
 
 jobs:
   test:
+    env:
+      GOOGLE_MAPS_KEY: ${{ secrets.GOOGLE_MAPS_KEY }}
+      GOOGLE_MAPS_PRIVATE_KEY: ${{ secrets.GOOGLE_MAPS_PRIVATE_KEY }}
+
     runs-on: ubuntu-latest
 
     steps:
@@ -22,10 +26,10 @@ jobs:
         with:
           bundler-cache: true
 
-      - run: bundle install
-
-      - name: Lint
-        run: bundle exec rubocop
+      - name: Standard Ruby
+        uses: standardrb/standard-ruby-action@v1
+        with:
+          autofix: false
 
       - name: License Finder
         run: bundle exec license_finder
@@ -41,7 +45,6 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       BUCKET_REGION: ${{ secrets.BUCKET_REGION }}
       CACHE_VERSION: ${{ secrets.CACHE_VERSION }}
-      GOOGLE_ANALYTICS_TRACKING_ID: ${{ secrets.GOOGLE_ANALYTICS_TRACKING_ID }}
       GOOGLE_FORM_NAME_ID: ${{ secrets.GOOGLE_FORM_NAME_ID }}
       GOOGLE_FORM_SUBJECT_ID: ${{ secrets.GOOGLE_FORM_SUBJECT_ID }}
       GOOGLE_FORM_URL: ${{ secrets.GOOGLE_FORM_URL }}
@@ -59,8 +62,6 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-
-      - run: bundle install
 
       - name: Install AWS Command Line Interface
         run: |

@@ -1,110 +1,110 @@
 ---
-- - :whitelist
+- - :permit
   - MIT
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2018-05-18 00:33:43.900514000 Z
-- - :whitelist
+- - :permit
   - ISC
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2018-05-18 00:33:47.306010000 Z
-- - :whitelist
+- - :permit
   - ruby
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2018-05-18 00:33:50.196437000 Z
-- - :whitelist
+- - :permit
   - Apache 2.0
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2018-05-18 00:33:56.015563000 Z
-- - :whitelist
+- - :permit
   - Simplified BSD
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2018-05-18 00:34:16.439207000 Z
-- - :whitelist
+- - :permit
   - New BSD
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2018-05-18 00:35:57.528480000 Z
-- - :whitelist
+- - :permit
   - Mozilla Public License 2.0
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2018-05-18 00:36:08.367935000 Z
-- - :whitelist
+- - :permit
   - CC-BY-3.0
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2018-05-18 00:36:15.417105000 Z
-- - :whitelist
+- - :permit
   - CC0-1.0
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2018-05-18 00:36:20.171639000 Z
 - - :license
   - path-is-inside
   - MIT
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2018-05-18 03:18:56.713026000 Z
 - - :license
   - map
   - ruby
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2018-05-18 03:19:05.156895000 Z
 - - :license
   - em-websocket
   - MIT
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2018-05-18 03:19:31.725484000 Z
-- - :whitelist
+- - :permit
   - BSD 2-Clause
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2018-05-18 03:20:19.169927000 Z
 - - :license
   - unf
   - BSD 2-Clause
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2018-05-18 03:20:27.154306000 Z
 - - :license
   - contracts
   - BSD 2-Clause
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2018-05-18 03:20:32.176601000 Z
 - - :license
   - htmlcompressor
   - Apache 2.0
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2018-05-18 03:20:56.857919000 Z
 - - :license
   - bundler
   - MIT
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2018-05-18 03:27:21.095185000 Z
