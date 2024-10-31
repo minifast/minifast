@@ -40,6 +40,10 @@ members:
     image_side: center
     title: People Secretary, Principal Consultant
     email: rae@minifast.co
+  - name: Harold Booker
+    image_side: left
+    title: Project Manager
+    email: harold@minifast.co
 members_emeritus:
   - name: Sarah Mei
     title: Co-Founder
