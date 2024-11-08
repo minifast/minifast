@@ -80,7 +80,10 @@
     color: minifast-color("white", "0");
 
     &--navigation { @include minifast-text("footer-navigation"); }
-    &--small { @include minifast-text("footer-legal"); }
+    &--small {
+      @include minifast-text("footer-legal");
+      & + & { margin-left: minifast-space(-3); }
+    }
     &--logo {
       display: inline-block;
       height: header-size(portrait) / 3;

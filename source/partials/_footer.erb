@@ -18,6 +18,8 @@
       <% link_to('/', class: 'minifast-footer__link minifast-footer__link--small') do %>
          <%= Time.now.year %> &copy; <%= t(:name, scope: [:minifast]) %>
       <% end %>
+      <span class='minifast-footer__link minifast-footer__link--small'>&middot;</span>
+      <a class='minifast-footer__link minifast-footer__link--small' href='/assets/20241106-ministry-of-velocity-capabilities.pdf'><%= t(:capabilities, scope: [:partials, :portfolio]) %></a>
     </div>
   </div>
 </section>
